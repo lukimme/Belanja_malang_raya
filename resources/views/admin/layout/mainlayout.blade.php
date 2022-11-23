@@ -518,6 +518,43 @@
         </a>
       </li><!-- End Blank Page Nav --> --}}
 
+      {{-- Halaman --}}
+      <li class="nav-heading">Halaman</li>
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="administrator">
+          <i class="bi bi-people"></i>
+          <span>Administrator</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="akun">
+          <i class="bi bi-person"></i>
+          <span>Akun</span>
+        </a>
+      </li>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+         <i class="bi bi-gear"></i><span>Setting</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="banner">
+              <i class="bi bi-circle"></i><span>Banner</span>
+            </a>
+          </li>
+          <li>
+            <a href="iklan">
+              <i class="bi bi-circle"></i><span>Iklan Masyarakat</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      {{-- End Halaman --}}
+
     </ul>
 
   </aside><!-- End Sidebar-->
