@@ -457,21 +457,21 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="kategori">
-          <i class="bi bi-person"></i>
+          <i class="bx bxs-category"></i>
           <span>Kategori</span>
         </a>
       </li><!-- End Kategori Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="produk">
-          <i class="bi bi-person"></i>
+          <i class="bx bxs-cart-alt"></i>
           <span>Produk</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="penjual">
-          <i class="bi bi-person"></i>
+          <i class="bi bi-file-person-fill"></i>
           <span>Penjual</span>
         </a>
       </li><!-- End Produk Page Nav -->
