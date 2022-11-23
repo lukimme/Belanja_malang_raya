@@ -17,7 +17,7 @@
     <div class="row justify-content-center">
 
       <!-- Left side columns -->
-      <div class="col-lg-11">
+      <div class="col-lg-10">
         <div class="row">
 
           <!-- Sales Card -->
@@ -91,7 +91,7 @@
           </div><!-- End Revenue Card -->
 
           <!-- Customers Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-4 col-xl-6">
 
             <div class="card info-card customers-card">
 
