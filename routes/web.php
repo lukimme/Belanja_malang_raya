@@ -34,7 +34,7 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.kategori');
     });
 
-<<<<<<< Updated upstream
+
     // Produk
     Route::get('produk', function () {
         return view('admin.produk');
@@ -44,7 +44,7 @@ Route::prefix('/admin/')->group(function () {
     Route::get('penjual', function () {
         return view('admin.penjual');
     });
-=======
+
     //Adminstrator
     Route::get('administrator', function () {
         return view('admin.administrator');
@@ -65,7 +65,7 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.iklan');
     });
 
->>>>>>> Stashed changes
+
 
 });
 
