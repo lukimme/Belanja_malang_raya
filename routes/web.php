@@ -29,11 +29,20 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.dashboard');
     });
 
-    //Kategori
+    // Kategori
     Route::get('kategori', function () {
         return view('admin.kategori');
     });
 
+    // Produk
+    Route::get('produk', function () {
+        return view('admin.produk');
+    });
+
+    // Penjual
+    Route::get('penjual', function () {
+        return view('admin.penjual');
+    });
 
 });
 
