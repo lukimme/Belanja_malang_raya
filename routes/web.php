@@ -19,18 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 
 // ----Admin----
-Route::prefix('/admin')->group(function () {
+Route::prefix('/admin/')->group(function () {
 
     // Dashboard
-    Route::get('/', function () {
+    Route::get('', function () {
         return view('admin.dashboard');
     });
-    Route::get('/dashboard', function () {
+    Route::get('dashboard', function () {
         return view('admin.dashboard');
     });
 
     //Kategori
-    Route::get('/kategori', function () {
+    Route::get('kategori', function () {
         return view('admin.kategori');
     });
 
