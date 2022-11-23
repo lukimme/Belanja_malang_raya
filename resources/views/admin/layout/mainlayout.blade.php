@@ -277,7 +277,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="/dashboard">
+        <a class="nav-link " href="dashboard">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -456,7 +456,7 @@
       <li class="nav-heading">Input Data</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/kategori">
+        <a class="nav-link collapsed" href="kategori">
           <i class="bi bi-person"></i>
           <span>Kategori</span>
         </a>
@@ -507,6 +507,9 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+
+
+  
 
     <main id="main" class="main">
         @yield('content')
