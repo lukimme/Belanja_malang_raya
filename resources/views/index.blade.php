@@ -48,13 +48,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner benner-radius">
             <div class="carousel-item active">
-              <img src="asset/img/b1.png" class="img-fluid d-block img1-ukuran" alt="..." />
+              <img src="asset/img/belanjamalang.jpg" class="img-fluid d-block img1-ukuran" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="asset/img/b2.png" class="img-fluid img1-ukuran" alt="..." />
+              <img src="asset/img/1-4.jpg" class="img-fluid img1-ukuran" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="asset/img/b3.jpg" class="img-fluid img1-ukuran" alt="..." />
+              <img src="asset/img/3-3.jpg" class="img-fluid img1-ukuran" alt="..." />
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -74,14 +74,14 @@
           <div class="carousel-inner">
             <h6 class="ikm">Iklan Masyarakat</h6>
             <div class="carousel-item active">
-              <img src="asset/img/i1.jpg" class="img-fluid d-block img2-ukuran" alt="..." />
+              <img src="asset/img/ULTAH.jpg" class="img-fluid d-block img2-ukuran" alt="..." />
             </div>
-            <!-- <div class="carousel-item active">
-              <img src="asset/img/ikm.jpg" class="img-fluid img2-ukuran" alt="..." />
+            <div class="carousel-item active">
+              <img src="asset/img/mas-saprol.jpg" class="img-fluid img2-ukuran" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="asset/img/ikm.jpg" class="img-fluid img2-ukuran" alt="..." />
-            </div> -->
+              <img src="asset/img/iklanhasta.jpg" class="img-fluid img2-ukuran" alt="..." />
+            </div>
           </div>
         </div>
       </div>
@@ -142,114 +142,243 @@
     <!-- Glider Swiper -->
     <div class="glider-contain">
       <div class="glider0">
+            <!-- Product Box -->
+        <div class="product-box">
+          <!-- Discount -->
+          <span class="p-discount">-20%</span>
+          <!-- Img Container -->
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+             <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
+          </div>
+        </div>
+
         <!-- Product Box -->
-        <div class="product-boxx box1">
+        <div class="product-box">
           <!-- Discount -->
-          <!-- <span class="p-discount">-20%</span> -->
+          <span class="p-discount">-20%</span>
           <!-- Img Container -->
-          <div class="p-img-containerr">
-            <div class="p-img_">
-              <a href="detail_produk.html">
-                <img src="asset/img/buahh.png" class="p-img-front" alt="Front" /></a>
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
 
           <!-- Text -->
-          <div class="box">
-
-            <h2>Fruits</h2>
-            <span>22 Items</span>
-            <a href="#" style="margin-right: 36px;"><i class='text-dark bx bx-cart-alt'></i> </a>
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+              <a style="text-decoration: none" href="/detailproduct"><span class="p-price">$100</span></a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
           </div>
         </div>
-        <!-- Product-box 2 -->
-        <div class="product-boxx box2">
+
+        <!-- Product Box -->
+        <div class="product-box">
           <!-- Discount -->
-          <!-- <span class="p-discount">-20%</span> -->
+          <span class="p-discount">-20%</span>
           <!-- Img Container -->
-          <div class="p-img-containerr">
-            <div class="p-img_">
-              <a href="detail_produk.html">
-                <img src="asset/img/sayur1.png" class="p-img-front" alt="Front" /></a>
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
 
           <!-- Text -->
-          <div class="box">
-
-            <h2>Vegetables</h2>
-            <span>22 Items</span>
-            <a href="#" style="margin-right: 36px;"><i class='text-dark bx bx-cart-alt'></i> </a>
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+             <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
           </div>
         </div>
 
-        <!-- Product Box 3 -->
-        <div class="product-boxx box3">
+        <!-- Product Box -->
+        <div class="product-box">
           <!-- Discount -->
-          <!-- <span class="p-discount">-20%</span> -->
+          <span class="p-discount">-20%</span>
           <!-- Img Container -->
-          <div class="p-img-containerr">
-            <div class="p-img_">
-              <a href="detail_produk.html">
-                <img src="asset/img/drink.png" class="p-img-front" alt="Front" /></a>
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
 
           <!-- Text -->
-          <div class="box">
-
-            <h2>Drinks</h2>
-            <span>22 Items</span>
-            <a href="#" style="margin-right: 36px;"><i class='text-dark bx bx-cart-alt'></i> </a>
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+           <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
           </div>
         </div>
 
-        <!-- Product 4 -->
-        <div class="product-boxx box4">
+        <!-- Product Box -->
+        <div class="product-box">
           <!-- Discount -->
-          <!-- <span class="p-discount">-20%</span> -->
+          <span class="p-discount">-20%</span>
           <!-- Img Container -->
-          <div class="p-img-containerr">
-            <div class="p-img_">
-              <a href="detail_produk.html">
-                <img src="asset/img/nuts.png" class="p-img-front" alt="Front" /></a>
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
 
           <!-- Text -->
-          <div class="box">
-
-            <h2>Fresh Nut</h2>
-            <span>22 Items</span>
-            <a href="#" style="margin-right: 36px;"><i class='text-dark bx bx-cart-alt'></i> </a>
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+              <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
           </div>
         </div>
-        <!-- product-box 5 -->
-        <div class="product-boxx box5">
+
+        <!-- Product Box -->
+        <div class="product-box">
           <!-- Discount -->
-          <!-- <span class="p-discount">-20%</span> -->
+          <span class="p-discount">-20%</span>
           <!-- Img Container -->
-          <div class="p-img-containerr">
-            <div class="p-img_">
-              <a href="detail_produk.html">
-                <img src="asset/img/spices.png" class="p-img-front" alt="Front" /></a>
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
 
           <!-- Text -->
-          <div class="box">
-
-            <h2>Spices</h2>
-            <span>22 Items</span>
-            <a href="#" style="margin-right: 36px;"><i class='text-dark bx bx-cart-alt'></i> </a>
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+              <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
           </div>
         </div>
 
+        <!-- Product Box -->
+        <div class="product-box">
+          <!-- Discount -->
+          <span class="p-discount">-20%</span>
+          <!-- Img Container -->
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+              <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Box -->
+        <div class="product-box">
+          <!-- Discount -->
+          <span class="p-discount">-20%</span>
+          <!-- Img Container -->
+          <div class="p-img-container">
+            <div class="p-img">
+              <a href="/detailproduct">
+                <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="p-box-text">
+            <!-- Category -->
+            <div class="product-category">
+              <span>Kategori</span>
+            </div>
+            <!-- Title -->
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
+            <!-- Price Buy -->
+            <div class="price-buy">
+              <span class="p-price">$100</span>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
+              <i class="bx bx-heart"></i>
+            </div>
+          </div>
+        </div>
+      </div>
         <!-- Slider Btns -->
-        <!-- <div class="slider-btns2">
-          <button aria-label="Previous" class="glider-prev">«</button>
-          <button aria-label="Next" class="glider-next">»</button>
-        </div> -->
+        <div class="slider-btns2">
+          <button aria-label="Previous" class="glider-prev0">«</button>
+          <button aria-label="Next" class="glider-next0">»</button>
+        </div>
         <!-- End Slider Btns -->
       </div>
   </section>
@@ -306,7 +435,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -322,7 +451,7 @@
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -335,7 +464,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -347,11 +476,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -364,7 +493,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -376,11 +505,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -393,7 +522,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -405,11 +534,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -422,7 +551,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -434,7 +563,7 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
@@ -451,7 +580,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -463,11 +592,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -480,7 +609,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -492,11 +621,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -511,7 +640,7 @@
     </div>
   </section>
 
-  <!-- End Product Terlaris  -->
+  <!-- End Product Diskon  -->
 
   <!-- Product Terlaris Start -->
   <section class="products" style="margin-top: -160px;">
@@ -534,7 +663,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -546,11 +675,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -563,7 +692,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -579,7 +708,7 @@
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -592,7 +721,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -604,11 +733,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -621,7 +750,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -633,11 +762,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -650,7 +779,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -662,11 +791,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -679,7 +808,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -691,7 +820,7 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
@@ -708,7 +837,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -720,11 +849,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -737,7 +866,7 @@
           <!-- Img Container -->
           <div class="p-img-container">
             <div class="p-img">
-              <a href="detail_produk.html">
+              <a href="/detailproduct">
                 <img src="asset/img/bag.jpg" class="p-img-front" alt="Front" /></a>
             </div>
           </div>
@@ -749,11 +878,11 @@
               <span>Kategori</span>
             </div>
             <!-- Title -->
-            <a href="detail_produk.html" class="product-title"> Nama Produk </a>
+            <a href="/detailproduct" class="product-title"> Nama Produk </a>
             <!-- Price Buy -->
             <div class="price-buy">
               <span class="p-price">$100</span>
-              <a href="detail_produk.html"><i class="bx bx-cart-alt"></i> </a>
+              <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
               <i class="bx bx-heart"></i>
             </div>
           </div>
@@ -802,119 +931,119 @@
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <a href="detail_produk.html"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+              <a href="/detailproduct"><img src="asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <a style="text-decoration: none;" href="detail_produk.html">
+                <a style="text-decoration: none;" href="/detailproduct">
                   <h3>Nama Produk</h3>
                 </a>
                 <span>$150</span>
               </div>
-              <a href="detail_produk.html"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
         </div>
@@ -1135,10 +1264,10 @@
       slidesToShow: 5,
       draggable: true,
       dots: ".dots",
-      // arrows: {
-      //   prev: ".glider-prev0",
-      //   next: ".glider-next0",
-      // },
+      arrows: {
+        prev: ".glider-prev0",
+        next: ".glider-next0",
+      },
     });
   </script>
   <!-- End Script Glider -->

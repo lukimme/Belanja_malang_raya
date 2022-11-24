@@ -94,7 +94,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Data Admin -->
-                <table class="table datatable">
+                <table class="table datatable" id="tablee">
                   <thead>
                     <tr>
                       <th scope="col">No</th>
@@ -130,6 +130,13 @@
         </div>
       </div>
     </section>
+
+   
+      <script>
+        $('#tablee').dataTable( {
+         searchable: false
+} );
+      </script>
 
   
 
