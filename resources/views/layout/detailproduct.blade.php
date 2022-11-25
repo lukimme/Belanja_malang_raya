@@ -37,7 +37,7 @@
                 <div class="img-select">
                     <div class="img-item">
                         <a href="#" data-id="1">
-                            <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
+                            <img src="../asset/img/ramen.jpg" alt="sushi">
                         </a>
                     </div>
                     <div class="img-item">

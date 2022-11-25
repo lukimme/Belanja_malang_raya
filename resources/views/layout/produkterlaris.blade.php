@@ -28,112 +28,111 @@
   <section class="products container" id="products">
     <div class="heading">
       <h1><span>Produk</span> Terlaris</h1>
-      <!-- <a href="#">See All</a> -->
     </div>
-    <!-- Fashion Content -->
+    <!-- Product Content -->
     <div class="products-content">
       <!-- Box 1 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/headphonee.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/headphonee.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box2 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/bag.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/bag.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box2 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/headphonee.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/headphonee.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box3 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/bag.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/bag.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box2 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/headphonee.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/headphonee.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box4 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/bag.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/bag.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box5 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/headphonee.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/headphonee.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
       <!-- Box6 -->
       <div class="box">
         <div class="product-img_">
-          <img src="../asset/img/bag.jpg" alt="">
+          <a href="/detailproduct"><img src="../asset/img/bag.jpg" alt=""></a>
         </div>
         <div class="box-text">
           <div class="title-price">
-            <h3>Nama Produk</h3>
+                <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
             <span>$150</span>
           </div>
-          <a href="#"><i class=' bx bx-cart-alt'></i></a>
+           <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
         </div>
       </div>
     </div>

@@ -136,7 +136,7 @@
       <h1>Pilihan Produk <br />
         <span>Terbaru</span>
       </h1>
-      <a href="/produkterlaris" class="btn">Lihat Semua <i class="bx bx-right-arrow-alt"></i></a>
+      <a href="/produkterbaru" class="btn">Lihat Semua <i class="bx bx-right-arrow-alt"></i></a>
     </div>
 
     <!-- Glider Swiper -->
@@ -920,7 +920,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -937,7 +937,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -954,7 +954,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -971,7 +971,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -988,7 +988,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -1005,7 +1005,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -1022,7 +1022,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -1039,7 +1039,7 @@
             <div class="box-text">
               <div class="title-price">
                 <a style="text-decoration: none;" href="/detailproduct">
-                  <h3>Nama Produk</h3>
+                   <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 </a>
                 <span>$150</span>
               </div>
@@ -1068,135 +1068,135 @@
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/sushi.jpeg" class="product-thumb" alt="">
+              <a href="/detailproduct"><img src="asset/img/sushi.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                <a style="text-decoration: none;" href="/detailproduct"> <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/ramen.jpg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/ramen.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class='bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class='bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/sushi.jpeg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/sushi.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/ramen.jpg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/ramen.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/sushi.jpeg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/sushi.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/ramen.jpg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/ramen.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/sushi.jpeg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/sushi.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/ramen.jpg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/ramen.jpg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
 
           <!-- Product Card -->
           <div class="product-card">
             <div class="product-image">
-              <img src="asset/img/sushi.jpeg" class="product-thumb" alt="">
+                <a href="/detailproduct"><img src="asset/img/sushi.jpeg" class="product-thumb" alt=""></a>
             </div>
             <!-- Text -->
             <div class="box-text">
               <div class="title-price">
-                <h3>Nama Produk</h3>
+                 <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                 <span>$150</span>
               </div>
-              <a href="#"><i class=' bx bx-cart-alt'></i></a>
+              <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
             </div>
           </div>
         </div>

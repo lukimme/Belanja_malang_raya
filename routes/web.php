@@ -65,34 +65,8 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.iklan');
     });
 
-
-
 });
 
-
-
-
-
-
-
-
-
-
-// ----User----
-Route::get('/about', function () {
-    return view('about', [
-        "name" => "Irsal",
-        "ini" => "Dwarf",
-        "img" => "ogino.jpg",
-        "lorem" => "lorem"
-
-    ]);
-});
-
-
-Route::get('/post', function () {
-    return view('post');
-});
 
 // Categories
 Route::get('/categories', function () {
@@ -134,12 +108,17 @@ Route::get('/cart', function () {
     return view('layout/cart');
 });
 
-// Terlaris Categories
+// ShowAllTerbaru
+Route::get('/produkterbaru', function () {
+    return view('layout/produkterbaru');
+});
+
+// ShowAllTerlaris
 Route::get('/produkterlaris', function () {
     return view('layout/produkterlaris');
 });
 
-// Diskon Categories
+// ShowAllDiskon
 Route::get('/produkdiskon', function () {
     return view('layout/produkdiskon');
 });

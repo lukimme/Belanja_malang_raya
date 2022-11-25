@@ -99,24 +99,33 @@
                     <tr>
                       <th scope="col">No</th>
                       <th scope="col">Nama</th>
-                      <th scope="col">Gambar</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Username</th>
+                      <th scope="col">Profile</th>
+                      <th scope="col">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Brandon Jacob</td>
-                      <td>Designer</td>
+                      <td>Jhon</td>
+                      <td>Super Admin</td>
+                      <td>Admin</td>
+                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>Bridie Kessler</td>
-                      <td>Developer</td>
+                      <td>Elly</td>
+                      <td>Sub Admin</td>
+                      <td>Ellysh</td>
+                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                      <td>Ashleigh Langosh</td>
-                      <td>Finance</td>
+                      <td>Ashleigh</td>
+                      <td>Sub Admin</td>
+                      <td>Ashle</td>
+                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
                     </tr>
                   </tbody>
                 </table>
@@ -131,12 +140,7 @@
       </div>
     </section>
 
-   
-      <script>
-        $('#tablee').dataTable( {
-         searchable: false
-} );
-      </script>
+
 
   
 

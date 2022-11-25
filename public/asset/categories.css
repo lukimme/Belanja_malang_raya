@@ -266,7 +266,7 @@ body {
     }
 
     .side-bar {
-        min-height: 11vh;
+        height: 190px;
     }
 }
 
@@ -309,7 +309,7 @@ body {
     }
 
     .side-bar {
-        padding-top: 5px;
+        padding-top: 10px;
         position: absolute;
         top: 420px;
         /* height: 0; */
