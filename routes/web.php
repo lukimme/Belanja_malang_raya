@@ -28,7 +28,6 @@ Route::prefix('/admin')->group(function () {
     // Route::post('/login', [AdminController::class, 'login']);
 
     // Dashboard
-<<<<<<< Updated upstream
     Route::get('', function () {
         return view('admin.dashboard');
     });
@@ -40,7 +39,6 @@ Route::prefix('/admin')->group(function () {
     Route::get('kategori', function () {
         return view('layout.kategori');
     });
-=======
     // Route::get('', function () {
     //     return view('admin.dashboard');
     // });
@@ -54,7 +52,6 @@ Route::prefix('/admin')->group(function () {
     // });
     Route::get('/kategori', [KategoriController::class, 'index']);
     // Route::get('/kategori', [KategoriController::class, 'create']);
->>>>>>> Stashed changes
 
 
     // Produk
