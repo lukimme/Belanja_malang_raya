@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 
 // ----Admin----
-Route::prefix('/admin/')->group(function () {
+Route::prefix('/admin')->group(function () {
+
+    // Login
+    // Route::get('/', [AdminController::class, 'index']);
+    // Route::post('/login', [AdminController::class, 'login']);
 
     // Dashboard
+<<<<<<< Updated upstream
     Route::get('', function () {
         return view('admin.dashboard');
     });
@@ -33,35 +40,50 @@ Route::prefix('/admin/')->group(function () {
     Route::get('kategori', function () {
         return view('layout.kategori');
     });
+=======
+    // Route::get('', function () {
+    //     return view('admin.dashboard');
+    // });
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    });
+
+    // Kategori
+    // Route::get('/kategori', function () {
+    //     return view('admin.kategori');
+    // });
+    Route::get('/kategori', [KategoriController::class, 'index']);
+    // Route::get('/kategori', [KategoriController::class, 'create']);
+>>>>>>> Stashed changes
 
 
     // Produk
-    Route::get('produk', function () {
+    Route::get('/produk', function () {
         return view('admin.produk');
     });
 
     // Penjual
-    Route::get('penjual', function () {
+    Route::get('/penjual', function () {
         return view('admin.penjual');
     });
 
     //Adminstrator
-    Route::get('administrator', function () {
+    Route::get('/administrator', function () {
         return view('admin.administrator');
     });
 
     //Akun
-    Route::get('akun', function () {
+    Route::get('/akun', function () {
         return view('admin.akun');
     });
 
     //Akun
-    Route::get('banner', function () {
+    Route::get('/banner', function () {
         return view('admin.banner');
     });
 
     //Akun
-    Route::get('iklan', function () {
+    Route::get('/iklan', function () {
         return view('admin.iklan');
     });
 
