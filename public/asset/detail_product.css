@@ -66,6 +66,7 @@ img {
 
 .img-showcase img {
     min-width: 100%;
+    object-fit: cover;
 }
 
 .img-select {
@@ -77,10 +78,13 @@ img {
 .img-item {
     padding: 3px 0;
     margin: 5px;
+    width: 100%;
 }
 
 .img-item img {
     border-radius: 8px;
+    object-fit: cover;
+    height: 100%;
 }
 
 .img-item:nth-child(1),

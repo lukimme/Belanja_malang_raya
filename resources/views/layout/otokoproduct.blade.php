@@ -53,108 +53,108 @@
     {{-- Product Toko Start--}}
         <div class="otoko__">
                 <main class="main-content2">
-            <!-- Box 1 -->
-            <div style="background: #fff" class="box2">
+             <!-- Box 1 -->
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/womanorange.jpg" alt="">
+                    <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
             <!-- Box2 -->
-            <div style="background: #fff" class="box2">
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/hiphopman.jpeg" alt="">
+                       <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
+                </div>
+            </div>
+            <!-- Box2 -->
+            <div class="box">
+                <div class="product-img_">
+                    <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" alt=""></a>
+                </div>
+                <div class="box-text">
+                    <div class="title-price">
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
+                        <span>$150</span>
+                    </div>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
             <!-- Box3 -->
-            <div style="background: #fff" class="box2">
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/womanorange.jpg" alt="">
+                       <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
+                </div>
+            </div>
+            <!-- Box2 -->
+            <div class="box">
+                <div class="product-img_">
+                    <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" alt=""></a>
+                </div>
+                <div class="box-text">
+                    <div class="title-price">
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
+                        <span>$150</span>
+                    </div>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
             <!-- Box4 -->
-            <div style="background: #fff" class="box2">
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/hiphopman.jpeg" alt="">
+                       <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
             <!-- Box5 -->
-            <div style="background: #fff" class="box2">
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/womanorange.jpg" alt="">
+                    <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
             <!-- Box6 -->
-            <div style="background: #fff" class="box2">
+            <div class="box">
                 <div class="product-img_">
-                    <img src="../asset/img/hiphopman.jpeg" alt="">
+                       <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" alt=""></a>
                 </div>
                 <div class="box-text">
                     <div class="title-price">
-                        <h3>Nama Produk</h3>
+                        <a style="text-decoration: none" href="/detailproduct"><h3>Nama Produk</h3></a>
                         <span>$150</span>
                     </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
-                </div>
-            </div>
-            <!-- Box7 -->
-            <div style="background: #fff" class="box2">
-                <div class="product-img_">
-                    <img src="../asset/img/womanorange.jpg" alt="">
-                </div>
-                <div class="box-text">
-                    <div class="title-price">
-                        <h3>Nama Produk</h3>
-                        <span>$150</span>
-                    </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
-                </div>
-            </div>
-            <!-- Box8 -->
-            <div style="background: #fff" class="box2">
-                <div class="product-img_">
-                    <img src="../asset/img/hiphopman.jpeg" alt="">
-                </div>
-                <div class="box-text">
-                    <div class="title-price">
-                        <h3>Nama Produk</h3>
-                        <span>$150</span>
-                    </div>
-                    <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                    <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                 </div>
             </div>
         </main>

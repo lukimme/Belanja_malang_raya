@@ -29,30 +29,30 @@
                 <div class="img-display">
                     <div class="img-showcase">
                         <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
-                        <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
-                        <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
-                        <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
+                        <img src="../asset/img/womanorange.jpg" alt="hiphopman">
+                        <img src="../asset/img/sushi.jpeg" alt="hiphopman">
+                        <img src="../asset/img/ramen.jpg" alt="hiphopman">
                     </div>
                 </div>
                 <div class="img-select">
                     <div class="img-item">
                         <a href="#" data-id="1">
-                            <img src="../asset/img/ramen.jpg" alt="sushi">
+                            <img src="../asset/img/hiphopman.jpeg" alt="sushi">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="2">
-                            <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
+                            <img src="../asset/img/womanorange.jpg" alt="woman">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="3">
-                            <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
+                            <img src="../asset/img/sushi.jpeg" alt="hiphopman">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="4">
-                            <img src="../asset/img/hiphopman.jpeg" alt="hiphopman">
+                            <img src="../asset/img/ramen.jpg" alt="hiphopman">
                         </a>
                     </div>
                 </div>
@@ -140,136 +140,136 @@
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/hiphopman.jpeg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-                        <a href="#"><i class=' bx bx-cart-alt'></i></a>
+                        <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
 
                 <!-- Product Card -->
                 <div class="product-card">
                     <div class="product-image">
-                        <a href="#"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
+                        <a href="/detailproduct"><img src="../asset/img/womanorange.jpg" class="product-thumb" alt=""></a>
                     </div>
                     <!-- Text -->
                     <div class="box-text">
                         <div class="title-price">
                             <a style="text-decoration: none;" href="#">
-                                <h3>Nama Produk</h3>
+                                <a style="text-decoration: none;" href="/detailproduct"><h3>Nama Produk</h3></a>
                             </a>
                             <span>$150</span>
                         </div>
-
+                          <a href="/detailproduct"><i class=' bx bx-cart-alt'></i></a>
                     </div>
                 </div>
             </div>

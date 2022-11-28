@@ -26,12 +26,12 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.dashboard');
     });
     Route::get('dashboard', function () {
-        return view('admin.dashboard');
+        return view('layout.dashboard');
     });
 
     // Kategori
     Route::get('kategori', function () {
-        return view('admin.kategori');
+        return view('layout.kategori');
     });
 
 

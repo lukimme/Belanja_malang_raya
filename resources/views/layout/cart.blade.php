@@ -140,8 +140,7 @@
         </div>
     </div>
 
-    <!-- Rekomendasi -->
-    <!-- Start Halaman Semua Produk Fashion -->
+    <!-- Start Rekomendasi Product-->
     <section class="products mb-5">
         <div class="heading">
             <h1 class="fs-5">Rekomendasi <span>Untukmu</span></h1>
@@ -156,7 +155,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -168,11 +167,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -184,7 +183,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -196,11 +195,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -212,7 +211,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -224,11 +223,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -240,7 +239,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -252,11 +251,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -268,7 +267,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -280,11 +279,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -296,7 +295,7 @@
                 <!-- Img Container -->
                 <div class="p-img-container">
                     <div class="p-img">
-                        <a href="#">
+                        <a href="/detailproduct">
                             <img src="../asset/img/headphonee.jpg" class="p-img-front" alt="Front" /></a>
                     </div>
                 </div>
@@ -308,11 +307,11 @@
                         <span>Kategori</span>
                     </div>
                     <!-- Title -->
-                    <a href="#" class="product-title"> Nama Produk </a>
+                    <a href="/detailproduct" class="product-title"> Nama Produk </a>
                     <!-- Price Buy -->
                     <div class="price-buy">
                         <span class="p-price">$100</span>
-                        <a href="#"><i class="bx bx-cart-alt"></i> </a>
+                        <a href="/detailproduct"><i class="bx bx-cart-alt"></i> </a>
                         <i class="bx bx-heart"></i>
                     </div>
                 </div>
@@ -320,7 +319,7 @@
 
         </div>
     </section>
-    <!-- End Halaman Semua Produk Fashion -->
+    <!-- End rekomendasu produk-->
 
 
 

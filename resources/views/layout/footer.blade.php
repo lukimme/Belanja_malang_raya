@@ -79,7 +79,7 @@
                         <h4>follow us</h4>
                         <a href="#"><i class='bx bxl-facebook'></i></a>
                         <a href="#"><i class=' bx bxl-twitter'></i></a>
-                        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        <a href="https://www.instagram.com/belanjamalangofficial/"><i class='bx bxl-instagram-alt'></i></a>
                     </ul>
                 </div>
             </div>
@@ -89,7 +89,11 @@
 
     <!-- Copyright -->
     <div class="copyright">
-        <p>&#169; Belanjamalang.com & Yukti 2022</p>
+        <p>&#169; Belanjamalang.com 2022/2023</p>
+
+    </div>
+     <div class="copyright">
+        <p>Desain & Development By Yukti</p>
 
     </div>
     <!-- End Copyright -->
