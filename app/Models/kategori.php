@@ -6,7 +6,7 @@ use App\Models\admins;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class kategoris extends Model
+class kategori extends Model
 {
     use HasFactory;
 // protected $fillable = ['id_admin', 'nama_kategori', 'foto_kategori'];

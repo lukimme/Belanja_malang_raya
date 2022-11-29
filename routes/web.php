@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use App\Http\Controllers\BannerController;
 // });
 
 // ----Admin----
-Route::prefix('/admin/')->group(function () {
+Route::prefix('admin/')->group(function () {
 
     // Dashboard
     Route::get('', function () {
@@ -30,9 +31,8 @@ Route::prefix('/admin/')->group(function () {
     });
 
     // Kategori
-    Route::get('kategori', function () {
-        return view('admin.kategori');
-    });
+    Route::get('kategori', [KategoriController::class, 'index']);
+    Route::post('kategori', [KategoriController::class, 'create']);
 
     // Produk
     // Route::get('/produk', function () {

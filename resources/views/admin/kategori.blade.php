@@ -14,9 +14,7 @@
         </nav>
     </div><!-- End Page Title -->
     {{-- {{$kategoriList}} --}}
-    @foreach ($kategoriList as $data)
-        {{$data->nama}}
-    @endforeach
+
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">
@@ -116,7 +114,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                  @foreach ($kategoriList as $item)
+                                  @foreach ($kategori as $item)
                                   <tr>
 
                                   <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
