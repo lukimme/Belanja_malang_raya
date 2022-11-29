@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\admins;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class kategoris extends Model
 {
     use HasFactory;
-
+// protected $fillable = ['id_admin', 'nama_kategori', 'foto_kategori'];
     protected $table = 'kategoris';
-    public function kategoris()
+    public function admin()
     {
-        return $this->belongsTo(admins::class, 'id_admin', 'id_admin');
+        return $this->hasMany(admins::class, 'id', 'id_admin');
     }
 
 }

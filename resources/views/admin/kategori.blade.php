@@ -13,7 +13,10 @@
           </ol>
         </nav>
     </div><!-- End Page Title -->
-    
+    {{-- {{$kategoriList}} --}}
+    @foreach ($kategoriList as $data)
+        {{$data->nama}}
+    @endforeach
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">
@@ -27,27 +30,39 @@
                       <h5 class="card-title">Masukkan data kategori</h5>
         
                       <!-- General Form Elements -->
-                      <form action="" method="post">
+                      <form action="kategori" method="post" enctype="multipart/form-data">
+                        @csrf
 
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input name="nama_kategori" type="text" class="form-control" required>
+                          </div>
+                        </div>
+
+                        <div class="row mb-4">
+                          <label class="col-sm-2 col-form-label">Admin</label>
+                          <div class="col-sm-10">
+                            <select name="id_admin" class="form-select" aria-label="Default select example" required>
+                              <option selected>--pilih--</option>
+                              @foreach ($admin as $data)
+                              
+                              <option value="{{$data->id}}">{{$data->nama}}</option>
+
+                              @endforeach
+                            </select>
                           </div>
                         </div>
 
                         <div class="row mb-5">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar:</label>
                           <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile">
+                            <input name="foto_kategori" class="form-control" type="file" id="formFile" required>
                           </div>
                         </div>
         
                         <div class="row mb-4">
-                          <div class="col-sm-10 text-end">
-                            <button type="submit" class="btn btn-primary">Show All Kategori</button>
-                          </div>
-                          <div class="col-sm-2 text-end">
+                          <div class="col-sm-12 text-end">
                             <button type="submit" class="btn btn-primary">Tambah Kategori</button>
                           </div>
                         </div>
@@ -97,19 +112,28 @@
                                   <th scope="col">Admin</th>
                                   <th scope="col">Nama</th>
                                   <th scope="col">Gambar</th>
+                                  <th scope="col">Aksi</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
                                   @foreach ($kategoriList as $item)
+                                  <tr>
 
-                                  <th scope="row">{{$loop->iteration}}</th>
-                                  <td>{{$item->kategoris->nama}}</td>
-                                  <td>{{$item->nama_kategori}}</td>
-                                  <td>{{$item->foto_kategori}}</td>
+                                  <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
+                                  @foreach ($item->admin as $admin)
+                                    <td><p class="m-2">{{$admin->nama}}</p></td>
 
                                   @endforeach
+                                  <td><p class="m-2">{{$item->nama_kategori}}</p></td>
+                                  <td>
+                                    {{-- {{$item->foto_kategori}} --}}
+                                  <img class="m-2" src="{{asset('storage/img/'.$item->foto_kategori)}}" width="70" alt="">
+                                  </td>
+                                  <td>
+                                    <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
+                                  </td> 
                                 </tr>
+                                  @endforeach
                               </tbody>
                             </table>
                           </div>

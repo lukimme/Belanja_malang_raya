@@ -51,7 +51,7 @@ Route::prefix('/admin')->group(function () {
     //     return view('admin.kategori');
     // });
     Route::get('/kategori', [KategoriController::class, 'index']);
-    // Route::get('/kategori', [KategoriController::class, 'create']);
+    Route::post('/kategori', [KategoriController::class, 'create']);
 
 
     // Produk
