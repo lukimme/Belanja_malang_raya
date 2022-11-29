@@ -36,7 +36,7 @@
                           <select class="form-select" name="id_admin" aria-label="Default select example">
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $item)
-                                <option value="{{$item->id_admin}}">{{$item->nama}}</option>
+                                <option value="{{$item->id}}">{{$item->nama}}</option>
                             @endforeach
                           </select>
                         </div>
