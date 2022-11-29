@@ -35,16 +35,14 @@ Route::prefix('/admin/')->group(function () {
     });
 
     // Produk
-<<<<<<< HEAD
     // Route::get('/produk', function () {
     //     return view('admin.produk');
     // });
     
-=======
     Route::get('produk', function () {
         return view('admin.produk');
     });
->>>>>>> main
+
 
     // Penjual
     Route::get('penjual', function () {
