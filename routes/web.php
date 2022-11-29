@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PenjualController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,7 @@ Route::prefix('admin/')->group(function () {
 
 
     // Penjual
-    Route::get('penjual', function () {
-        return view('admin.penjual');
-    });
+    Route::get('penjual', [PenjualController::class, 'index']);
 
     //Adminstrator
     Route::get('administrator', function () {
