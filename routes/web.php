@@ -55,9 +55,10 @@ Route::prefix('/admin')->group(function () {
 
 
     // Produk
-    Route::get('/produk', function () {
-        return view('admin.produk');
-    });
+    // Route::get('/produk', function () {
+    //     return view('admin.produk');
+    // });
+    
 
     // Penjual
     Route::get('/penjual', function () {
