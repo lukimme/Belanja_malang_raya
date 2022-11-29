@@ -26,6 +26,7 @@ class BannerController extends Controller
        $banner->gambar = $request->image;
        $banner->link = $request->link;
        $banner->save();
+    // dd($banner);
     }
 
 }

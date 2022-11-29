@@ -28,7 +28,7 @@
                       <h5 class="card-title">Upload Banner</h5>
         
                       <!-- General Form Elements -->
-                      <form method="post" action="banner" enctype="multipart/form-data">
+                      <form method="POST" action="banner" enctype="multipart/form-data">
                         @csrf
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
@@ -36,7 +36,7 @@
                           <select class="form-select" name="id_admin" aria-label="Default select example">
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $item)
-                                <option value="{{$item->id}}">{{$item->nama}}</option>
+                                <option value="{{$item->id_admin}}">{{$item->nama}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -52,13 +52,13 @@
                         <label class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
                            <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="option1"  checked>
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  checked>
                       <label class="form-check-label" for="gridRadios1">
                         Banner
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="option2">
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="2">
                       <label class="form-check-label" for="gridRadios2">
                         Iklan
                       </label>
