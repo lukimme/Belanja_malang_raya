@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,80 +12,65 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 // Route::get('/', function () {
 //     return view('home');
 // });
 
-
 // ----Admin----
-Route::prefix('/admin')->group(function () {
-
-    // Login
-    // Route::get('/', [AdminController::class, 'index']);
-    // Route::post('/login', [AdminController::class, 'login']);
+Route::prefix('/admin/')->group(function () {
 
     // Dashboard
     Route::get('', function () {
         return view('admin.dashboard');
     });
     Route::get('dashboard', function () {
-        return view('layout.dashboard');
-    });
-
-    // Kategori
-    Route::get('kategori', function () {
-        return view('layout.kategori');
-    });
-    // Route::get('', function () {
-    //     return view('admin.dashboard');
-    // });
-    Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
 
     // Kategori
-    // Route::get('/kategori', function () {
-    //     return view('admin.kategori');
-    // });
-    Route::get('/kategori', [KategoriController::class, 'index']);
-    Route::post('/kategori', [KategoriController::class, 'create']);
-
+    Route::get('kategori', function () {
+        return view('admin.kategori');
+    });
 
     // Produk
+<<<<<<< HEAD
     // Route::get('/produk', function () {
     //     return view('admin.produk');
     // });
     
+=======
+    Route::get('produk', function () {
+        return view('admin.produk');
+    });
+>>>>>>> main
 
     // Penjual
-    Route::get('/penjual', function () {
+    Route::get('penjual', function () {
         return view('admin.penjual');
     });
 
     //Adminstrator
-    Route::get('/administrator', function () {
+    Route::get('administrator', function () {
         return view('admin.administrator');
     });
 
     //Akun
-    Route::get('/akun', function () {
+    Route::get('akun', function () {
         return view('admin.akun');
     });
 
-    //Akun
-    Route::get('/banner', function () {
-        return view('admin.banner');
-    });
+    Route::get('banner',[BannerController::class, 'create']);
+    Route::post('/create-banner', [BannerController::class, 'store']);
 
+ 
     //Akun
-    Route::get('/iklan', function () {
+    Route::get('iklan', function () {
         return view('admin.iklan');
     });
 
 });
-
 
 // Categories
 Route::get('/categories', function () {
@@ -108,7 +92,7 @@ Route::get('/aksesoris', function () {
     return view('layout/aksesoris');
 });
 
-// ibu Anak 
+// ibu Anak
 Route::get('/ibuanak', function () {
     return view('layout/ibuanak');
 });
@@ -143,7 +127,7 @@ Route::get('/produkdiskon', function () {
     return view('layout/produkdiskon');
 });
 
-// ShowAllFashion 
+// ShowAllFashion
 Route::get('/showallfashion', function () {
     return view('layout/showallfashion');
 });
@@ -172,7 +156,6 @@ Route::get('/otokoproduct', function () {
 Route::get('/otokocategories', function () {
     return view('layout/otokocategories');
 });
-
 
 // Belanja Malang
 Route::get('/', function () {

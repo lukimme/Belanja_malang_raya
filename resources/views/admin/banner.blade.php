@@ -14,7 +14,7 @@
           </ol>
         </nav>
       </div><!-- End Page Title -->
-    
+    {{-- {{$enum}} --}}
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">
@@ -28,29 +28,67 @@
                       <h5 class="card-title">Upload gambar banner</h5>
         
                       <!-- General Form Elements -->
-                      <form>
-
+                      <form method="POST" action="create-banner" enctype="multipart/form-data">
+                        @csrf
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Admin</label>
+                        <div class="col-sm-10">
+                          <select class="form-select" name="select" aria-label="Default select example">
+                            <option selected>Pilih Admin</option>
+                            @foreach ($admin as $item)
+                                <option value="{{$item->id}}">{{$item->nama}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                    </div>
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" name="nama" class="form-control">
                           </div>
                         </div>
+
+                        <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Status</label>
+                        <div class="col-sm-10">
+                           <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"  checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Banner
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        Iklan
+                      </label>
+                    </div>
+                        </div>
+                    </div>
+
+                      <div class="row mb-4">
+                          <label for="inputText" class="col-sm-2 col-form-label">Link</label>
+                          <div class="col-sm-10">
+                            <input type="text" name="link" class="form-control">
+                          </div>
+                        </div>
+
 
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" name="image" type="file" id="formFile">
                           </div>
                         </div>
-        
+                        
                         <div class="row mb-4 text-end">
                           <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button class="btn btn-primary">Upload</button>
                           </div>
                         </div>
-        
-                      </form><!-- End General Form Elements -->
+                      </form>
+
+                      
         
                     </div>
                   </div>
@@ -74,25 +112,52 @@
                   <thead>
                     <tr>
                       <th scope="col">No</th>
+                      <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Gambar</th>
+                      <th scope="col">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
+                      <td>Super Admin</td>
                       <td>Brandon Jacob</td>
                       <td>Designer</td>
+                      <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="reset" class="btn btn-danger">Delete</button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
+                      <td>Sub Admin</td>
                       <td>Bridie Kessler</td>
                       <td>Developer</td>
+                       <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="reset" class="btn btn-danger">Delete</button>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
+                      <td>Super Admin</td>
                       <td>Ashleigh Langosh</td>
                       <td>Finance</td>
+                       <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="reset" class="btn btn-danger">Delete</button>
+                      </td>
+                    </tr>
+                     <tr>
+                      <th scope="row">3</th>
+                      <td>Sub Admin</td>
+                      <td>Ashleigh Langosh</td>
+                      <td>Finance</td>
+                       <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="reset" class="btn btn-danger">Delete</button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
