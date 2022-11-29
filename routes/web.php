@@ -60,7 +60,7 @@ Route::prefix('admin/')->group(function () {
     });
 
     Route::get('banner',[BannerController::class, 'create']);
-    Route::post('/create-banner', [BannerController::class, 'store']);
+    Route::post('banner', [BannerController::class, 'store']);
 
  
     //Akun

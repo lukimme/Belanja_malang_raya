@@ -25,7 +25,7 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Upload gambar banner</h5>
+                      <h5 class="card-title">Upload Iklan</h5>
         
                       <!-- General Form Elements -->
                       <form>
