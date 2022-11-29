@@ -25,7 +25,7 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Masukkan data kategori</h5>
+                      <h5 class="card-title">Masukkan data kategoris</h5>
         
                       <!-- General Form Elements -->
                       <form action="kategori" method="post" enctype="multipart/form-data">
