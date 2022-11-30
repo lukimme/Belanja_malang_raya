@@ -18,15 +18,19 @@ class BannerController extends Controller
    
     public function store(Request $request)
     {   
+        // insert
+        $ekstensi = $request->file('gambar')->getClientOriginalExtension();
+        $newName = 'banner'.now()->timestamp.'.'.$ekstensi;
+        $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
        $banner->id_admin = $request->id_admin;
-       $banner->nama_gambar = $request->nama;
+       $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
-       $banner->gambar = $request->image;
+       $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-    // dd($banner);
+       return redirect('/admin/banner');
     }
 
 }

@@ -1,5 +1,5 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'Kategori')
+@section('title', 'Banner')
 
 
 @section('content')
@@ -33,10 +33,10 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
-                          <select class="form-select" name="id_admin" aria-label="Default select example">
+                          <select class="form-select" name="id_admin" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
-                            @foreach ($admin as $item)
-                                <option value="{{$item->id_admin}}">{{$item->nama}}</option>
+                            @foreach ($admin as $data)
+                                <option value="{{$data->id_admin}}">{{$data->nama}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
-                            <input type="text" name="nama" class="form-control">
+                            <input type="text" name="nama_gambar" class="form-control" required>
                           </div>
                         </div>
 
@@ -52,13 +52,13 @@
                         <label class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
                            <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  checked>
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  checked required>
                       <label class="form-check-label" for="gridRadios1">
                         Banner
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="2">
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="2" required>
                       <label class="form-check-label" for="gridRadios2">
                         Iklan
                       </label>
@@ -69,7 +69,7 @@
                       <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Link</label>
                           <div class="col-sm-10">
-                            <input type="text" name="link" class="form-control">
+                            <input type="text" name="link" class="form-control" required>
                           </div>
                         </div>
 
@@ -77,7 +77,7 @@
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" name="image" type="file" id="formFile">
+                            <input class="form-control" name="gambar" type="file" id="formFile" required>
                           </div>
                         </div>
                         
@@ -119,46 +119,27 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Super Admin</td>
-                      <td>Brandon Jacob</td>
-                      <td>Designer</td>
+                      @foreach ($banner as $item)
+                      <tr>
+                      <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
+{{--                       
+                      @foreach ($item->admin as $admin)
+                      <td><p class="m-2">{{$admin->nama}}</p></td>
+                      @endforeach --}}
+
+                       <td><p class="m-2">{{$item->id_admin}}</p></td>
+
+                      <td><p class="m-2">{{$item->nama_gambar}}</p></td>
+                       <td><p class="m-2">{{$item->link}}</p></td>
                       <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="reset" class="btn btn-danger">Delete</button>
+                      {{-- {{$item->foto_kategori}} --}}
+                      <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Sub Admin</td>
-                      <td>Bridie Kessler</td>
-                      <td>Developer</td>
-                       <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="reset" class="btn btn-danger">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Super Admin</td>
-                      <td>Ashleigh Langosh</td>
-                      <td>Finance</td>
-                       <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="reset" class="btn btn-danger">Delete</button>
-                      </td>
-                    </tr>
-                     <tr>
-                      <th scope="row">3</th>
-                      <td>Sub Admin</td>
-                      <td>Ashleigh Langosh</td>
-                      <td>Finance</td>
-                       <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="reset" class="btn btn-danger">Delete</button>
-                      </td>
-                    </tr>
+                      <td>
+                      <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_gambar}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_gambar}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_gambar}}"><i class="bx bxs-trash"></i></a>
+                      </td> 
+                      </tr>
+                      @endforeach
                   </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
