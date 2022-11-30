@@ -14,7 +14,7 @@
           </ol>
         </nav>
       </div><!-- End Page Title -->
-    {{-- {{$enum}} --}}
+      
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">

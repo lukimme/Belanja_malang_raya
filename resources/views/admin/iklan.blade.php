@@ -25,32 +25,70 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Upload Iklan</h5>
+                      <h5 class="card-title">Upload Banner</h5>
         
                       <!-- General Form Elements -->
-                      <form>
-
+                      <form method="POST" action="banner" enctype="multipart/form-data">
+                        @csrf
+                    {{-- <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Admin</label>
+                        <div class="col-sm-10">
+                          <select class="form-select" name="id_admin" aria-label="Default select example" required>
+                            <option selected>Pilih Admin</option>
+                            @foreach ($admin as $data)
+                                <option value="{{$data->id_admin}}">{{$data->nama}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                    </div> --}}
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" name="nama_gambar" class="form-control" required>
                           </div>
                         </div>
+
+                        <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Status</label>
+                        <div class="col-sm-10">
+                           <div class="form-check">
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  checked required>
+                      <label class="form-check-label" for="gridRadios1">
+                        Banner
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="2" required>
+                      <label class="form-check-label" for="gridRadios2">
+                        Iklan
+                      </label>
+                    </div>
+                        </div>
+                    </div>
+
+                      <div class="row mb-4">
+                          <label for="inputText" class="col-sm-2 col-form-label">Link</label>
+                          <div class="col-sm-10">
+                            <input type="text" name="link" class="form-control" required>
+                          </div>
+                        </div>
+
 
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" name="gambar" type="file" id="formFile" required>
                           </div>
                         </div>
-        
+                        
                         <div class="row mb-4 text-end">
                           <div class="col-sm-12">
                             <button type="submit" class="btn btn-primary">Upload</button>
                           </div>
                         </div>
-        
-                      </form><!-- End General Form Elements -->
+                      </form>
+
+                      
         
                     </div>
                   </div>
@@ -68,41 +106,29 @@
   
             <div class="card table-responsive">
               <div class="card-body">
-                <h5 class="card-title">Tabel Iklan</h5>
+                <h5 class="card-title">Tabel Banner</h5>
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                   <thead>
                     <tr>
                       <th scope="col">No</th>
+                      <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Gambar</th>
+                      <th scope="col">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Brandon Jacob</td>
-                      <td>Designer</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Bridie Kessler</td>
-                      <td>Developer</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Ashleigh Langosh</td>
-                      <td>Finance</td>
-                    </tr>
+                    
                   </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
+  
   
               </div>
             </div>
   
           </div>
         </div>
-      </section><!-- End Tables -->
-
+      </section>
   @endsection
