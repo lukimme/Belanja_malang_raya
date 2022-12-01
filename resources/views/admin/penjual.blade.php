@@ -29,6 +29,20 @@
                     <!-- General Form Elements -->
                     <form>
 
+                      <div class="row mb-4">
+                        <label class="col-sm-2 col-form-label">Admin</label>
+                        <div class="col-sm-10">
+                          <select name="id_admin" class="form-select" aria-label="Default select example" required>
+                            <option selected>--pilih--</option>
+                            @foreach ($adminPenjual as $data)
+                            
+                            <option value="{{$data->id}}">{{$data->nama}}</option>
+
+                            @endforeach
+                          </select>
+                        </div>
+                      </div>
+
                       <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                         <div class="col-sm-10">
@@ -95,7 +109,7 @@
       </div>
   </section><!-- End Form Input -->
 
-  {{$adminP->nama}}
+  {{-- {{$adminP->nama}} --}}
 
 
   <!-- Tables -->
@@ -123,26 +137,21 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($penjual as $item)
 
                 <tr>
-                  <th scope="row">{{$loop->iteration}}</th>
+                  <th scope="row"></th>
 
-                  {{-- @foreach ($adminP as $name)
-                    <td><p class="m-2">{{$name->nama}}</p></td>
-                    
-                  @endforeach --}}
+                    <td><p class="m-2"></p></td>
 
 
-                  <td>{{$item->nama_penjual}}</td>
-                  <td>{{$item->nomor_penjual}}</td>
-                  <td>{{$item->email_penjual}}</td>
-                  <td>{{$item->foto}}</td>
-                  <td>{{$item->alamat}}</td>
-                  <td>{{$item->brand_penjual}}</td>
+                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2"></p></td>
                 </tr>
 
-                @endforeach
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
