@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\admins;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class penjuals extends Model
 {
     use HasFactory;
+
+    public function admin()
+    {
+        return $this->hasMany(admins::class, 'id', 'id_admin');
+    }
 }

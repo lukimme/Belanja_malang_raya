@@ -95,6 +95,9 @@
       </div>
   </section><!-- End Form Input -->
 
+  {{$adminP->nama}}
+
+
   <!-- Tables -->
   <section class="section">
     <div class="row">
@@ -110,6 +113,7 @@
               <thead>
                 <tr>
                   <th scope="col">No</th>
+                  <th scope="col">Penambah</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Nomor</th>
                   <th scope="col">Email</th>
@@ -119,16 +123,26 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach ($penjual as $item)
+
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>02380</td>
-                  <td>asda@gmail.com</td>
-                  <td><img src="" alt="">qwd</td>
-                  <td>Blau</td>
-                  <td><img src="" alt="">ewdw</td>
+                  <th scope="row">{{$loop->iteration}}</th>
+
+                  {{-- @foreach ($adminP as $name)
+                    <td><p class="m-2">{{$name->nama}}</p></td>
+                    
+                  @endforeach --}}
+
+
+                  <td>{{$item->nama_penjual}}</td>
+                  <td>{{$item->nomor_penjual}}</td>
+                  <td>{{$item->email_penjual}}</td>
+                  <td>{{$item->foto}}</td>
+                  <td>{{$item->alamat}}</td>
+                  <td>{{$item->brand_penjual}}</td>
                 </tr>
-                </tr>
+
+                @endforeach
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
