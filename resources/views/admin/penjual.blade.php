@@ -134,24 +134,30 @@
                   <th scope="col">Foto</th>
                   <th scope="col">Alamat</th>
                   <th scope="col">Brand</th>
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>
 
+                @foreach ($penjual as $item)
                 <tr>
-                  <th scope="row"></th>
+                  <th scope="row">{{$loop->iteration}}</th>
 
-                    <td><p class="m-2"></p></td>
+                    @foreach ($item->adminPenjual as $admin)
+                    <td>{{$admin->nama}}</td>
+                    @endforeach
 
-
-                  <td><p class="m-2"></p></td>
-                  <td><p class="m-2"></p></td>
-                  <td><p class="m-2"></p></td>
-                  <td><p class="m-2"></p></td>
-                  <td><p class="m-2"></p></td>
-                  <td><p class="m-2"></p></td>
+                  <td><p class="m-2">{{$item->nama_penjual}}</p></td>
+                  <td><p class="m-2">{{$item->nomor_penjual}}</p></td>
+                  <td><p class="m-2">{{$item->email_penjual}}</p></td>
+                  <td><p class="m-2">{{$item->foto}}</p></td>
+                  <td><p class="m-2">{{$item->alamat}}</p></td>
+                  <td><p class="m-2">{{$item->brand_penjual}}</p></td>
+                  <td>
+                    <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
+                  </td> 
                 </tr>
-
+                @endforeach
               </tbody>
             </table>
             <!-- End Table with stripped rows -->
