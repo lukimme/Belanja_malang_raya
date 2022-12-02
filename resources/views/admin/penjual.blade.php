@@ -27,7 +27,8 @@
                     <h5 class="card-title">General Form Elements</h5>
       
                     <!-- General Form Elements -->
-                    <form>
+                    <form action="penjual" method="post" enctype="multipart/form-data">
+                      @csrf
 
                       <div class="row mb-4">
                         <label class="col-sm-2 col-form-label">Admin</label>
@@ -46,21 +47,21 @@
                       <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control">
+                          <input type="text" name="nama" class="form-control">
                         </div>
                       </div>
 
                       <div class="row mb-3">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Nomor:</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control">
+                          <input type="text" name="nomor" class="form-control">
                         </div>
                       </div>
 
                       <div class="row mb-3">
                           <label for="inputPassword" class="col-sm-2 col-form-label">Email:</label>
                           <div class="col-sm-10">
-                            <input type="email" class="form-control">
+                            <input type="email" name="email" class="form-control">
                           </div>
                       </div>
 
@@ -74,21 +75,21 @@
                       <div class="row mb-3">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Foto penjual:</label>
                         <div class="col-sm-10">
-                          <input class="form-control" type="file" id="formFile">
+                          <input class="form-control" name="foto" type="file" id="formFile">
                         </div>
                       </div>
 
                       <div class="row mb-3">
                         <label for="inputDate" class="col-sm-2 col-form-label">Alamat:</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control">
+                          <input type="text" name="alamat" class="form-control">
                         </div>
                       </div>
 
                       <div class="row mb-3">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Brand penjual:</label>
                         <div class="col-sm-10">
-                          <input class="form-control" type="file" id="formFile">
+                          <input class="form-control" name="brand" type="file" id="formFile">
                         </div>
                       </div>
       

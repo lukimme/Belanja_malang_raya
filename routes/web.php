@@ -47,6 +47,7 @@ Route::prefix('admin/')->group(function () {
 
     // Penjual
     Route::get('penjual', [PenjualController::class, 'index']);
+    Route::post('penjual', [PenjualController::class, 'create']);
 
     //Adminstrator
     Route::get('administrator', function () {
