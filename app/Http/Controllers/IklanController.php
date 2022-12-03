@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 
+
 use App\Models\Banner;
 use App\Models\admins;
 use Illuminate\Http\Request;
 
-class BannerController extends Controller
+class IklanController extends Controller
 {
-    public function create(){
+    public function create2(){
         $banner = Banner::all();
         $admin = admins::all();
-        return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
+        return view('/admin/iklan', ['banner' => $banner], ['admin' => $admin]);
     }  
 
 
-    
-    public function store(Request $request)
+    public function store2(Request $request)
     {   
         // insert
         $ekstensi = $request->file('gambar')->getClientOriginalExtension();
-        $newName = 'banner'.now()->timestamp.'.'.$ekstensi;
+        $newName = 'iklan'.now()->timestamp.'.'.$ekstensi;
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
@@ -31,7 +31,7 @@ class BannerController extends Controller
        $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-       return redirect('/admin/banner');
+       return redirect('/admin/iklan');
     }
 
 }

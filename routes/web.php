@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IklanController;
 use App\Http\Controllers\BannerController;
-use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PenjualController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,8 +68,8 @@ Route::prefix('admin/')->group(function () {
     // Route::get('iklan', function () {
     //     return view('admin.iklan');
     // });
-    Route::get('iklan',[BannerController::class, 'create']);
-    Route::post('iklan', [BannerController::class, 'store']);
+    Route::get('iklan',[IklanController::class, 'create2']);
+    Route::post('iklan', [IklanController::class, 'store2']);
 
 });
 

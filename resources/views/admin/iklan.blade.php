@@ -25,22 +25,22 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Upload Banner</h5>
+                      <h5 class="card-title">Upload Iklan</h5>
         
                       <!-- General Form Elements -->
                       <form method="POST" action="iklan" enctype="multipart/form-data">
                         @csrf
-                    {{-- <div class="row mb-3">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
                           <select class="form-select" name="id_admin" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $data)
-                                <option value="{{$data->id_admin}}">{{$data->nama}}</option>
+                                <option value="{{$data->id}}">{{$data->nama}}</option>
                             @endforeach
                           </select>
                         </div>
-                    </div> --}}
+                    </div>
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
@@ -114,11 +114,32 @@
                       <th scope="col">No</th>
                       <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
+                     @foreach ($banner as $item)
+                      <tr>
+                      <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
+                      
+                      @foreach ($item->admin as $admin)
+                      <td><p class="m-2">{{$admin->nama}}</p></td>
+                      @endforeach
+                      
+                      <td><p class="m-2">{{$item->nama_gambar}}</p></td>
+                      <td><p class="m-2">{{$item->status_gambar}}</p></td>
+                       <td><p class="m-2">{{$item->link}}</p></td>
+                      <td>
+                      {{-- {{$item->foto_kategori}} --}}
+                      <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
+                      </td>
+                      <td>
+                      <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_gambar}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_gambar}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_gambar}}"><i class="bx bxs-trash"></i></a>
+                      </td> 
+                      </tr>
+                      @endforeach
                     
                   </tbody>
                 </table>

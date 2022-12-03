@@ -36,7 +36,7 @@
                           <select class="form-select" name="id_admin" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $data)
-                                <option value="{{$data->id_admin}}">{{$data->nama}}</option>
+                                <option value="{{$data->id}}">{{$data->nama}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -114,6 +114,7 @@
                       <th scope="col">No</th>
                       <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Aksi</th>
                     </tr>
@@ -128,6 +129,7 @@
                       @endforeach
                       
                       <td><p class="m-2">{{$item->nama_gambar}}</p></td>
+                       <td><p class="m-2">{{$item->status_gambar}}</p></td>
                        <td><p class="m-2">{{$item->link}}</p></td>
                       <td>
                       {{-- {{$item->foto_kategori}} --}}
