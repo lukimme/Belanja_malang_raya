@@ -68,7 +68,7 @@ Route::prefix('admin/')->group(function () {
     //     return view('admin.iklan');
     // });
     Route::get('iklan',[BannerController::class, 'create']);
-    Route::post('banner', [BannerController::class, 'store']);
+    Route::post('iklan', [BannerController::class, 'store']);
 
 });
 

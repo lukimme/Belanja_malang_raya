@@ -122,13 +122,11 @@
                       @foreach ($banner as $item)
                       <tr>
                       <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
-{{--                       
+                      
                       @foreach ($item->admin as $admin)
                       <td><p class="m-2">{{$admin->nama}}</p></td>
-                      @endforeach --}}
-
-                       <td><p class="m-2">{{$item->id_admin}}</p></td>
-
+                      @endforeach
+                      
                       <td><p class="m-2">{{$item->nama_gambar}}</p></td>
                        <td><p class="m-2">{{$item->link}}</p></td>
                       <td>

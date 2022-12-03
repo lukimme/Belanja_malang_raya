@@ -28,7 +28,7 @@
                       <h5 class="card-title">Upload Banner</h5>
         
                       <!-- General Form Elements -->
-                      <form method="POST" action="banner" enctype="multipart/form-data">
+                      <form method="POST" action="iklan" enctype="multipart/form-data">
                         @csrf
                     {{-- <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
