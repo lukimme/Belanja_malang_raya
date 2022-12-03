@@ -110,67 +110,90 @@
       </div>
   </section><!-- End Form Input -->
 
-  {{-- {{$adminP->nama}} --}}
 
-
-  <!-- Tables -->
-  <section class="section">
+   <!-- Tables -->
+   <section class="section dashboard">
     <div class="row">
       <div class="col-lg-12">
+        <div class="row">
 
-        <div class="card table-responsive">
+        <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Tabel penjual</h5>
-            <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+            <h5 class="card-title">Tabel data penjual</h5>
 
-            <!-- Table with stripped rows -->
-            <table class="table datatable">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Penambah</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Nomor</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Foto</th>
-                  <th scope="col">Alamat</th>
-                  <th scope="col">Brand</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
+            <!-- Default Accordion -->
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Tabel penjual
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Datatables</h5>
+                        <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+          
+                        <!-- Table with stripped rows -->
+                      <div class="table-responsive">
+                        <table class="table datatable">
+                          <thead>
+                            <tr>
+                              <th scope="col">No</th>
+                              <th scope="col">Penambah</th>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Nomor</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Foto</th>
+                              <th scope="col">Alamat</th>
+                              <th scope="col">Brand</th>
+                              <th scope="col">Aksi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
 
-                @foreach ($penjual as $item)
-                <tr>
-                  <th scope="row">{{$loop->iteration}}</th>
-
-                    @foreach ($item->adminPenjual as $admin)
-                    <td>{{$admin->nama}}</td>
-                    @endforeach
-
-                  <td><p class="">{{$item->nama_penjual}}</p></td>
-                  <td><p class="">{{$item->nomor_penjual}}</p></td>
-                  <td><p class="">{{$item->email_penjual}}</p></td>
-                  <td>
-                    <img src="{{asset('storage/img/'.$item->foto)}}" width="115%" alt="">
-                  </td>
-                  <td><p class="">{{$item->alamat}}</p></td>
-                  <td>
-                    <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
-                  </td>
-                  <td class="align-items-center">
-                    <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
-                  </td> 
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-            <!-- End Table with stripped rows -->
+                            @foreach ($penjual as $item)
+                            <tr>
+                              <th scope="row">{{$loop->iteration}}</th>
+            
+                                @foreach ($item->adminPenjual as $admin)
+                                <td>{{$admin->nama}}</td>
+                                @endforeach
+            
+                              <td><p class="">{{$item->nama_penjual}}</p></td>
+                              <td><p class="">{{$item->nomor_penjual}}</p></td>
+                              <td><p class="">{{$item->email_penjual}}</p></td>
+                              <td>
+                                <img src="{{asset('storage/img/'.$item->foto)}}" width="115%" alt="">
+                              </td>
+                              <td><p class="">{{$item->alamat}}</p></td>
+                              <td>
+                                <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
+                              </td>
+                              <td class="align-items-center">
+                                <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
+                              </td> 
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                      </div>
+                        <!-- End Table with stripped rows -->
+          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Default Accordion Example -->
 
           </div>
         </div>
 
       </div>
+    </div>
     </div>
   </section><!-- End Tables -->
 

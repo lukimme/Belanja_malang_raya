@@ -32,10 +32,8 @@
                         <label class="col-sm-2 col-form-label">Penjual:</label>
                         <div class="col-sm-10">
                           <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Penjual</option>
+                            <option selected>--Pilih--</option>
                             <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
                           </select>
                         </div>
                     </div>
@@ -112,14 +110,14 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Tabel data kategori</h5>
+            <h5 class="card-title">Tabel data produk</h5>
 
             <!-- Default Accordion -->
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Tabel kategori
+                    Tabel produk
                   </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
