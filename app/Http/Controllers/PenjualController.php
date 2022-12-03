@@ -27,7 +27,15 @@ class PenjualController extends Controller
         $request->file('brand')->storeAs('img', $newNameBrand);
 
         $penjual = new penjuals;
-        $penjual->id = $request->id_admin;
-        $penjual->nama_penjual = $request->nama;
+        $penjual->id            = $request->id_admin;
+        $penjual->nama_penjual  = $request->nama;
+        $penjual->brand_penjual = $newNameBrand;
+        $penjual->nomor_penjual = $request->nomor;
+        $penjual->email_penjual = $request->email;
+        $penjual->sandi         = '';
+        $penjual->foto          = $newNamePenjual;
+        $penjual->alamat        = $request->alamat;
+        $penjual->save();
+        return redirect('/admin/penjual');
     }
 }

@@ -148,13 +148,17 @@
                     <td>{{$admin->nama}}</td>
                     @endforeach
 
-                  <td><p class="m-2">{{$item->nama_penjual}}</p></td>
-                  <td><p class="m-2">{{$item->nomor_penjual}}</p></td>
-                  <td><p class="m-2">{{$item->email_penjual}}</p></td>
-                  <td><p class="m-2">{{$item->foto}}</p></td>
-                  <td><p class="m-2">{{$item->alamat}}</p></td>
-                  <td><p class="m-2">{{$item->brand_penjual}}</p></td>
+                  <td><p class="">{{$item->nama_penjual}}</p></td>
+                  <td><p class="">{{$item->nomor_penjual}}</p></td>
+                  <td><p class="">{{$item->email_penjual}}</p></td>
                   <td>
+                    <img src="{{asset('storage/img/'.$item->foto)}}" width="115%" alt="">
+                  </td>
+                  <td><p class="">{{$item->alamat}}</p></td>
+                  <td>
+                    <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
+                  </td>
+                  <td class="align-items-center">
                     <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
                   </td> 
                 </tr>
