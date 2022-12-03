@@ -95,7 +95,7 @@
       
                       <div class="row mb-3 text-end">
                         <div class="col-sm-12 ">
-                          <button type="submit" class="btn btn-primary">Submit Form</button>
+                          <button type="submit" class="btn btn-primary">Tambah Penjual</button>
                         </div>
                       </div>
       
