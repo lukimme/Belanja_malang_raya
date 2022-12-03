@@ -600,6 +600,43 @@
         CKEDITOR.replace( 'deskripsi' );
       </script>
 
+      <!-- Javascript untuk gambar di input -->
+      <script>
+        var a = document.getElementById("gam");
+        function readUrl(input){
+          if(input.files){
+            var reader = new FileReader();
+            reader.readAsDataURL(input.files[0]);
+            reader.onload=(e)=>{
+              a.src = e.target.result;
+            }
+          }
+        }
+
+        function hapus() {
+          document.getElementById("gam").src = '';
+          document.getElementById("pics").value = '';
+        }
+      </script>
+
+      <script>
+        var b = document.getElementById("gambar");
+        function readURL(masuk){
+          if(masuk.files){
+            var reade = new FileReader();
+            reade.readAsDataURL(masuk.files[0]);
+            reade.onload=(e)=>{
+              a.src = e.target.result;
+            }
+          }
+        }
+
+        function dele() {
+          document.getElementById("gambar").src = '';
+          document.getElementById("picture").value = '';
+        }
+      </script>
+
     
 
     

@@ -72,10 +72,21 @@
                         </div>
                       </div> --> --}}
 
-                      <div class="row mb-3">
+                      <div class="row mb-4">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Foto penjual:</label>
                         <div class="col-sm-10">
-                          <input class="form-control" name="foto" type="file" id="formFile">
+                          <div class="input-group form-outline">
+                            <input name="foto" class="form-control" type="file" id="pics" onchange="readUrl(this)" required>
+                            <div class="input-group-append">
+                              <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-2">
+                        <div class="col-sm-12 text-center">
+                          <img class="border border-primary" id="gam" width="200" src="" alt="">
                         </div>
                       </div>
 
@@ -86,10 +97,21 @@
                         </div>
                       </div>
 
-                      <div class="row mb-3">
+                      <div class="row mb-4">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Brand penjual:</label>
                         <div class="col-sm-10">
-                          <input class="form-control" name="brand" type="file" id="formFile">
+                          <div class="input-group form-outline">
+                            <input name="brand" class="form-control" type="file" id="picture" onchange="readURL(masuk)" required>
+                            <div class="input-group-append">
+                              <button type="button" class="btn btn-danger" onclick="dele()">Hapus</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-2">
+                        <div class="col-sm-12 text-center">
+                          <img class="border border-primary" id="gambar" width="200" src="" alt="">
                         </div>
                       </div>
       
