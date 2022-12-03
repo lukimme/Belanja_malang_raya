@@ -15,8 +15,19 @@ class PenjualController extends Controller
     }
 
     public function create(Request $request) {
-        $ekstensi = $request->file('foto_kategori')->getClientOriginalExtension();
-        $newName = 'kat'.now()->timestamp.'.'.$ekstensi;
-        $request->file('foto_kategori')->storeAs('img', $newName);
+
+        // foto_penjual
+        $ekstensi = $request->file('foto')->getClientOriginalExtension();
+        $newNamePenjual = 'fotopenjual'.now()->timestamp.'.'.$ekstensi;
+        $request->file('foto')->storeAs('img', $newNamePenjual);
+
+        // brand_penjual
+        $ekstensi = $request->file('brand')->getClientOriginalExtension();
+        $newNameBrand = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
+        $request->file('brand')->storeAs('img', $newNameBrand);
+
+        $penjual = new penjuals;
+        $penjual->id = $request->id_admin;
+        $penjual->nama_penjual = $request->nama;
     }
 }
