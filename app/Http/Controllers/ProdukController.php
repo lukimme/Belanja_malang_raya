@@ -17,7 +17,7 @@ class ProdukController extends Controller
         $kategori   = kategori::all();
         $admin      = admins::all();
         $produk     = produks::all();
-        return view('/admin/produk', ['produks' => $produk], []);
+        return view('/admin/produk', ['produks' => $produk], ['adminProduk' => $admin], ['kategoriProduk' => $kategori], ['penjualProduk' => $penjual]);
 
     }
 

@@ -102,6 +102,8 @@
     </div>
    </section><!-- End Form Input -->
 
+   {{-- {{$produks}} --}}
+
    <!-- Tables -->
    <section class="section dashboard">
     <div class="row">
@@ -138,35 +140,46 @@
                               <th scope="col">Nama</th>
                               <th scope="col">Kategori</th>
                               <th scope="col">Gambar</th>
-                              <th scope="col">deskripsi</th>
                               <th scope="col">Diskon</th>
-                              <th scope="col">Nomor</th>
-                              <th scope="col">Pesan</th>
                               <th scope="col">Aksi</th>
                             </tr>
                           </thead>
                           <tbody>
                               
+                            @foreach ($produks as $item)
+                                
                               <tr>
 
-                              <th scope="row"><p class="m-2"></p>1</th>
-                                <td><p class="m-2">sdd</p></td>
+                              <th scope="row"><p class="m-2"></p>{{$loop->iteration}}</th>
 
-                              <td><p class="m-2"></p>dsv</td>
-                              <td><p class="m-2">sdc</p></td>
-                              <td><p class="m-2">aks</p></td>
+                                @foreach ($item->adminProduk as $adminProduks)
+                                <td><p class="m-2">{{$adminProduks->nama}}</p></td>
+                                @endforeach
+
+                                @foreach ($item->penjualProduk as $penjualProduks)
+                                <td><p class="m-2"></p>{{$penjualProduks->nama_penjual}}</td>
+                                @endforeach
+
+                                <td><p class="m-2">{{$item->nama_produk}}</p></td>
+
+                                @foreach ($item->kategoriProduk as $kategoriProduks)
+                                <td><p class="m-2">{{$kategoriProduks->nama_kategori}}</p></td>
+                                @endforeach
+                              
+
                               <td>
                               <img class="m-2" src="" width="70" alt="">
+                              {{$item->gambar}}
                               </td>
-                              <td><p class="m-2">hooh tenan</p></td>
-                              <td><p class="m-2">10%</p></td>
-                              <td><p class="m-2">2309842</p></td>
-                              <td><p class="m-2">lala</p></td>
+
+                              <td><p class="m-2">{{$item->diskon}}</p></td>
+
                               <td>
                                 <a href="#" class="btn btn-primary m-1" title="Edit "><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail "><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus "><i class="bx bxs-trash"></i></a>
                               </td> 
                             </tr>
-                              
+
+                            @endforeach
                           </tbody>
                         </table>
                       </div>
