@@ -5,6 +5,7 @@ use App\Http\Controllers\IklanController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +37,9 @@ Route::prefix('admin/')->group(function () {
     Route::get('kategori', [KategoriController::class, 'index']);
     Route::post('kategori', [KategoriController::class, 'create']);
 
-    // Produk
-    // Route::get('/produk', function () {
-    //     return view('admin.produk');
-    // });
     
-    Route::get('produk', function () {
-        return view('admin.produk');
-    });
+    // Produk
+    Route::get('/produk', [ProdukController::class, 'index']);
 
 
     // Penjual

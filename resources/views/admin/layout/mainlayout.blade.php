@@ -619,12 +619,12 @@
         }
 
         var b = document.getElementById("gambar");
-        function halo(input){
+        function readURL(input){
           if(input.files){
             var reade = new FileReader();
             reade.readAsDataURL(input.files[0]);
             reade.onload=(e)=>{
-              a.src = e.target.result;
+              b.src = e.target.result;
             }
           }
         }

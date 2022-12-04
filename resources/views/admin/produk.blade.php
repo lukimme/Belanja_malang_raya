@@ -138,6 +138,7 @@
                               <th scope="col">Nama</th>
                               <th scope="col">Kategori</th>
                               <th scope="col">Gambar</th>
+                              <th scope="col">deskripsi</th>
                               <th scope="col">Diskon</th>
                               <th scope="col">Nomor</th>
                               <th scope="col">Pesan</th>
@@ -155,9 +156,9 @@
                               <td><p class="m-2">sdc</p></td>
                               <td><p class="m-2">aks</p></td>
                               <td>
-                                
                               <img class="m-2" src="" width="70" alt="">
                               </td>
+                              <td><p class="m-2">hooh tenan</p></td>
                               <td><p class="m-2">10%</p></td>
                               <td><p class="m-2">2309842</p></td>
                               <td><p class="m-2">lala</p></td>
