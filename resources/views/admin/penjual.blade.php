@@ -101,7 +101,7 @@
                         <label for="inputNumber" class="col-sm-2 col-form-label">Brand penjual:</label>
                         <div class="col-sm-10">
                           <div class="input-group form-outline">
-                            <input name="brand" class="form-control" type="file" id="picture" onchange="readURL(masuk)" required>
+                            <input name="brand" class="form-control" type="file" id="picture" onchange="halo(this)" required>
                             <div class="input-group-append">
                               <button type="button" class="btn btn-danger" onclick="dele()">Hapus</button>
                             </div>

@@ -617,14 +617,12 @@
           document.getElementById("gam").src = '';
           document.getElementById("pics").value = '';
         }
-      </script>
 
-      <script>
         var b = document.getElementById("gambar");
-        function readURL(masuk){
-          if(masuk.files){
+        function halo(input){
+          if(input.files){
             var reade = new FileReader();
-            reade.readAsDataURL(masuk.files[0]);
+            reade.readAsDataURL(input.files[0]);
             reade.onload=(e)=>{
               a.src = e.target.result;
             }
