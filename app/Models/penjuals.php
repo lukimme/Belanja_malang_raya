@@ -10,6 +10,8 @@ class penjuals extends Model
 {
     use HasFactory;
 
+    protected $table = 'penjuals';
+
     public function adminPenjual()
     {
         return $this->hasMany(admins::class, 'id', 'id');

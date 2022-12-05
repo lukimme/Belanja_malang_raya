@@ -13,6 +13,12 @@
     </nav>
 </div><!-- End Page Title -->
 
+{{$penjual}}
+<br><br><br>
+{{$adminProduk}}
+<br><br><br>
+{{-- {{$kategoriProduk}} --}}
+
 <section class="section dashboard">
     <div class="row justify-content-center">
 
@@ -31,9 +37,13 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Penjual:</label>
                         <div class="col-sm-10">
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select" name="penjual" aria-label="Default select example">
                             <option selected>--Pilih--</option>
-                            <option value="1">One</option>
+                            {{-- @foreach ($produks as $data) --}}
+                              {{-- @foreach ($penjualProduk as $data)
+                                <option value="{{$data->id_penjual}}">{{$data->nama_penjual}}</option>
+                              @endforeach --}}
+                            {{-- @endforeach --}}
                           </select>
                         </div>
                     </div>
@@ -53,33 +63,60 @@
                     </div>
 
                     <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Admin:</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="admin" aria-label="Default select example">
+                          <option selected>--Pilih--</option>
+                          {{-- @foreach ($produks as $itemProduk)
+                              @foreach ($itemProduk->adminProduk as $item)
+                                <option value="{{$item->id}}">{{$item->nama}}</option>
+                              @endforeach
+                          @endforeach --}}
+                        </select>
+                      </div>
+                  </div>
+
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Kategori:</label>
                         <div class="col-sm-10">
                           <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected>--Pilih--</option>
+                            {{-- @foreach ($produks as $itemProduk)
+                                @foreach ($itemProduk->kategoriProduk as $item)
+                                  <option value="{{$item->id_kategori}}">{{$item->nama_kategori}}</option>
+                                @endforeach
+                            @endforeach --}}
                           </select>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                       <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
                       <div class="col-sm-10">
-                        <input class="form-control" type="file" id="formFile">
+                        <div class="input-group form-outline">
+                          <input name="foto_kategori" class="form-control" type="file" id="pics" onchange="readUrl(this)" required>
+                          <div class="input-group-append">
+                            <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-sm-12 text-center">
+                        <img class="border border-primary" id="gam" width="200" src="" alt="">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="inputDate" class="col-sm-2 col-form-label">Nomor Penjual:</label>
+                      <label for="inputDate" class="col-sm-2 col-form-label">Pesan Produk:</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control">
                       </div>
                     </div>
 
                     <div class="row mb-4">
-                        <label for="inputDate" class="col-sm-2 col-form-label">Pesan Produk:</label>
+                        <label for="inputDate" class="col-sm-2 col-form-label">Deskripsi Produk:</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="deskripsi" placeholder="Ketikkan deskripsi produk anda" name="" id="" cols="30" rows="10" required></textarea>
                         </div>
@@ -87,7 +124,7 @@
     
                     <div class="row mb-3 text-end">
                       <div class="col-sm-12 ">
-                        <button type="submit" class="btn btn-primary">Submit Form</button>
+                        <button type="submit" class="btn btn-primary">Tambah produk</button>
                       </div>
                     </div>
     
@@ -146,7 +183,7 @@
                           </thead>
                           <tbody>
                               
-                            @foreach ($produks as $item)
+                            {{-- @foreach ($produks as $item)
                                 
                               <tr>
 
@@ -179,7 +216,7 @@
                               </td> 
                             </tr>
 
-                            @endforeach
+                            @endforeach --}}
                           </tbody>
                         </table>
                       </div>
