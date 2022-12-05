@@ -13,12 +13,15 @@ class ProdukController extends Controller
     
     public function index() {
 
-        $dol    = penjuals::all();
-        $kategori   = kategori::all();
+        $penjual    = penjuals::all();
         $admin      = admins::all();
+        return view('/admin/produk', ['adminProduk' => $admin],  ['dol' => $penjual]);
+    }
+
+    public function tampil() {
+        $kategori   = kategori::all();
         $produk     = produks::all();
-        return view('/admin/produk', ['adminProduk' => $admin], ['kategoriProduk' => $kategori],  ['penjual' => $dol]);
-        // ['produks' => $produk], ['adminProduk' => $admin], ['kategoriProduk' => $kategori],
+        return view('/admin/produk', ['produks' => $produk], ['kategoriProduk' => $kategori]);
     }
 
 
