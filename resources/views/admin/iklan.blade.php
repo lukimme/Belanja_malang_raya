@@ -1,5 +1,5 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'Kategori')
+@section('title', 'Iklan')
 
 
 @section('content')
@@ -106,7 +106,7 @@
   
             <div class="card table-responsive">
               <div class="card-body">
-                <h5 class="card-title">Tabel Banner</h5>
+                <h5 class="card-title">Tabel Iklan</h5>
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                   <thead>

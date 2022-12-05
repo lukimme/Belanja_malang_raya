@@ -15,7 +15,12 @@ class BannerController extends Controller
         return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
     }  
 
-
+    public function edit(Request $request, $id_gambar)
+    {   
+        $banner = Banner::findOrFail($id_gambar);
+        return view('admin/banner-edit', ['banner' => $banner]);
+    }
+    
     
     public function store(Request $request)
     {   

@@ -1,16 +1,17 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'Banner')
+@section('title', 'Edit Banner')
 
 
 @section('content')
 
     <div class="pagetitle">
-        <h1>Setting Banner</h1>
+        <h1>Edit Banner</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><span>Home</span></li>
               <li class="breadcrumb-item"><span>Setting</span></li>
-            <li class="breadcrumb-item active">Banner</li>
+              <li class="breadcrumb-item"><span>Banner</span></li>
+            <li class="breadcrumb-item active">Edit Banner</li>
           </ol>
         </nav>
       </div><!-- End Page Title -->
@@ -25,12 +26,12 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Upload Banner</h5>
+                      <h5 class="card-title">Edit Banner</h5>
         
                       <!-- General Form Elements -->
                       <form method="POST" action="banner" enctype="multipart/form-data">
                         @csrf
-                    <div class="row mb-3">
+                    {{-- <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
                           <select class="form-select" name="id_admin" aria-label="Default select example" required>
@@ -40,15 +41,15 @@
                             @endforeach
                           </select>
                         </div>
-                    </div>
+                    </div> --}}
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
-                            <input type="text" name="nama_gambar" class="form-control" required>
+                            <input type="text" name="nama_gambar" class="form-control" value="{{$banner->nama_gambar}}" required>
                           </div>
                         </div>
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
                            <div class="form-check">
@@ -64,12 +65,12 @@
                       </label>
                     </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                       <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Link</label>
                           <div class="col-sm-10">
-                            <input type="text" name="link" class="form-control" required>
+                            <input type="text" name="link" class="form-control" value="{{$banner->link}}"  required>
                           </div>
                         </div>
 
@@ -83,7 +84,7 @@
                         
                         <div class="row mb-4 text-end">
                           <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button type="submit" class="btn btn-primary">Edit</button>
                           </div>
                         </div>
                       </form>
@@ -99,55 +100,7 @@
         </div>
        </section><!-- End Form Input -->
 
-       <!-- Tables -->
-       <section class="section">
-        <div class="row">
-          <div class="col-lg-12">
-  
-            <div class="card table-responsive">
-              <div class="card-body">
-                <h5 class="card-title">Tabel Banner</h5>
-                <!-- Table with stripped rows -->
-                <table class="table datatable">
-                  <thead>
-                    <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Admin</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Gambar</th>
-                      <th scope="col">Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      @foreach ($banner as $item)
-                      <tr>
-                      <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
-                      
-                      @foreach ($item->admin as $admin)
-                      <td><p class="m-2">{{$admin->nama}}</p></td>
-                      @endforeach
-                      
-                      <td><p class="m-2">{{$item->nama_gambar}}</p></td>
-                       <td><p class="m-2">{{$item->status_gambar}}</p></td>
-                       <td><p class="m-2">{{$item->link}}</p></td>
-                      <td>
-                      {{-- {{$item->foto_kategori}} --}}
-                      <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
-                      </td>
-                      <td>
-                      <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit"><i class="bi bi-pencil-square"></i></a>  
-                      
-                      <a href="#" class="btn btn-primary m-1" title="Detail"><i class="bi bi-card-list"></i></a>  
-                      
-                      <a href="#" class="btn btn-danger m-1" title="Hapus"><i class="bx bxs-trash"></i></a>
-                      </td> 
-                      </tr>
-                      @endforeach
-                  </tbody>
-                </table>
-                <!-- End Table with stripped rows -->
-  
+      
               </div>
             </div>
   

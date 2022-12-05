@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Banner extends Model
 {
+    protected $primaryKey = 'id_gambar';
     use HasFactory;
     protected $table = 'banner_iklans';
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id_admin');
+        return $this->hasMany(admins::class, 'id',  'id_admin');
     }
+    
+    
 }
