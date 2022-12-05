@@ -10,7 +10,7 @@ class kategori extends Model
 {
     use HasFactory;
 // protected $fillable = ['id_admin', 'nama_kategori', 'foto_kategori'];
-    protected $table = 'kategoris';
+    // protected $table = 'kategoris';
     public function admin()
     {
         return $this->hasMany(admins::class, 'id', 'id_admin');

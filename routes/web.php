@@ -40,7 +40,7 @@ Route::prefix('admin/')->group(function () {
     
     // Produk
     Route::get('/produk', [ProdukController::class, 'index']);
-    Route::get('/produk', [ProdukController::class, 'tampil']);
+    // Route::get('/produk', [ProdukController::class, 'tampil']);
 
 
     // Penjual

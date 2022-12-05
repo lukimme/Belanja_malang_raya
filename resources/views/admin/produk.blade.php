@@ -17,9 +17,9 @@
 <br><br><br>
 {{-- {{$adminProduk}} --}}
 <br><br><br>
-{{-- {{$kategoriProduk}} --}}
+{{$kategori}}
 <br><br><br>
-{{$produks}}
+{{-- {{$produks}} --}}
 
 <section class="section dashboard">
     <div class="row justify-content-center">
