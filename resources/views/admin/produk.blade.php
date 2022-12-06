@@ -13,13 +13,15 @@
     </nav>
 </div><!-- End Page Title -->
 
-{{$dol}}
+{{-- {{$dol}} --}}
 <br><br><br>
 {{-- {{$adminProduk}} --}}
 <br><br><br>
-{{$kategori}}
+{{-- {{$kategoris}} --}}
 <br><br><br>
 {{-- {{$produks}} --}}
+
+
 
 <section class="section dashboard">
     <div class="row justify-content-center">

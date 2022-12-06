@@ -13,15 +13,22 @@ class ProdukController extends Controller
 {
     
     public function index() {
-        $kategori   = DB::table('kategoris')->get();
-        $produk     = DB::table('produks')->get();
-        $penjual    = DB::table('penjuals')->get();
-        return view('/admin/produk',['dol' => $penjual], ['kategori' => $kategori], ['produks' => $produk]);
+        $produk     = produks::all();
+        $penjual    = penjuals::all();
+        return view('/admin/produk',['dol' => $penjual], ['produks' => $produk]);
     }
 
-    // public function tampil() {
-    //     return view('/admin/produk',);
-    // }
-
+    public function tampil() {
+        $kategori   = kategori::all();
+        return view('/admin/produk', ['kategoris' => $kategori]);
+    }
+    public function show(){
+        $penjual = penjuals::all();
+        $kategori = kategori::all();
+        return view('/admin/add_produk', ['penjual' => $penjual], ['kategori' => $kategori]);
+    }
+    public function simpan(Request $request){
+        dd($request);
+    }
 
 }

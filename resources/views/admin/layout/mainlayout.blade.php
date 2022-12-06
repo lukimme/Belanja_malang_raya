@@ -30,7 +30,6 @@
   <link href="{{('/css/style.css')}}" rel="stylesheet">
 
   <!-- Sambungan ke link untuk teks area -->
-  <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.0
@@ -596,9 +595,7 @@
       <script src="{{('/js/main.js')}}"></script>
 
       <!-- Javascript untuk textarea -->
-      <script>
-        CKEDITOR.replace( 'deskripsi' );
-      </script>
+    
 
       <!-- Javascript untuk gambar di input -->
       <script>
