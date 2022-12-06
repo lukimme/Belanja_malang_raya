@@ -15,7 +15,7 @@ class produks extends Model
     
     public function adminProduk()
     {
-        return $this->hasMany(admins::class, 'id', 'id_admin');
+        return $this->hasMany(admins::class, 'id', 'id');
     }
 
     public function kategoriProduk()

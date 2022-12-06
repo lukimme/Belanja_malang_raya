@@ -28,7 +28,7 @@ class KategoriController extends Controller
         // $kategori = kategoris::create($request->all());
         
         $kategori = new kategori;
-        $kategori->id_admin = $request->id_admin;
+        $kategori->id = $request->id_admin;
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();

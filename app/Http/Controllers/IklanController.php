@@ -25,7 +25,7 @@ class IklanController extends Controller
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
-       $banner->id_admin = $request->id_admin;
+       $banner->id = $request->id_admin;
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
        $banner->gambar = $newName;
