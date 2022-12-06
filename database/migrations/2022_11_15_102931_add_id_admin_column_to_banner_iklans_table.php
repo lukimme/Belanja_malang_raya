@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('banner_iklans', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_admin')->after('id_gambar')->required();
-            $table->foreign('id_admin')->references('id_admin')->on('admins');
+            $table->unsignedBigInteger('id')->after('id_gambar')->required();
+            $table->foreign('id')->references('id')->on('admins');
         });
     }
 
@@ -27,8 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('banner_iklans', function (Blueprint $table) {
-            $table->dropForeign(['id_admin']);
-            $table->dropColumn('id_admin');
+            $table->dropForeign(['id']);
+            $table->dropColumn('id');
         });
     }
 };

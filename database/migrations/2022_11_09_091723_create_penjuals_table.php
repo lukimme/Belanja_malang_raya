@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('brand_penjual', 100);
             $table->string('nomor_penjual', 20)->nullable();
             $table->string('email_penjual', 50)->nullable();
-            $table->string('sandi', 50);
+            $table->string('sandi', 50)->nullable();
             $table->string('foto', 100);
             $table->string('alamat', 100);
             $table->timestamps();

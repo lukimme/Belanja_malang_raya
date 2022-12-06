@@ -41,7 +41,6 @@ Route::prefix('admin/')->group(function () {
     // Produk
     Route::get('/produk', [ProdukController::class, 'index']);
     Route::get('/produk', [ProdukController::class, 'tampil']);
-    Route::get('/add_produk', [ProdukController::class, 'show']);
     Route::post('/create-produk', [ProdukController::class, 'simpan']);
 
 

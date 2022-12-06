@@ -1,5 +1,5 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'Produk')
+@section('title', 'Tambah Produk')
 
 @section('content')
 

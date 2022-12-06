@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_kategori')->after('id_penjual')->required();
             $table->foreign('id_kategori')->references('id_kategori')->on('kategoris');
 
-            $table->unsignedBigInteger('id_admin')->after('id_kategori')->required();
-            $table->foreign('id_admin')->references('id_admin')->on('admins');
+            $table->unsignedBigInteger('id')->after('id_kategori')->required();
+            $table->foreign('id')->references('id')->on('admins');
         });
     }
 
@@ -37,8 +37,8 @@ return new class extends Migration
             $table->dropColumn('id_penjual');
             $table->dropForeign(['id_kategori']);
             $table->dropColumn('id_kategori');
-            $table->dropForeign(['id_admin']);
-            $table->dropColumn('id_admin');
+            $table->dropForeign(['id']);
+            $table->dropColumn('id');
         });
     }
 };
