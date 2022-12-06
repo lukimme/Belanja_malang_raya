@@ -73,11 +73,21 @@
                           </div>
                         </div>
 
-
-                        <div class="row mb-4">
+                          <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" name="gambar" type="file" id="formFile" required>
+                            <div class="input-group form-outline">
+                              <input name="gambar" class="form-control" type="file" id="pict" onchange="readUrl(this)" required>
+                              <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                         <div class="row mb-2">
+                          <div class="col-sm-12 text-center">
+                            <img class="border border-primary" id="gam" width="200" src="" alt="">
                           </div>
                         </div>
                         
@@ -106,7 +116,7 @@
   
             <div class="card table-responsive">
               <div class="card-body">
-                <h5 class="card-title">Tabel Banner</h5>
+                <h5 class="card-title">Table Banner & Iklan</h5>
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                   <thead>

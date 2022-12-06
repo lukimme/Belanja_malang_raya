@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +61,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('banner',[BannerController::class, 'create']);
     Route::post('banner', [BannerController::class, 'store']);
     Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);
+    Route::put('banner/{id_gambar}', [BannerController::class, 'update']);
 
  
     //Akun

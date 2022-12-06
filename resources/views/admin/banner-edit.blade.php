@@ -29,8 +29,9 @@
                       <h5 class="card-title">Edit Banner</h5>
         
                       <!-- General Form Elements -->
-                      <form method="POST" action="banner" enctype="multipart/form-data">
+                      <form method="POST" action="banner/{{$banner->id_gambar}}" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                     {{-- <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
@@ -78,7 +79,18 @@
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" name="gambar" type="file" id="formFile" required>
+                            <div class="input-group form-outline">
+                              <input name="gambar" class="form-control" value="{{$banner->gambar}}" type="file" id="pict" onchange="readUrl(this)" required>
+                              <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                         <div class="row mb-2">
+                          <div class="col-sm-12 text-center">
+                            <img class="border border-primary" id="gam" width="200" src="" alt="">
                           </div>
                         </div>
                         

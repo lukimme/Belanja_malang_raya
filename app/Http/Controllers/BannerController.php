@@ -20,6 +20,12 @@ class BannerController extends Controller
         $banner = Banner::findOrFail($id_gambar);
         return view('admin/banner-edit', ['banner' => $banner]);
     }
+
+    public function update(Request $request, $id_gambar)
+    {   
+        $banner = Banner::findOrFail($id_gambar);
+        dd($banner);
+    }
     
     
     public function store(Request $request)

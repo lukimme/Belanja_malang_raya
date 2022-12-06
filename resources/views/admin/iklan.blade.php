@@ -106,7 +106,7 @@
   
             <div class="card table-responsive">
               <div class="card-body">
-                <h5 class="card-title">Tabel Iklan</h5>
+                <h5 class="card-title">Table Banner & Iklan</h5>
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                   <thead>
