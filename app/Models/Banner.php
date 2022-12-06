@@ -13,7 +13,7 @@ class Banner extends Model
     protected $table = 'banner_iklans';
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id',  'id_admin');
+        return $this->hasMany(admins::class, 'id',  'id');
     }
     
     
