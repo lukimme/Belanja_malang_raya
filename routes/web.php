@@ -40,8 +40,8 @@ Route::prefix('admin/')->group(function () {
     
     // Produk
     Route::get('/produk', [ProdukController::class, 'index']);
-    Route::get('/produk', [ProdukController::class, 'tampil']);
-    Route::post('/create-produk', [ProdukController::class, 'simpan']);
+    Route::get('/add_produk', [ProdukController::class, 'tampil']);
+    Route::post('/add_produk', [ProdukController::class, 'create']);
 
 
     // Penjual

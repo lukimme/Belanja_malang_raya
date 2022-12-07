@@ -26,7 +26,7 @@
                   <h5 class="card-title">General Form Elements</h5>
     
                   <!-- General Form Elements -->
-                  <form action="/admin/create-produk" method="post" enctype="multipart/form-data">
+                  <form action="/admin/add_produk" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row mb-3">

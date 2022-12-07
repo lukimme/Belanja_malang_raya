@@ -17,12 +17,12 @@ class ProdukController extends Controller
     }
 
     public function tampil() {
-        $kategori   = kategori::all();
         $penjual    = penjuals::all();
-        return view('/admin/produk', ['kategoris' => $kategori], ['penjual' => $penjual]);
+        $kategori   = kategori::all();
+        return view('/admin/add_produk', ['penjual' => $penjual], ['kategori' => $kategori]);
     }
 
-    public function simpan(Request $request){
+    public function create(Request $request) {
         dd($request);
     }
 

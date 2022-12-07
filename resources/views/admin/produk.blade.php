@@ -31,7 +31,14 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Tabel data produk <a class="btn btn-primary" href="">Tambah produk</a></h5>
+            <div class="row align-items-center">
+              <div class="col-md-3 text-start">
+                <h5 class="card-title">Tabel data produk</h5>
+              </div>
+              <div class="col-md-9 text-end">
+                <a class="btn btn-primary" href="add_produk">Tambah produk</a>
+              </div>
+            </div>
 
             <!-- Default Accordion -->
             <div class="accordion" id="accordionExample">
@@ -65,7 +72,7 @@
                           </thead>
                           <tbody>
                               
-                            {{-- @foreach ($produks as $item)
+                            @foreach ($produks as $item)
                                 
                               <tr>
 
@@ -98,7 +105,7 @@
                               </td> 
                             </tr>
 
-                            @endforeach --}}
+                            @endforeach
                           </tbody>
                         </table>
                       </div>
