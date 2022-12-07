@@ -35,8 +35,15 @@ class BannerController extends Controller
        $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-        return redirect('/admin/banner');
+       return redirect('/admin/banner');
          
+    }
+
+    public function destroy($id_gambar)
+    {
+        $banner = Banner::findOrFail($id_gambar);
+        $banner->delete();
+        return redirect('/admin/banner');
     }
     
     

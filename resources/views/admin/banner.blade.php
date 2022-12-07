@@ -125,6 +125,7 @@
                       <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Link</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Aksi</th>
                     </tr>
@@ -146,11 +147,12 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                      <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit"><i class="bi bi-pencil-square"></i></a>  
-                      
-                      <a href="#" class="btn btn-primary m-1" title="Detail"><i class="bi bi-card-list"></i></a>  
-                      
-                      <a href="#" class="btn btn-danger m-1" title="Hapus"><i class="bx bxs-trash"></i></a>
+                      <form action="banner-edit/{{$item->id_gambar}}" method="POST">
+                        @csrf
+                        @method('delete')
+                          <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
+                      <input  class="btn btn-danger m-1" value="Hapus" type="submit" >
+                      </form>
                       </td> 
                       </tr>
                       @endforeach

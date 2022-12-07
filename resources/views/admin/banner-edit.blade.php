@@ -80,7 +80,7 @@
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                              <input name="gambar" class="form-control" value="{{$banner->gambar}}" type="file" id="pict" onchange="readUrl(this)" required>
+                              <input name="gambar" class="form-control" type="file" id="pict" onchange="readUrl(this)" required>
                               <div class="input-group-append">
                                 <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                               </div>
@@ -90,7 +90,7 @@
 
                          <div class="row mb-2">
                           <div class="col-sm-12 text-center">
-                            <img class="border border-primary" id="gam" width="200" src="" alt="">
+                            <img class="border border-primary" id="gam" width="200" src="{{asset('storage/img/'.$banner->gambar)}}" alt="">
                           </div>
                         </div>
                         

@@ -62,6 +62,7 @@ Route::prefix('admin/')->group(function () {
     Route::post('banner', [BannerController::class, 'store']);
     Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);
     Route::put('/admin/banner/{id_gambar}', [BannerController::class, 'update']);
+    Route::delete('banner-edit/{id_gambar}', [BannerController::class, 'destroy']);
 
  
     //Akun
