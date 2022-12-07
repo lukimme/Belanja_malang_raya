@@ -35,7 +35,7 @@ class BannerController extends Controller
        $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-       
+        return redirect('/admin/banner');
          
     }
     
