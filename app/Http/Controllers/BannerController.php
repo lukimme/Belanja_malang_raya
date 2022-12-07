@@ -24,7 +24,19 @@ class BannerController extends Controller
     public function update(Request $request, $id_gambar)
     {   
         $banner = Banner::findOrFail($id_gambar);
-        dd($banner);
+
+         // insert
+        $ekstensi = $request->file('gambar')->getClientOriginalExtension();
+        $newName = 'banner'.now()->timestamp.'.'.$ekstensi;
+        $request->file('gambar')->storeAs('img', $newName);
+
+       
+       $banner->nama_gambar = $request->nama_gambar;
+       $banner->gambar = $newName;
+       $banner->link = $request->link;
+       $banner->save();
+       
+         
     }
     
     

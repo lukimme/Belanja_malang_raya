@@ -29,7 +29,7 @@
                       <h5 class="card-title">Edit Banner</h5>
         
                       <!-- General Form Elements -->
-                      <form method="POST" action="banner/{{$banner->id_gambar}}" enctype="multipart/form-data">
+                      <form method="POST" action="/banner/{{$banner->id_gambar}}">
                         @csrf
                         @method('PUT')
                     {{-- <div class="row mb-3">
