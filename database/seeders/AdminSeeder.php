@@ -20,21 +20,21 @@ class AdminSeeder extends Seeder
         admins::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $dataAdmin = [
-            ['nama' => 'Super Admin', 'email' => 'superadmin@bm.com', 'sandi' => '1234', 'foto' => 'halo.jpg', 'status' => 1],
-            ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2]
-        ];
+        // $dataAdmin = [
+        //     ['nama' => 'Super Admin', 'email' => 'superadmin@bm.com', 'sandi' => '1234', 'foto' => 'halo.jpg', 'status' => 1],
+        //     ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2]
+        // ];
 
-        foreach ($dataAdmin as $value) {
-            admins::insert([
+        // foreach ($dataAdmin as $value) {
+        //     admins::insert([
 
-                'nama' => $value['nama'],
-                'email' => $value['email'],
-                'sandi' => $value['sandi'],
-                'foto' => $value['foto'],
-                'status' => $value['status']
+        //         'nama' => $value['nama'],
+        //         'email' => $value['email'],
+        //         'sandi' => $value['sandi'],
+        //         'foto' => $value['foto'],
+        //         'status' => $value['status']
 
-            ]);
-        }
+        //     ]);
+        // }
     }
 }
