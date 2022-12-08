@@ -590,6 +590,9 @@
       <script src="{{('/vendor/simple-datatables/simple-datatables.js')}}"></script>
       <script src="{{('/vendor/tinymce/tinymce.min.js')}}"></script>
       <script src="{{('/vendor/php-email-form/validate.js')}}"></script>
+
+      {{-- SweetAlert --}}
+     
     
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
@@ -633,7 +636,57 @@
       </script>
 
     
+      {{-- SweetAlert Delete Script--}}     
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script>
+    $(document).ready(function () {
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('.btndelete').click(function (e) {
+            e.preventDefault();
+
+            var deleteid = $(this).closest("tr").find('.delete_id').val();
+
+            swal({
+                    title: "Apakah anda yakin?",
+                    text: "Setelah dihapus, Anda tidak dapat memulihkan data ini lagi!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+                        var data = {
+                            "_token": $('input[name=_token]').val(),
+                            'id': deleteid,
+                        };
+                        $.ajax({
+                            type: "DELETE",
+                            url: 'admin/banner-edit/' + deleteid,
+                            data: data,
+                            success: function (response) {
+                                swal(response.status, { 
+                                        icon: "success",
+                                    })
+                                    .then((result) => {
+                                        location.reload();
+                                    });
+                            }
+                        });
+                    }
+                });
+        });
+
+    });
+
+</script>
     
     </body>
     

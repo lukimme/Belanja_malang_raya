@@ -133,6 +133,7 @@
                   <tbody>
                       @foreach ($banner as $item)
                       <tr>
+                      <input type="hidden" class="delete_id" value="{{ $item->id_gambar }}">
                       <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                       
                       @foreach ($item->admin as $admin)
@@ -149,9 +150,9 @@
                       <td>
                       <form action="banner-edit/{{$item->id_gambar}}" method="POST">
                         @csrf
-                        @method('delete')
+                        @method('delete') 
                           <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
-                      <input  class="btn btn-danger m-1" value="Hapus" type="submit" >
+                      <input class="btn btn-danger m-1 btndelete" value="Hapus" type="submit" >
                       </form>
                       </td> 
                       </tr>
@@ -165,6 +166,10 @@
   
           </div>
         </div>
-      </section><!-- End Tables -->
+      </section>
+
+      @include('sweetalert::alert')
+
+
 
   @endsection
