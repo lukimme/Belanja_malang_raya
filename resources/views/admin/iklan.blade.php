@@ -74,10 +74,21 @@
                         </div>
 
 
-                        <div class="row mb-4">
+                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
-                            <input class="form-control" name="gambar" type="file" id="formFile" required>
+                            <div class="input-group form-outline">
+                              <input name="gambar" class="form-control" type="file" id="pict" onchange="readUrl(this)" required>
+                              <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                         <div class="row mb-2">
+                          <div class="col-sm-12 text-center">
+                            <img class="border border-primary" id="gam" width="200" src="" alt="">
                           </div>
                         </div>
                         
@@ -115,6 +126,7 @@
                       <th scope="col">Admin</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Link</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Aksi</th>
                     </tr>
@@ -136,7 +148,12 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                      <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_gambar}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_gambar}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_gambar}}"><i class="bx bxs-trash"></i></a>
+                      <form action="banner-edit/{{$item->id_gambar}}" method="POST">
+                        @csrf
+                        @method('delete')
+                          <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
+                      <input  class="btn btn-danger m-1" value="Hapus" type="submit" >
+                      </form>
                       </td> 
                       </tr>
                       @endforeach

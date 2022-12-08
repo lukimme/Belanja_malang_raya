@@ -5,13 +5,11 @@
 @section('content')
 
     <div class="pagetitle">
-        <h1>Edit Banner</h1>
+        <h1>Edit Banner & Iklan</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><span>Home</span></li>
-              <li class="breadcrumb-item"><span>Setting</span></li>
-              <li class="breadcrumb-item"><span>Banner</span></li>
-            <li class="breadcrumb-item active">Edit Banner</li>
+            <li class="breadcrumb-item active">Edit Banner & Iklan</li>
           </ol>
         </nav>
       </div><!-- End Page Title -->
@@ -26,7 +24,7 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Edit Banner</h5>
+                      <h5 class="card-title">Edit Banner & Iklan</h5>
         
                       <!-- General Form Elements -->
                       <form action="/admin/banner/{{$banner->id_gambar}}" method="POST"  enctype="multipart/form-data">
