@@ -669,10 +669,10 @@
                         };
                         $.ajax({
                             type: "DELETE",
-                            url: 'admin/banner-edit/' + deleteid,
+                            url: '/admin/banner/' + deleteid,
                             data: data,
                             success: function (response) {
-                                swal(response.status, { 
+                                swal(response.status, {
                                         icon: "success",
                                     })
                                     .then((result) => {
@@ -685,6 +685,7 @@
         });
 
     });
+
 
 </script>
     

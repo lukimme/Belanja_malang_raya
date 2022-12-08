@@ -43,8 +43,8 @@ class BannerController extends Controller
     {
         $banner = Banner::findOrFail($id_gambar);
         $banner->delete();
-         //return redirect('/admin/banner');
-          return response()->json(['status' => 'Data Berhasil di hapus!']);
+         return redirect('/admin/banner');
+        //   return response()->json(['status' => 'Data Berhasil di hapus!']);
          
     }
     
@@ -63,7 +63,8 @@ class BannerController extends Controller
        $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-       return redirect('/admin/banner')->with('success', 'Upload Berhasil!');;
+       return redirect('/admin/banner')->with('success', 'Upload Berhasil!');
+       
     }
 
 }
