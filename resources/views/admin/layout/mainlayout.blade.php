@@ -591,8 +591,11 @@
       <script src="{{('/vendor/tinymce/tinymce.min.js')}}"></script>
       <script src="{{('/vendor/php-email-form/validate.js')}}"></script>
 
+      {{-- jQuery --}}
+      <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
       {{-- SweetAlert --}}
-     
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
@@ -637,57 +640,35 @@
 
     
       {{-- SweetAlert Delete Script--}}     
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
 
-<script>
-    $(document).ready(function () {
+        $('.delete').click(function(){
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+          var biid = $(this).attr('data-id');
+          var nama = $(this).attr('data-nama');
 
-        $('.btndelete').click(function (e) {
-            e.preventDefault();
-
-            var deleteid = $(this).closest("tr").find('.delete_id').val();
-
-            swal({
-                    title: "Apakah anda yakin?",
-                    text: "Setelah dihapus, Anda tidak dapat memulihkan data ini lagi!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
+                  swal({
+                  title: "Yakin?",
+                  text: "Kamu akan menghapus data dengan nama "+nama+" ",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
                 })
                 .then((willDelete) => {
-                    if (willDelete) {
+                  if (willDelete) {
+                    window.location = "/admin/banner/"+nama+""
+                    swal("Data berhasil di hapus", {
+                      icon: "success",
+                    });
+                  } else {
+                    swal("Data tidak jadi dihapus");
+                  }
+              });
 
-                        var data = {
-                            "_token": $('input[name=_token]').val(),
-                            'id': deleteid,
-                        };
-                        $.ajax({
-                            type: "DELETE",
-                            url: '/admin/banner/' + deleteid,
-                            data: data,
-                            success: function (response) {
-                                swal(response.status, {
-                                        icon: "success",
-                                    })
-                                    .then((result) => {
-                                        location.reload();
-                                    });
-                            }
-                        });
-                    }
-                });
-        });
+          })
 
-    });
-
-
-</script>
+    
+      </script>
     
     </body>
     

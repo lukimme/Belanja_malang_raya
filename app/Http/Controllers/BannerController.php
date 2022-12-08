@@ -39,12 +39,11 @@ class BannerController extends Controller
          
     }
 
-    public function destroy($id_gambar)
+    public function destroy(Request $request, $id_gambar)
     {
         $banner = Banner::findOrFail($id_gambar);
-        $banner->delete();
-         return redirect('/admin/banner');
-        //   return response()->json(['status' => 'Data Berhasil di hapus!']);
+        // $banner->delete();
+        return back()->with('success', 'Data berhasil di hapus!');
          
     }
     

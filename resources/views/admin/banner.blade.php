@@ -152,7 +152,7 @@
                         @csrf
                         @method('delete') 
                           <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
-                      <input class="btn btn-danger m-1 btndelete" value="Hapus" type="submit" >
+                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id_gambar}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
                       </form>
                       </td> 
                       </tr>
