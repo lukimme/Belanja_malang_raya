@@ -14,6 +14,7 @@
 </div><!-- End Page Title -->
 
 
+
 <section class="section dashboard">
     <div class="row justify-content-center">
 
@@ -35,7 +36,7 @@
                           <select class="form-select" name="penjual" aria-label="Default select example">
                             <option selected>--Pilih--</option>
                             @foreach ($penjual as $data)
-                                <option value="{{$data->id}}">{{$data->nama_penjual}}</option>
+                                <option value="{{$data->id_penjual}}">{{$data->nama_penjual}}</option>
                             @endforeach
                           </select>
                         </div>

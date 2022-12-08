@@ -23,7 +23,26 @@ class ProdukController extends Controller
     }
 
     public function create(Request $request) {
-        dd($request);
+
+        // insert
+        $ekstensi = $request->file('gambar')->getClientOriginalExtension();
+        $newName = 'prod'.now()->timestamp.'.'.$ekstensi;
+        $request->file('gambar')->storeAs('img', $newName);
+
+        $produk = new produks;
+        $produk->id_penjual       = $request->penjual;
+        $produk->id_kategori      = $request->kategori;
+        $produk->id               = $request->id_admin;
+        $produk->nama_produk      = $request->nama;
+        $produk->deskripsi_produk = $request->deskripsi;
+        $produk->diskon           = $request->diskon;
+        $produk->gambar           = $newName;
+        $produk->pesan            = $request->pesan;
+        $produk->save();
+        return redirect('/admin/produk');
+
+        // dd($request);
+
     }
 
 }
