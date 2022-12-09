@@ -148,7 +148,7 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                      <form action="/admin/banner/{{$item->id_gambar}}" method="POST">
+                      <form action="{{ route('banner.delete', $item->id_gambar) }}" method="POST">
                         @csrf
                         @method('delete') 
                           <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  

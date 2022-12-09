@@ -592,11 +592,11 @@
       <script src="{{('/vendor/php-email-form/validate.js')}}"></script>
 
       {{-- jQuery --}}
-      <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       {{-- SweetAlert --}}
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
 
@@ -642,31 +642,29 @@
       {{-- SweetAlert Delete Script--}}     
       <script>
 
-        $('.delete').click(function(){
+        
 
-          var biid = $(this).attr('data-id');
-          var nama = $(this).attr('data-nama');
-
-                  swal({
-                  title: "Yakin?",
-                  text: "Kamu akan menghapus data dengan nama "+nama+" ",
-                  icon: "warning",
-                  buttons: true,
-                  dangerMode: true,
-                })
-                .then((willDelete) => {
-                  if (willDelete) {
-                    window.location = "/admin/banner/"+nama+""
-                    swal("Data berhasil di hapus", {
-                      icon: "success",
-                    });
-                  } else {
-                    swal("Data tidak jadi dihapus");
-                  }
-              });
-
+     
+     $('.delete').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Yakin?`,
+              text: "Data yang akan di hapus tidak bisa dikembalikan lagi!",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
           })
-
+          .then((willDelete) => {
+            if (willDelete) {
+                form.submit();   
+              } else {
+                swal("Data tidak jadi dihapus");
+              }
+          });
+      });
+  
     
       </script>
     
