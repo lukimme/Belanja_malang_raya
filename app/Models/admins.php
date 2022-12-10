@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\kategori;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class admins extends Model
 {
     use HasFactory;
+
+    public function kategori() {
+        return $this->hasMany(kategori::class, 'id', 'id');
+    }
 }

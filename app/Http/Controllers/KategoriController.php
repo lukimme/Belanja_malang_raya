@@ -35,4 +35,12 @@ class KategoriController extends Controller
         return redirect('/admin/kategori');
     }
 
+
+    public function editKategori(Request $request, $id) {
+
+        $kategori = kategori::with('admins')->findOrFail($id);
+        return view('/admin/edit_kategori', ['kategori' => $kategori]);
+
+    }
+
 }
