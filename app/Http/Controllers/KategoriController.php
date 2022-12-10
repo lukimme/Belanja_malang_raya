@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\admins;
-
+use App\Models\produks;
 use App\Models\kategori;
 use Illuminate\Http\Request;
 
@@ -36,10 +36,14 @@ class KategoriController extends Controller
     }
 
 
-    public function editKategori(Request $request, $id) {
+    public function edit($id) {
 
-        $kategori = kategori::with('admins')->findOrFail($id);
-        return view('/admin/edit_kategori', ['kategori' => $kategori]);
+        // $admin      = admins::with('kategoris')->find($id);
+        $admin      = admins::all();
+        $produk     = produks::all();
+        $kategori   = kategori::with('admin')->find($id);
+        // return view('/admin/edit_kategori', ['kategori' => $kategori], ['admin' => $admin]);
+        return view('/admin/edit_kategori', compact('kategori'), compact('produk'));
 
     }
 

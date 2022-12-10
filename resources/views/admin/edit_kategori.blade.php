@@ -16,6 +16,11 @@
     </div><!-- End Page Title -->
 
     {{$kategori}}
+    {{-- <br><br>
+    {{$admin}} --}}
+    <br><br>
+    {{$produk}}
+
 
       <!-- Form Input -->
       <section class="section dashboard">
@@ -32,6 +37,7 @@
                       <!-- General Form Elements -->
                       <form action="/admin/edit_kategori" method="post" enctype="multipart/form-data">
                         @csrf
+                        {{-- @method('put') --}}
 
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
