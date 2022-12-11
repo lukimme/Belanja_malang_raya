@@ -68,7 +68,8 @@
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar:</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                              <input name="foto_kategori" class="form-control" value="{{$kategoris->foto_kategori}}" type="file" id="pics" onchange="readUrl(this)">
+                              <input type="hidden" name="oldimage" value="{{$kategoris->foto_kategori}}">
+                              <input name="foto_kategori" class="form-control" type="file" id="pics" onchange="readUrl(this)">
                               <div class="input-group-append">
                                 <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                               </div>
