@@ -641,9 +641,6 @@
     
       {{-- SweetAlert Delete Script--}}     
       <script>
-
-        
-
      
      $('.delete').click(function(event) {
           var form =  $(this).closest("form");

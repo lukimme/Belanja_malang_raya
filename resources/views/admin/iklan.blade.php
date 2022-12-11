@@ -27,24 +27,33 @@
                     <div class="card-body">
                       <h5 class="card-title">Upload Iklan</h5>
         
+                      
+
                       <!-- General Form Elements -->
                       <form method="POST" action="iklan" enctype="multipart/form-data">
                         @csrf
-                    <div class="row mb-3">
+                      <div class="row mb-3">
+                         
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
-                          <select class="form-select" name="id_admin" aria-label="Default select example" required>
+                          <select class="form-select" name="id" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $data)
                                 <option value="{{$data->id}}">{{$data->nama}}</option>
                             @endforeach
+                          
                           </select>
                         </div>
                     </div>
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
-                            <input type="text" name="nama_gambar" class="form-control" required>
+                            <input type="text" name="nama_gambar" class="form-control @error('nama_gambar') is-invalid @enderror">
+                             @error('nama_gambar')
+                            <div class="invalid-feedback">
+                            {{ 'Nama tidak boleh kosong!' }}
+                            </div>
+                            @enderror
                           </div>
                         </div>
 
@@ -58,10 +67,15 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios2" value="2" required>
+                      <input class="form-check-input @error('status_gambar') is-invalid @enderror" type="radio" name="status_gambar" id="gridRadios2" value="2" required>
                       <label class="form-check-label" for="gridRadios2">
                         Iklan
                       </label>
+                          @error('status_gambar')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                            @enderror
                     </div>
                         </div>
                     </div>
@@ -69,16 +83,29 @@
                       <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Link</label>
                           <div class="col-sm-10">
-                            <input type="text" name="link" class="form-control" required>
+                            <input type="text" name="link" class="form-control form-control @error('link') is-invalid @enderror" >
+                             @error('link')
+                            <div class="invalid-feedback">
+                            {{ 'Link tidak boleh kosong!' }}
+                            
+                            </div>
+                            @enderror
                           </div>
                         </div>
 
-
-                         <div class="row mb-4">
+                          <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                              <input name="gambar" class="form-control" type="file" id="pict" onchange="readUrl(this)" required>
+                                <input name="gambar" class="form-control @error('gambar') is-invalid @enderror" type="file" id="pict" onchange="readUrl(this)">
+                                
+                             @error('gambar')
+                            <div class="invalid-feedback">
+                            {{ 'Yang kamu masukan bukan gambar!' }}
+                            
+                            </div>
+                            @enderror
+                           
                               <div class="input-group-append">
                                 <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                               </div>
@@ -148,11 +175,11 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                      <form action="/admin/banner/{{$item->id_gambar}}" method="POST">
+                     <form action="{{ route('banner.delete', $item->id_gambar) }}" method="POST">
                         @csrf
-                        @method('delete')
+                        @method('delete') 
                           <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
-                      <input  class="btn btn-danger m-1" value="Hapus" type="submit" >
+                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id_gambar}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
                       </form>
                       </td> 
                       </tr>
@@ -171,6 +198,6 @@
         </div>
       </section>
 
-       @include('sweetalert::alert')
+      @include('sweetalert::alert')
 
   @endsection
