@@ -13,7 +13,7 @@ class kategori extends Model
     protected $table = 'kategoris';
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id');
+        return $this->hasMany(admins::class, 'id', 'id_admin');
     }
 
 }

@@ -12,6 +12,6 @@ class admins extends Model
 
     public function kategoris()
     {
-        return $this->hasMany(kategori::class, 'id', 'id');
+        return $this->hasMany(kategori::class, 'id_admin', 'id');
     }
 }

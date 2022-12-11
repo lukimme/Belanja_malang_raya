@@ -15,11 +15,9 @@
         </nav>
     </div><!-- End Page Title -->
 
-    {{$kategori}}
+    {{-- {{$kategoris->admin->nama}} --}}
     {{-- <br><br>
     {{$admin}} --}}
-    <br><br>
-    {{$produk}}
 
 
       <!-- Form Input -->
@@ -42,7 +40,7 @@
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
-                            <input name="nama_kategori" type="text" class="form-control" value="{{$kategori->nama_kategori}}" required>
+                            <input name="nama_kategori" type="text" class="form-control" value="{{$kategoris->nama_kategori}}" required>
                           </div>
                         </div>
 
@@ -52,7 +50,7 @@
                             <select name="id_admin" class="form-select" aria-label="Default select example" required>
 
 
-                              <option value=""></option>
+                              {{-- <option value="{{$kategori->admin->id}}">{{$kategori->admin->nama}}</option> --}}
 
 
                               {{-- @foreach ($admin as $data)

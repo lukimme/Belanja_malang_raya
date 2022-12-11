@@ -28,7 +28,7 @@ class KategoriController extends Controller
         // $kategori = kategoris::create($request->all());
         
         $kategori = new kategori;
-        $kategori->id = $request->id_admin;
+        $kategori->id_admin = $request->id_admin;
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
@@ -38,12 +38,9 @@ class KategoriController extends Controller
 
     public function edit($id) {
 
-        // $admin      = admins::with('kategoris')->find($id);
         $admin      = admins::all();
-        $produk     = produks::all();
         $kategori   = kategori::with('admin')->find($id);
-        // return view('/admin/edit_kategori', ['kategori' => $kategori], ['admin' => $admin]);
-        return view('/admin/edit_kategori', compact('kategori'), compact('produk'));
+        return view('/admin/edit_kategori', ['kategoris' => $kategori], ['admin' => $admin]);
 
     }
 
