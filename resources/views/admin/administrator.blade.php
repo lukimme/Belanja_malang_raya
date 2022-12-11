@@ -39,7 +39,7 @@
               <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Tambah Sub Admin</button>
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Tambah Admin</button>
                 </li>
 
                 <li class="nav-item">
@@ -61,18 +61,32 @@
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Username</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control">
                           </div>
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Password</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Sandi</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control">
                           </div>
                         </div>
+
+                        <div class="row mb-3">
+                         
+                        <label class="col-sm-2 col-form-label">Status Admin</label>
+                        <div class="col-sm-10">
+                          <select class="form-select" name="id" aria-label="Default select example" required>
+                            <option selected>Pilih Admin</option>
+                            @foreach ($admin as $data)
+                                <option value="{{$data->id}}">{{$data->nama}}</option>
+                            @endforeach
+                          
+                          </select>
+                        </div>
+                    </div>
 
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Foto:</label>
