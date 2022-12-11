@@ -66,7 +66,7 @@
 
                         <div class="row mb-2">
                           <div class="col-sm-12 text-center">
-                            <img class="border border-primary" id="gam" width="200" src="" alt="">
+                            <img id="gam" width="200" src="" alt="">
                           </div>
                         </div>
         
@@ -125,11 +125,12 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                  @foreach ($kategori as $item)
+                                  @foreach ($kategoris as $item)
                                   <tr>
 
                                   <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                                   @foreach ($item->admin as $admin)
+
                                     <td><p class="m-2">{{$admin->nama}}</p></td>
 
                                   @endforeach

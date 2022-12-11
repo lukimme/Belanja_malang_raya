@@ -15,7 +15,10 @@
         </nav>
     </div><!-- End Page Title -->
 
-    {{-- {{$kategoris->admin->nama}} --}}
+    {{-- {{$kategoris}} --}}
+    {{-- @foreach ($kategoris->admin as $item)
+        {{$item->nama}}
+    @endforeach --}}
     {{-- <br><br>
     {{$admin}} --}}
 
@@ -48,16 +51,15 @@
                           <label class="col-sm-2 col-form-label">Admin</label>
                           <div class="col-sm-10">
                             <select name="id_admin" class="form-select" aria-label="Default select example" required>
+                              @foreach ($kategoris->admin as $item)
+                              <option value="{{$item->id}}">{{$item->nama}}</option>
+                              @endforeach
 
-
-                              {{-- <option value="{{$kategori->admin->id}}">{{$kategori->admin->nama}}</option> --}}
-
-
-                              {{-- @foreach ($admin as $data)
+                              @foreach ($admin as $data)
                               
                               <option value="{{$data->id}}">{{$data->nama}}</option>
 
-                              @endforeach --}}
+                              @endforeach
                             </select>
                           </div>
                         </div>
@@ -76,7 +78,7 @@
 
                         <div class="row mb-2">
                           <div class="col-sm-12 text-center">
-                            <img class="border border-primary" id="gam" width="200" src="" alt="">
+                            <img id="gam" width="200" src="{{asset('storage/img/'.$kategoris->foto_kategori)}}" alt="">
                           </div>
                         </div>
         

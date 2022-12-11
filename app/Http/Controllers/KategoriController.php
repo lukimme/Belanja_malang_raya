@@ -12,7 +12,7 @@ class KategoriController extends Controller
     public function index() {
         $kategori = kategori::all();
         $admin= admins::all();
-        return view('/admin/kategori', ['kategori' => $kategori], ['admin' => $admin]);
+        return view('/admin/kategori', ['kategoris' => $kategori], ['admin' => $admin]);
         // dd($kategori);
     }
 
@@ -35,8 +35,9 @@ class KategoriController extends Controller
         return redirect('/admin/kategori');
     }
 
-
-    public function edit($id) {
+    
+    // Edit kategori
+    public function edit(Request $request, $id) {
 
         $admin      = admins::all();
         $kategori   = kategori::with('admin')->find($id);

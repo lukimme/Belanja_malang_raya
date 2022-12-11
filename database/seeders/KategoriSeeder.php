@@ -20,16 +20,16 @@ class KategoriSeeder extends Seeder
         kategori::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $kategori = [
-            ['id_admin' => 1, 'nama_kategori' => 'Produk digital', 'foto_kategori' => 'produkdigital.jpg']
-        ];
+        // $kategori = [
+        //     ['id_admin' => 1, 'nama_kategori' => 'Produk digital', 'foto_kategori' => 'produkdigital.jpg']
+        // ];
 
-        foreach ($kategori as $data) {
-            kategori::insert([
-                'id_admin'  => $data['id_admin'],
-                'nama_kategori'  => $data['nama_kategori'],
-                'foto_kategori'  => $data['foto_kategori']
-            ]);
-        }
+        // foreach ($kategori as $data) {
+        //     kategori::insert([
+        //         'id_admin'  => $data['id_admin'],
+        //         'nama_kategori'  => $data['nama_kategori'],
+        //         'foto_kategori'  => $data['foto_kategori']
+        //     ]);
+        // }
     }
 }

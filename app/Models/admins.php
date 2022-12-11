@@ -10,8 +10,8 @@ class admins extends Model
 {
     use HasFactory;
 
-    public function kategoris()
-    {
-        return $this->hasMany(kategori::class, 'id_admin', 'id');
-    }
+    // public function kategoris()
+    // {
+    //     return $this->hasMany(kategori::class, 'id_admin', 'id');
+    // }
 }
