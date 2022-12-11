@@ -22,7 +22,8 @@ class AdminSeeder extends Seeder
 
         // $dataAdmin = [
         //     ['nama' => 'Super Admin', 'email' => 'superadmin@bm.com', 'sandi' => '1234', 'foto' => 'halo.jpg', 'status' => 1],
-        //     ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2]
+        //     ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2],
+        //     ['nama' => 'Sub Admin2', 'email' => 'subadmin2@bm.com', 'sandi' => '123456', 'foto' => 'halo02.jpg', 'status' => 3]
         // ];
 
         // foreach ($dataAdmin as $value) {

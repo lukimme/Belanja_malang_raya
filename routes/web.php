@@ -37,6 +37,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('kategori', [KategoriController::class, 'index']);
     Route::post('kategori', [KategoriController::class, 'create']);
     Route::get('edit_kategori/{id}', [KategoriController::class, 'edit']);
+    Route::put('kategori/{id}', [KategoriController::class, 'update']);
 
     
     // Produk

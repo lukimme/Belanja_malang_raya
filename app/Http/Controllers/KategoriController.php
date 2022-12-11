@@ -13,7 +13,6 @@ class KategoriController extends Controller
         $kategori = kategori::all();
         $admin= admins::all();
         return view('/admin/kategori', ['kategoris' => $kategori], ['admin' => $admin]);
-        // dd($kategori);
     }
 
 
@@ -37,12 +36,30 @@ class KategoriController extends Controller
 
     
     // Edit kategori
-    public function edit(Request $request, $id) {
+    public function edit($id) {
 
-        $admin      = admins::all();
         $kategori   = kategori::with('admin')->find($id);
+        $admin      = admins::where('id', '!=', $kategori->id_admin)->get(['id', 'nama']);
         return view('/admin/edit_kategori', ['kategoris' => $kategori], ['admin' => $admin]);
 
+    }
+
+
+    public function update(Request $request, $id) {
+
+        $newName = $request->oldimage;
+        if ($request->file('foto_kategori')) {
+            $ekstensi = $request->file('foto_kategori')->getClientOriginalExtension();
+            $newName = 'kat'.now()->timestamp.'.'.$ekstensi;
+            $request->file('foto_kategori')->storeAs('img', $newName);
+        }
+
+        $kategori = kategori::find($id);
+        $kategori->id_admin = $request->id_admin;
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->foto_kategori = $newName;
+        $kategori->save();
+        return redirect('/admin/kategori');
     }
 
 }

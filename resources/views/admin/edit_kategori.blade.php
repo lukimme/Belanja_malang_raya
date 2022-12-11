@@ -36,21 +36,21 @@
                       <h5 class="card-title">Masukkan data kategoris</h5>
         
                       <!-- General Form Elements -->
-                      <form action="/admin/edit_kategori" method="post" enctype="multipart/form-data">
+                      <form action="/admin/kategori/{{$kategoris->id_kategori}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        {{-- @method('put') --}}
+                        @method('PUT')
 
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
-                            <input name="nama_kategori" type="text" class="form-control" value="{{$kategoris->nama_kategori}}" required>
+                            <input name="nama_kategori" type="text" class="form-control" value="{{$kategoris->nama_kategori}}">
                           </div>
                         </div>
 
                         <div class="row mb-4">
                           <label class="col-sm-2 col-form-label">Admin</label>
                           <div class="col-sm-10">
-                            <select name="id_admin" class="form-select" aria-label="Default select example" required>
+                            <select name="id_admin" class="form-select" aria-label="Default select example">
                               @foreach ($kategoris->admin as $item)
                               <option value="{{$item->id}}">{{$item->nama}}</option>
                               @endforeach
@@ -68,7 +68,7 @@
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar:</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                              <input name="foto_kategori" class="form-control" type="file" id="pics" onchange="readUrl(this)" required>
+                              <input name="foto_kategori" class="form-control" value="{{$kategoris->foto_kategori}}" type="file" id="pics" onchange="readUrl(this)">
                               <div class="input-group-append">
                                 <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                               </div>
@@ -84,7 +84,7 @@
         
                         <div class="row mb-4">
                           <div class="col-sm-12 text-end">
-                            <button type="submit" class="btn btn-primary">Tambah Kategori</button>
+                            <button type="submit" class="btn btn-primary">Edit Kategori</button>
                           </div>
                         </div>
         
