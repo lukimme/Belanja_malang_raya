@@ -41,12 +41,9 @@ class IklanController extends Controller
     {   
          $validatedData = $request->validate([
         'nama_gambar' => 'required | max:255',
-        'link' => 'required | max:225',
-        'id_gambar' => 'required',
-        'id' => 'required',
+        'gambar' => 'image|file |max: 1024',   
         'status_gambar' => 'required',
-        'gambar' => 'image|file |max: 1024',
-        
+        'link' => 'required | max:225',
         ]);
 
         // insert
@@ -55,7 +52,7 @@ class IklanController extends Controller
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
-       $banner->id = $request->id_admin;
+       $banner->id = $request->id;
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
        $banner->gambar = $newName;

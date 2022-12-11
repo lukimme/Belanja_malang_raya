@@ -53,15 +53,12 @@ class BannerController extends Controller
     
     public function store(Request $request)
     {   
-        // $validatedData = $request->validate([
-        // 'nama_gambar' => 'required | max:255',
-        // 'link' => 'required | max:225',
-        // 'id_gambar' => 'required',
-        // 'id' => 'required',
-        // 'status_gambar' => 'required',
-        // 'gambar' => 'image|file |max: 1024',
-        
-        // ]);
+        $validatedData = $request->validate([
+       'nama_gambar' => 'required | max:255',
+        'gambar' => 'image|file |max: 1024',   
+        'status_gambar' => 'required',
+        'link' => 'required | max:225',
+        ]);
 
         
 
