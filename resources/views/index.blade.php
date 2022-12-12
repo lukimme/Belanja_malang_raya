@@ -48,7 +48,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner benner-radius">
             <div class="carousel-item active">
-              <img src="asset/img/belanjamalang.jpg" class="img-fluid d-block img1-ukuran" alt="..." />
+              <img src="asset/img/1-4.jpg" class="img-fluid d-block img1-ukuran" alt="..." />
             </div>
             <div class="carousel-item">
               <img src="asset/img/1-4.jpg" class="img-fluid img1-ukuran" alt="..." />
