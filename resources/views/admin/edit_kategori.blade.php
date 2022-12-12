@@ -1,5 +1,5 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'Kategori')
+@section('title', 'Edit Kategori')
 
 
 @section('content')

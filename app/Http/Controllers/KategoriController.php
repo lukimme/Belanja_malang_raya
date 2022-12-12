@@ -62,4 +62,16 @@ class KategoriController extends Controller
         return redirect('/admin/kategori');
     }
 
+
+    // Delete
+    public function destroy($id)
+    {
+        
+        $kategori = kategori::findOrFail($id);
+        $kategori->delete();
+        return back()->with('success', 'Data berhasil di hapus!');
+        // dd($id);
+
+    }
+
 }

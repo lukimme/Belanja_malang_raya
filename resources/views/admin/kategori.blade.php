@@ -140,8 +140,24 @@
                                   <img class="m-2" src="{{asset('storage/img/'.$item->foto_kategori)}}" width="70" alt="">
                                   </td>
                                   <td>
-                                    <a href="edit_kategori/{{$item->id_kategori}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
-                                  </td> 
+                                    <form action="{{ route('kategori.delete', $item->id_kategori) }}" method="POST">
+                                      @csrf
+                                      @method('delete')
+
+                                      <a href="edit_kategori/{{$item->id_kategori}}" class="btn btn-labeled btn-primary m-1" title="Edit {{$item->nama_kategori}}">
+                                        <i class="bi bi-pencil-square px-1 fs-5 btn-label"></i>Edit
+                                      </a>
+
+                                      <a href="#" class="btn btn-labeled btn-primary m-1" title="Detail {{$item->nama_kategori}}">
+                                        <i class="bi bi-card-list px-1 fs-5 btn-label"></i>Detail
+                                      </a>
+
+                                      <button type="submit" data-id="{{$item->id_kategori}}" data-name="{{$item->nama_kategori}}" class="btn btn-labeled btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
+                                      <i class="bi bi-trash-fill px-1 fs-5 btn-label"></i>Hapus
+                                      </button>
+
+                                    </form>
+                                    </td> 
                                 </tr>
                                   @endforeach
                               </tbody>
@@ -163,5 +179,7 @@
         </div>
         </div>
       </section><!-- End Tables -->
+
+      @include('sweetalert::alert')
 
   @endsection
