@@ -168,3 +168,6 @@ Route::get('/otokocategories', function () {
 Route::get('/', function () {
     return view('index');
 });
+
+   
+

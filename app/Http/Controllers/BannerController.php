@@ -13,7 +13,9 @@ class BannerController extends Controller
         $banner = Banner::all();
         $admin = admins::all();
         return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
-    }  
+    }
+    
+     
 
     public function edit(Request $request, $id_gambar)
     {   
