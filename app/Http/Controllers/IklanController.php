@@ -40,8 +40,9 @@ class IklanController extends Controller
     public function store2(Request $request)
     {   
          $validatedData = $request->validate([
+        'id' => 'required | integer',
         'nama_gambar' => 'required | max:255',
-        'gambar' => 'image|file |max: 1024',   
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',   
         'status_gambar' => 'required',
         'link' => 'required | max:225',
         ]);

@@ -36,13 +36,19 @@
                          
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
-                          <select class="form-select" name="id" aria-label="Default select example" required>
+                          <select class="form-select @error('id') is-invalid @enderror" name="id" aria-label="Default select example">
+                            
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $data)
                                 <option value="{{$data->id}}">{{$data->nama}}</option>
                             @endforeach
                           
                           </select>
+                           @error('id')
+                            <div class="invalid-feedback">
+                            {{ 'Pilih admin tidak boleh kosong!' }}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                         <div class="row mb-4">
@@ -61,13 +67,13 @@
                         <label class="col-sm-2 col-form-label">Status</label>
                         <div class="col-sm-10">
                            <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  checked required>
+                      <input class="form-check-input" type="radio" name="status_gambar" id="gridRadios1" value="1"  required>
                       <label class="form-check-label" for="gridRadios1">
                         Banner
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input @error('status_gambar') is-invalid @enderror" type="radio" name="status_gambar" id="gridRadios2" value="2" required>
+                      <input class="form-check-input @error('status_gambar') is-invalid @enderror" type="radio" name="status_gambar" id="gridRadios2" value="2" checked  >
                       <label class="form-check-label" for="gridRadios2">
                         Iklan
                       </label>
@@ -99,16 +105,16 @@
                             <div class="input-group form-outline">
                                 <input name="gambar" class="form-control @error('gambar') is-invalid @enderror" type="file" id="pict" onchange="readUrl(this)">
                                 
-                             @error('gambar')
+                              <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                              </div>
+                                 @error('gambar')
                             <div class="invalid-feedback">
-                            {{ 'Yang kamu masukan bukan gambar!' }}
+                            {{ 'Yang kamu upload Bukan gambar / Gambar masih kosong!' }}
                             
                             </div>
                             @enderror
                            
-                              <div class="input-group-append">
-                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                              </div>
                             </div>
                           </div>
                         </div>

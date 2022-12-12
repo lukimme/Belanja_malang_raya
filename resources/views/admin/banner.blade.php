@@ -35,13 +35,17 @@
                          
                         <label class="col-sm-2 col-form-label">Admin</label>
                         <div class="col-sm-10">
-                          <select class="form-select" name="id" aria-label="Default select example" required>
+                          <select class="form-select @error('id') is-invalid @enderror" name="id" aria-label="Default select example ">
                             <option selected>Pilih Admin</option>
                             @foreach ($admin as $data)
                                 <option value="{{$data->id}}">{{$data->nama}}</option>
                             @endforeach
-                          
                           </select>
+                           @error('id')
+                            <div class="invalid-feedback">
+                            {{ 'Pilih admin tidak boleh kosong!' }}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                         <div class="row mb-4">
@@ -96,18 +100,16 @@
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                                <input name="gambar" class="form-control @error('gambar') is-invalid @enderror" type="file" id="pict" onchange="readUrl(this)">
-                                
-                             @error('gambar')
-                            <div class="invalid-feedback">
-                            {{ 'Yang kamu upload bukan gambar!' }} 
-                            
-                            </div>
-                            @enderror
-                           
+                                <input name="gambar" class="form-control @error('gambar') is-invalid @enderror" type="file" id="pict" onchange="readUrl(this)">                       
                               <div class="input-group-append">
                                 <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                               </div>
+                               @error('gambar')
+                            <div class="invalid-feedback">
+                            {{ 'Yang kamu upload Bukan gambar / Gambar masih kosong!' }} 
+                            
+                            </div>
+                            @enderror
                             </div>
                           </div>
                         </div>
