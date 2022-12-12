@@ -22,7 +22,11 @@ use App\Http\Controllers\KategoriController;
 //     return view('home');
 // });
 
-// ----Admin----
+/*
+|--------------------------------------------------------------------------
+| Web Tampilan Admin Belanja Malang
+|--------------------------------------------------------------------------
+ */
 Route::prefix('admin/')->group(function () {
 
     // Dashboard
@@ -78,6 +82,12 @@ Route::prefix('admin/')->group(function () {
     Route::post('iklan', [IklanController::class, 'store2']);
 
 });
+
+/*
+|--------------------------------------------------------------------------
+| Web Tampilan Belanja Malang
+|--------------------------------------------------------------------------
+ */
 
 // Categories
 Route::get('/categories', function () {
