@@ -22,9 +22,6 @@ class KategoriController extends Controller
         $ekstensi = $request->file('foto_kategori')->getClientOriginalExtension();
         $newName = 'kat'.now()->timestamp.'.'.$ekstensi;
         $request->file('foto_kategori')->storeAs('img', $newName);
-
-        // $kategori['image'] = $newName;
-        // $kategori = kategoris::create($request->all());
         
         $kategori = new kategori;
         $kategori->id_admin = $request->id_admin;
@@ -33,6 +30,15 @@ class KategoriController extends Controller
         $kategori->save();
         return redirect('/admin/kategori');
     }
+
+
+    // Detail kategori
+    // public function detail($id) {
+
+    //     $kategori = kategori::with('admin')->find($id);
+    //     return view('/admin/detail_kategori', ['kategori' => $kategori]);
+        
+    // }
 
     
     // Edit kategori

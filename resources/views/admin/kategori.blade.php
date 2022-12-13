@@ -148,9 +148,9 @@
                                         <i class="bi bi-pencil-square px-1 fs-5 btn-label"></i>Edit
                                       </a>
 
-                                      <a href="#" class="btn btn-labeled btn-primary m-1" title="Detail {{$item->nama_kategori}}">
+                                      {{-- <a href="detail_kategori/{{$item->id_kategori}}" class="btn btn-labeled btn-primary m-1" title="Detail {{$item->nama_kategori}}">
                                         <i class="bi bi-card-list px-1 fs-5 btn-label"></i>Detail
-                                      </a>
+                                      </a> --}}
 
                                       <button type="submit" data-id="{{$item->id_kategori}}" data-name="{{$item->nama_kategori}}" class="btn btn-labeled btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
                                       <i class="bi bi-trash-fill px-1 fs-5 btn-label"></i>Hapus
