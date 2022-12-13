@@ -57,6 +57,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('penjual', [PenjualController::class, 'index']);
     Route::post('penjual', [PenjualController::class, 'create']);
     Route::get('edit_penjual/{id}', [PenjualController::class, 'edit']);
+    Route::put('penjual/{id}', [PenjualController::class, 'update']);
 
     //Adminstrator
     Route::get('administrator', function () {

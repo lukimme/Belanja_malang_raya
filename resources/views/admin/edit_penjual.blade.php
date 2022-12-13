@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="pagetitle">
-    <h1>Penjual</h1>
+    <h1>Edit Penjual</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -14,8 +14,6 @@
       </ol>
     </nav>
   </div><!-- End Page Title -->
-
-  {{$penjual}}
 
   <!-- Form Input -->
   <section class="section dashboard">
@@ -27,17 +25,17 @@
 
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">General Form Elements</h5>
+                  <h5 class="card-title">Edit data penjual</h5>
     
                   <!-- General Form Elements -->
-                  <form action="/admin/penjual{{$penjual->id_penjual}}" method="post" enctype="multipart/form-data">
+                  <form action="/admin/penjual/{{$penjual->id_penjual}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <div class="row mb-4">
                       <label class="col-sm-2 col-form-label">Admin</label>
                       <div class="col-sm-10">
-                        <select name="id_admin" class="form-select" aria-label="Default select example" required>
+                        <select name="id_admin" class="form-select" aria-label="Default select example">
                           @foreach ($penjual->admin as $item)
 
                           <option value="{{$item->id}}">{{$item->nama}}</option>
@@ -86,7 +84,8 @@
                       <label for="inputNumber" class="col-sm-2 col-form-label">Foto penjual:</label>
                       <div class="col-sm-10">
                         <div class="input-group form-outline">
-                          <input name="foto" class="form-control" type="file" id="pics" onchange="readUrl(this)" required>
+                          <input type="hidden" name="oldimage" value="{{$penjual->foto}}">
+                          <input name="foto" class="form-control" type="file" id="pics" onchange="readUrl(this)">
                           <div class="input-group-append">
                             <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                           </div>
@@ -111,7 +110,8 @@
                       <label for="inputNumber" class="col-sm-2 col-form-label">Brand penjual:</label>
                       <div class="col-sm-10">
                         <div class="input-group form-outline">
-                          <input name="brand" class="form-control" type="file" id="picture" onchange="readURL(this)" required>
+                          <input type="hidden" name="oldimage2" value="{{$penjual->brand_penjual}}">
+                          <input name="brand" class="form-control" type="file" id="picture" onchange="readURL(this)">
                           <div class="input-group-append">
                             <button type="button" class="btn btn-danger" onclick="dele()">Hapus</button>
                           </div>

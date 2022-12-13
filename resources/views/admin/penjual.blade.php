@@ -181,7 +181,7 @@
                             <tr>
                               <th scope="row">{{$loop->iteration}}</th>
             
-                                @foreach ($item->adminPenjual as $admin)
+                                @foreach ($item->admin as $admin)
                                 <td>{{$admin->nama}}</td>
                                 @endforeach
             
@@ -237,5 +237,7 @@
     </div>
     </div>
   </section><!-- End Tables -->
+
+  @include('sweetalert::alert')
 
 @endsection

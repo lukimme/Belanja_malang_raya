@@ -27,7 +27,7 @@ class PenjualController extends Controller
         $request->file('brand')->storeAs('img', $newNameBrand);
 
         $penjual = new penjuals;
-        $penjual->id_admin            = $request->id_admin;
+        $penjual->id_admin      = $request->id_admin;
         $penjual->nama_penjual  = $request->nama;
         $penjual->brand_penjual = $newNameBrand;
         $penjual->nomor_penjual = $request->nomor;
@@ -36,7 +36,7 @@ class PenjualController extends Controller
         $penjual->foto          = $newNamePenjual;
         $penjual->alamat        = $request->alamat;
         $penjual->save();
-        return redirect('/admin/penjual');
+        return back()->with('success', 'Upload Berhasil!');
     }
 
 
@@ -46,6 +46,37 @@ class PenjualController extends Controller
         $penjual = penjuals::with('admin')->find($id);
         $admin   = admins::where('id', '!=', $penjual->id_admin)->get(['id', 'nama']);
         return view('/admin/edit_penjual', ['penjual' => $penjual], ['admin' => $admin]);
+
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+        $newNameFoto = $request->oldimage;
+        if ($request->file('foto')) {
+            $ekstensi = $request->file('foto')->getClientOriginalExtension();
+            $newNameFoto = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
+            $request->file('foto')->storeAs('img', $newNameFoto);
+        }
+
+        $newNameBrand = $request->oldimage2;
+        if ($request->file('brand')) {
+            $ekstensi = $request->file('brand')->getClientOriginalExtension();
+            $newNameBrand = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
+            $request->file('brand')->storeAs('img', $newNameBrand);
+        }
+
+        $penjual = penjuals::find($id);
+        $penjual->id_admin      = $request->id_admin;
+        $penjual->nama_penjual  = $request->nama;
+        $penjual->brand_penjual = $newNameBrand;
+        $penjual->nomor_penjual = $request->nomor;
+        $penjual->email_penjual = $request->email;
+        $penjual->sandi         = '';
+        $penjual->foto          = $newNameFoto;
+        $penjual->alamat        = $request->alamat;
+        $penjual->save();
+        return redirect('/admin/penjual');
 
     }
 }

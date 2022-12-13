@@ -55,13 +55,13 @@ class BannerController extends Controller
     
     public function store(Request $request)
     {   
-        $validatedData = $request->validate([
-        'id' => 'required | integer',  
-        'nama_gambar' => 'required | max:255',
-        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',   
-        'status_gambar' => 'required',
-        'link' => 'required | max:225',
-        ]);
+        // $validatedData = $request->validate([
+        // 'id' => 'required | integer',  
+        // 'nama_gambar' => 'required | max:255',
+        // 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',   
+        // 'status_gambar' => 'required',
+        // 'link' => 'required | max:225',
+        // ]);
         
         
         // insert
