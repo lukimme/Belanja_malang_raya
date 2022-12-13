@@ -14,15 +14,7 @@
           </ol>
         </nav>
     </div><!-- End Page Title -->
-
-    {{-- {{$kategoris}} --}}
-    {{-- @foreach ($kategoris->admin as $item)
-        {{$item->nama}}
-    @endforeach --}}
-    {{-- <br><br>
-    {{$admin}} --}}
-
-
+    
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">

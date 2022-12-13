@@ -14,6 +14,7 @@
     </nav>
   </div><!-- End Page Title -->
 
+
   <!-- Form Input -->
   <section class="section dashboard">
       <div class="row justify-content-center">
@@ -35,7 +36,7 @@
                         <div class="col-sm-10">
                           <select name="id_admin" class="form-select" aria-label="Default select example" required>
                             <option selected>--pilih--</option>
-                            @foreach ($adminPenjual as $data)
+                            @foreach ($admin as $data)
                             
                             <option value="{{$data->id}}">{{$data->nama}}</option>
 
@@ -195,7 +196,25 @@
                                 <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
                               </td>
                               <td class="align-items-center">
-                                <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
+
+                                <form action="">
+                                  @csrf
+                                  @method('')
+
+                                <a href="edit_penjual/{{$item->id_penjual}}" class="btn btn-primary m-1" title="Edit {{$item->nama_penjual}}">
+                                  <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
+                                  <i class="bi bi-card-list"></i>
+                                </a>
+
+                                <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_penjual}}">
+                                  <i class="bx bxs-trash"></i>
+                                </a>
+
+                              </form>
+
                               </td> 
                             </tr>
                             @endforeach

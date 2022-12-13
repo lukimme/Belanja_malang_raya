@@ -10,9 +10,10 @@ class penjuals extends Model
 {
     use HasFactory;
 
-    public function adminPenjual()
+    protected $primaryKey = 'id_penjual';
+    public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id');
+        return $this->hasMany(admins::class, 'id', 'id_admin');
     }
 
 }
