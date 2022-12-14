@@ -25,7 +25,7 @@
   
               <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">General Form Elements</h5>
+                    <h5 class="card-title">Tambah data penjual</h5>
       
                     <!-- General Form Elements -->
                     <form action="penjual" method="post" enctype="multipart/form-data">
@@ -197,9 +197,9 @@
                               </td>
                               <td class="align-items-center">
 
-                                <form action="">
+                                <form action="{{ route('penjual.delete', $item->id_penjual) }}" method="POST">
                                   @csrf
-                                  @method('')
+                                  @method('delete')
 
                                 <a href="edit_penjual/{{$item->id_penjual}}" class="btn btn-primary m-1" title="Edit {{$item->nama_penjual}}">
                                   <i class="bi bi-pencil-square"></i>
@@ -209,9 +209,9 @@
                                   <i class="bi bi-card-list"></i>
                                 </a>
 
-                                <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_penjual}}">
+                                <button type="submit" data-id="{{$item->id_penjual}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_penjual}}">
                                   <i class="bx bxs-trash"></i>
-                                </a>
+                                </button>
 
                               </form>
 

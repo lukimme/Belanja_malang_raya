@@ -28,7 +28,7 @@ class KategoriController extends Controller
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
-        return redirect('/admin/kategori');
+        return redirect('/admin/kategori')->with('success', 'Upload berhasil!');
     }
 
 
@@ -65,7 +65,7 @@ class KategoriController extends Controller
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
-        return redirect('/admin/kategori');
+        return redirect('/admin/kategori')->with('success', 'Data berhasil di ubah!');
     }
 
 

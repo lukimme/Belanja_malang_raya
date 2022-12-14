@@ -127,7 +127,7 @@
     
                     <div class="row mb-3 text-end">
                       <div class="col-sm-12 ">
-                        <button type="submit" class="btn btn-primary">Tambah Penjual</button>
+                        <button type="submit" class="btn btn-primary">Edit Penjual</button>
                       </div>
                     </div>
     

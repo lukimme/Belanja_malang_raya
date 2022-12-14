@@ -76,7 +76,14 @@ class PenjualController extends Controller
         $penjual->foto          = $newNameFoto;
         $penjual->alamat        = $request->alamat;
         $penjual->save();
-        return redirect('/admin/penjual');
+        return redirect('/admin/penjual')->with('success', 'Data berhasil di ubah!');
 
+    }
+
+    public function destroy($id)
+    {
+        $penjual = penjuals::findOrFail($id);
+        $penjual->delete();
+        return back()->with('success', 'Data berhasil di hapus!');
     }
 }
