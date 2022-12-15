@@ -205,11 +205,11 @@
                                   <i class="bi bi-pencil-square"></i>
                                 </a>
 
-                                <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
+                                <a href="detail_penjual/{{$item->id_penjual}}" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
                                   <i class="bi bi-card-list"></i>
                                 </a>
 
-                                <button type="submit" data-id="{{$item->id_penjual}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_penjual}}">
+                                <button type="submit" data-id="{{$item->id_penjual}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->nama_penjual}}">
                                   <i class="bx bxs-trash"></i>
                                 </button>
 

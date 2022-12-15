@@ -27,7 +27,7 @@ use App\Http\Controllers\KategoriController;
 | Web Tampilan Admin Belanja Malang
 |--------------------------------------------------------------------------
  */
-Route::prefix('admin/')->group(function () {
+Route::prefix('/admin/')->group(function () {
 
     // Dashboard
     Route::get('', function () {
@@ -47,10 +47,10 @@ Route::prefix('admin/')->group(function () {
 
     
     // Produk
-    Route::get('/produk', [ProdukController::class, 'index']);
-    Route::get('/add_produk', [ProdukController::class, 'tampil']);
-    Route::post('/add_produk', [ProdukController::class, 'create']);
-    Route::get('/edit_produk/{id}', [ProdukController::class, 'editProduk']);
+    Route::get('produk', [ProdukController::class, 'index']);
+    Route::get('add_produk', [ProdukController::class, 'tampil']);
+    Route::post('add_produk', [ProdukController::class, 'create']);
+    Route::get('edit_produk/{id}', [ProdukController::class, 'editProduk']);
 
 
     // Penjual
@@ -59,6 +59,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('edit_penjual/{id}', [PenjualController::class, 'edit']);
     Route::put('penjual/{id}', [PenjualController::class, 'update']);
     Route::delete('penjual/{id}', [PenjualController::class, 'destroy'])->name('penjual.delete');
+    Route::get('detail_penjual/{id}', [PenjualController::class, 'detail']);
 
     //Adminstrator
     Route::get('administrator', function () {
@@ -73,9 +74,9 @@ Route::prefix('admin/')->group(function () {
     Route::get('banner',[BannerController::class, 'create']);
     Route::post('banner', [BannerController::class, 'store']);
     Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);
-    Route::put('/banner/{id_gambar}', [BannerController::class, 'update']);
-    Route::put('/banner/{id_gambar}', [IklanController::class, 'update2']);
-    Route::delete('/banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
+    Route::put('banner/{id_gambar}', [BannerController::class, 'update']);
+    Route::put('banner/{id_gambar}', [IklanController::class, 'update2']);
+    Route::delete('banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
 
  
     //Akun

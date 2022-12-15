@@ -86,4 +86,12 @@ class PenjualController extends Controller
         $penjual->delete();
         return back()->with('success', 'Data berhasil di hapus!');
     }
+
+    // Detail
+    public function detail($id) {
+
+        $penjual = penjuals::with('admin')->find($id);
+        return view('/admin/detail_penjual', ['penjual' => $penjual]);
+
+    }
 }
