@@ -70,7 +70,7 @@ Route::prefix('/admin/')->group(function () {
     Route::get('akun', function () {
         return view('admin.akun');
     });
-    Route::get('administrator',[AdministratorController::class, 'create']);
+    // Route::get('administrator',[AdministratorController::class, 'create']);
     Route::get('banner',[BannerController::class, 'create']);
     Route::post('banner', [BannerController::class, 'store']);
     Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);

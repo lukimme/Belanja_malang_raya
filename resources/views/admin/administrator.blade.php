@@ -80,9 +80,9 @@
                         <div class="col-sm-10">
                           <select class="form-select" name="id" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
-                            @foreach ($admin as $data)
+                            {{-- @foreach ($admin as $data)
                                 <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
+                            @endforeach --}}
                           
                           </select>
                         </div>

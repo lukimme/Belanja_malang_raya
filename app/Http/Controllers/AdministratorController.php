@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class AdministratorController extends Controller
 {
     public function create(){
-        $administrator = Banner::all();
+        $banner = Banner::all();
         $admin = admins::all();
-        return view('/admin/administrator', ['administrator' => $administrator], ['admin' => $admin]);
+        return view('/admin/administrator', ['banner' => $banner], ['admin' => $admin]);
     }  
 
 }

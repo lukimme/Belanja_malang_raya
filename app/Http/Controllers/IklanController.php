@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 
 
-use App\Models\Banner;
+use App\Models\Iklan;
 use App\Models\admins;
 use Illuminate\Http\Request;
 
 class IklanController extends Controller
 {
     public function create2(){
-        $banner = Banner::all();
+        $iklan = Iklan::all();
         $admin = admins::all();
-        return view('/admin/iklan', ['banner' => $banner], ['admin' => $admin]);
+        return view('/admin/iklan', ['iklan' => $iklan], ['admin' => $admin]);
     }  
 
      public function update2(Request $request, $id_gambar)
     {   
-        $banner = Banner::findOrFail($id_gambar);
+        $banner = Iklan::findOrFail($id_gambar);
 
         $newName = $request->oldimage;
         if ($request->file('gambar')) {
@@ -52,7 +52,7 @@ class IklanController extends Controller
         $newName = 'iklan'.now()->timestamp.'.'.$ekstensi;
         $request->file('gambar')->storeAs('img', $newName);
 
-       $banner = new Banner;
+       $banner = new Iklan;
        $banner->id = $request->id;
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;

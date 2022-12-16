@@ -165,7 +165,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                     @foreach ($banner as $item)
+                     @foreach ($iklan as $item)
                       <tr>
                       <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                       
