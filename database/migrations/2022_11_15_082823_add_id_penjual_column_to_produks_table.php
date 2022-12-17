@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('produks', function (Blueprint $table) {
             $table->unsignedBigInteger('id_penjual')->after('id_produk')->required();
-            $table->foreign('id_penjual')->references('id_penjual')->on('penjuals');
+            $table->foreign('id_penjual')->references('id_penjual')->on('penjuals')->onDelete('cascade');
             
             $table->unsignedBigInteger('id_kategori')->after('id_penjual')->required();
             $table->foreign('id_kategori')->references('id_kategori')->on('kategoris');
