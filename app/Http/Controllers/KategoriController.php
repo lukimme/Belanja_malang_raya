@@ -74,7 +74,13 @@ class KategoriController extends Controller
     {
         
         $kategori = kategori::findOrFail($id);
-        $kategori->delete();
+
+        $file = public_path('storage/img/'.$kategori->foto_kategori);
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+
+        $kategori->delete(); 
         return back()->with('success', 'Data berhasil di hapus!');
         // dd($id);
 
