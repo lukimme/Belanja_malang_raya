@@ -80,6 +80,7 @@ class PenjualController extends Controller
 
     }
 
+
     public function destroy($id)
     {
         $penjual = penjuals::findOrFail($id);
@@ -94,6 +95,7 @@ class PenjualController extends Controller
         $penjual->delete();
         return back()->with('success', 'Data berhasil di hapus!');
     }
+
 
     // Detail
     public function detail($id) {

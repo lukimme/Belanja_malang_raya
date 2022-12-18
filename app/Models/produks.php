@@ -15,16 +15,16 @@ class produks extends Model
     
     public function adminProduk()
     {
-        return $this->hasMany(admins::class, 'id', 'id');
+        return $this->hasMany(admins::class, 'id', 'id_admin');
     }
 
     public function kategoriProduk()
     {
-        return $this->hasMany(kategori::class, 'id_kategori', 'id_kategori');
+        return $this->hasMany(kategori::class, 'id', 'id_kategori');
     }
 
     public function penjualProduk()
     {
-        return $this->hasMany(penjuals::class, 'id_penjual', 'id_penjual');
+        return $this->hasMany(penjuals::class, 'id', 'id_penjual');
     }
 }

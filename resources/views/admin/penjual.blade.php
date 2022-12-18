@@ -167,10 +167,6 @@
                               <th scope="col">No</th>
                               <th scope="col">Penambah</th>
                               <th scope="col">Nama</th>
-                              <th scope="col">Nomor</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">Foto</th>
-                              <th scope="col">Alamat</th>
                               <th scope="col">Brand</th>
                               <th scope="col">Aksi</th>
                             </tr>
@@ -186,30 +182,24 @@
                                 @endforeach
             
                               <td><p class="">{{$item->nama_penjual}}</p></td>
-                              <td><p class="">{{$item->nomor_penjual}}</p></td>
-                              <td><p class="">{{$item->email_penjual}}</p></td>
                               <td>
-                                <img src="{{asset('storage/img/'.$item->foto)}}" width="115%" alt="">
+                                <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="95%" alt="">
                               </td>
-                              <td><p class="">{{$item->alamat}}</p></td>
                               <td>
-                                <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
-                              </td>
-                              <td class="align-items-center">
 
-                                <form action="{{ route('penjual.delete', $item->id_penjual) }}" method="POST">
+                                <form action="{{ route('penjual.delete', $item->id) }}" method="POST">
                                   @csrf
                                   @method('delete')
 
-                                <a href="edit_penjual/{{$item->id_penjual}}" class="btn btn-primary m-1" title="Edit {{$item->nama_penjual}}">
+                                <a href="edit_penjual/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_penjual}}">
                                   <i class="bi bi-pencil-square"></i>
                                 </a>
 
-                                <a href="detail_penjual/{{$item->id_penjual}}" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
+                                <a href="detail_penjual/{{$item->id}}" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
                                   <i class="bi bi-card-list"></i>
                                 </a>
 
-                                <button type="submit" data-id="{{$item->id_penjual}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->nama_penjual}}">
+                                <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->nama_penjual}}">
                                   <i class="bx bxs-trash"></i>
                                 </button>
 

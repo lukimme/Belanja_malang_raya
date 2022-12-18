@@ -10,7 +10,7 @@ class penjuals extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_penjual';
+    protected $primaryKey = 'id';
     public function admin()
     {
         return $this->hasMany(admins::class, 'id', 'id_admin');

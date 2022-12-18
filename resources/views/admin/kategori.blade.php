@@ -140,11 +140,11 @@
                                   <img class="m-2" src="{{asset('storage/img/'.$item->foto_kategori)}}" width="70" alt="">
                                   </td>
                                   <td>
-                                    <form action="{{ route('kategori.delete', $item->id_kategori) }}" method="POST">
+                                    <form action="{{ route('kategori.delete', $item->id) }}" method="POST">
                                       @csrf
                                       @method('delete')
 
-                                      <a href="edit_kategori/{{$item->id_kategori}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}">
+                                      <a href="edit_kategori/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}">
                                         <i class="bi bi-pencil-square fs-6"></i>
                                       </a>
 
@@ -152,7 +152,7 @@
                                         <i class="bi bi-card-list fs-6 btn-label"></i>Detail
                                       </a> --}}
 
-                                      <button type="submit" data-id="{{$item->id_kategori}}" data-name="{{$item->nama_kategori}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
+                                      <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_kategori}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
                                       <i class="bi bi-trash-fill fs-6"></i>
                                       </button>
 

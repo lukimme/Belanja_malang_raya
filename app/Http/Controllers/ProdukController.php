@@ -49,7 +49,7 @@ class ProdukController extends Controller
     public function editProduk(Request $request, $id) {
         // $penjual    = penjuals::all();
         // $kategori   = kategori::all();
-        $produk = produks::findOrFail($id);
+        $produk = produks::find($id);
         return view('/admin/edit_produk', ['produk' => $produk]);
     }
 

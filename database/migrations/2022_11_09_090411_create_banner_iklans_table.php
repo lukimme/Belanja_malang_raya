@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('banner_iklans', function (Blueprint $table) {
-            $table->id('id_gambar');
+            $table->id('id');
             $table->string('nama_gambar', 25);
             $table->string('gambar', 100);
             $table->enum('status_gambar', ['banner', 'iklan']);
