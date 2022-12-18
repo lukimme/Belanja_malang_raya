@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Produk</h1>
+    <h1>Tambah produk</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><span>Home</span></li>

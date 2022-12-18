@@ -84,12 +84,12 @@ class PenjualController extends Controller
     {
         $penjual = penjuals::findOrFail($id);
 
-        // $fileBrand = public_path('storage/img/'.$penjual->brand_penjual);
-        // $fileFoto = public_path('storage/img/'.$penjual->foto);
-        // if (file_exists($fileBrand) && file_exists($fileFoto)) {
-        //     @unlink($fileBrand);
-        //     @unlink($fileFoto);
-        // }
+        $fileBrand = public_path('storage/img/'.$penjual->brand_penjual);
+        $fileFoto = public_path('storage/img/'.$penjual->foto);
+        if (file_exists($fileBrand) && file_exists($fileFoto)) {
+            @unlink($fileBrand);
+            @unlink($fileFoto);
+        }
 
         $penjual->delete();
         return back()->with('success', 'Data berhasil di hapus!');
