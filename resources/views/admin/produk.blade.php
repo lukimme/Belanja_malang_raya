@@ -192,13 +192,23 @@
                               <td><p class="m-2">{{$item->diskon}}</p></td>
 
                               <td>
-                                
-                                <a href="edit_produk/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_produk}}"><i class="bi bi-pencil-square"></i></a>
-                                
-                                <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_produk}}"><i class="bi bi-card-list"></i></a>
+                                <form action="{{ route('produk.delete', $item->id) }}" method="POST">
+                                  @csrf
+                                  @method('delete')
 
-                                <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_produk}}"><i class="bx bxs-trash"></i></a>
+                                  <a href="edit_produk/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_produk}}">
+                                    <i class="bi bi-pencil-square"></i>
+                                  </a>
+                                  
+                                  <a href="detail_produk/{{$item->id}}" class="btn btn-primary m-1" title="Detail {{$item->nama_produk}}">
+                                    <i class="bi bi-card-list"></i>
+                                  </a>
 
+                                  <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_produk}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_produk}}">
+                                    <i class="bi bi-trash-fill fs-6"></i>
+                                  </button>
+
+                                </form>
                               </td> 
                             </tr>
 

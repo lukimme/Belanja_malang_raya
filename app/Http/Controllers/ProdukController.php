@@ -76,4 +76,26 @@ class ProdukController extends Controller
 
     }
 
+
+    public function detail($id) {
+
+        $produk = produks::with('admin', 'penjual', 'kategori')->find($id);
+        return view('/admin/detail_produk', ['produk' => $produk]);
+
+    }
+
+
+    public function destroy($id) {
+
+        $produk = produks::findOrFail($id);
+
+        $file = public_path('storage/img/'.$produk->gambar);
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+        
+        $produk->delete();
+        return back()->with('success', 'Data berhasil di hapus!');
+    }
+
 }

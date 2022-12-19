@@ -51,6 +51,9 @@ Route::prefix('/admin/')->group(function () {
     Route::post('produk', [ProdukController::class, 'create']);
     Route::get('edit_produk/{id}', [ProdukController::class, 'edit']);
     Route::put('produk/{id}', [ProdukController::class, 'update']);
+    Route::get('detail_produk/{id}', [ProdukController::class, 'detail']);
+    Route::delete('produk/{id}', [ProdukController::class, 'destroy'])->name('produk.delete');
+
 
 
     // Penjual
