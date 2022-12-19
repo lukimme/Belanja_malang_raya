@@ -12,19 +12,20 @@ class produks extends Model
 {
     use HasFactory;
 
-    
-    public function adminProduk()
+    protected $primaryKey = 'id';
+
+    public function penjual()
     {
-        return $this->hasMany(admins::class, 'id', 'id_admin');
+        return $this->hasMany(penjuals::class, 'id', 'id_penjual');
     }
 
-    public function kategoriProduk()
+    public function kategori()
     {
         return $this->hasMany(kategori::class, 'id', 'id_kategori');
     }
-
-    public function penjualProduk()
+    
+    public function admin()
     {
-        return $this->hasMany(penjuals::class, 'id', 'id_penjual');
+        return $this->hasMany(admins::class, 'id', 'id_admin');
     }
 }

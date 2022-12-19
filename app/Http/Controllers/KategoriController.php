@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\admins;
-use App\Models\produks;
 use App\Models\kategori;
 use Illuminate\Http\Request;
 

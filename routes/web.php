@@ -48,9 +48,9 @@ Route::prefix('/admin/')->group(function () {
     
     // Produk
     Route::get('produk', [ProdukController::class, 'index']);
-    Route::get('add_produk', [ProdukController::class, 'tampil']);
-    Route::post('add_produk', [ProdukController::class, 'create']);
-    Route::get('edit_produk/{id}', [ProdukController::class, 'editProduk']);
+    Route::post('produk', [ProdukController::class, 'create']);
+    Route::get('edit_produk/{id}', [ProdukController::class, 'edit']);
+    Route::put('produk/{id}', [ProdukController::class, 'update']);
 
 
     // Penjual
