@@ -30,6 +30,12 @@ use App\Http\Controllers\KategoriController;
  */
 Route::prefix('/admin/')->group(function () {
 
+    // Login
+    Route::get('login', function () {
+        return view('admin.login_admin');
+    });
+
+
     // Dashboard
     Route::get('', function () {
         return view('admin.dashboard');

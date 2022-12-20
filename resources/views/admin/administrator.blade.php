@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Email:</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Username:</label>
                           <div class="col-sm-10">
                             <input type="text" name="email" class="form-control" required>
                           </div>
@@ -61,7 +61,7 @@
                           <label for="inputText" class="col-sm-2 col-form-label">Sandi:</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
-                              <input type="password" name="password" class="form-control" id="pass" placeholder="Password" required>
+                              <input type="password" name="password" class="form-control" id="pass" required>
                               <span class="input-group-text" id="mybutton" onclick="change()" style="background-color: #adb5bd; cursor: pointer;">
                                 <i class="bi bi-eye-fill fs-5"></i>
                               </span>
