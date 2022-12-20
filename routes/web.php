@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ProdukController;
@@ -37,6 +38,7 @@ Route::prefix('/admin/')->group(function () {
         return view('admin.dashboard');
     });
 
+
     // Kategori
     Route::get('kategori', [KategoriController::class, 'index']);
     Route::post('kategori', [KategoriController::class, 'create']);
@@ -55,7 +57,6 @@ Route::prefix('/admin/')->group(function () {
     Route::delete('produk/{id}', [ProdukController::class, 'destroy'])->name('produk.delete');
 
 
-
     // Penjual
     Route::get('penjual', [PenjualController::class, 'index']);
     Route::post('penjual', [PenjualController::class, 'create']);
@@ -64,10 +65,10 @@ Route::prefix('/admin/')->group(function () {
     Route::delete('penjual/{id}', [PenjualController::class, 'destroy'])->name('penjual.delete');
     Route::get('detail_penjual/{id}', [PenjualController::class, 'detail']);
 
+
     //Adminstrator
-    Route::get('administrator', function () {
-        return view('admin.administrator');
-    });
+    Route::get('administrator', [AdminController::class, 'index']);
+    Route::post('administrator', [AdminController::class, 'create']);
 
     //Akun
     Route::get('akun', function () {

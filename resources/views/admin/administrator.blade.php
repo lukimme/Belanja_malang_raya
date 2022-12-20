@@ -18,20 +18,8 @@
 
     <section class="section profile">
       <div class="row">
-        <div class="col-xl-4">
 
-          <div class="card">
-            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-              <img src="../asset/img/admin.png" alt="Profile" class="rounded-circle">
-              <h2>Admin</h2>
-              <h3>super Admin</h3>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-xl-8">
+        <div class="col-xl-12">
 
           <div class="card">
             <div class="card-body pt-3">
@@ -50,48 +38,64 @@
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                   <form>
+                   <form action="administrator" method="POST" enctype="multipart/form-data">
+                    @csrf
+
                         <h5 class="card-title">Tambah</h5>
         
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" name="nama" class="form-control" required>
                           </div>
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Email</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Email:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <input type="text" name="email" class="form-control" required>
                           </div>
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Sandi</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Sandi:</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control">
+                            <div class="input-group form-outline">
+                              <input type="password" name="password" class="form-control" id="pass" placeholder="Password" required>
+                              <span class="input-group-text" id="mybutton" onclick="change()" style="background-color: #adb5bd; cursor: pointer;">
+                                <i class="bi bi-eye-fill fs-5"></i>
+                              </span>
+                            </div>
                           </div>
                         </div>
 
                         <div class="row mb-3">
-                         
-                        <label class="col-sm-2 col-form-label">Status Admin</label>
+                        <label class="col-sm-2 col-form-label">Status Admin:</label>
                         <div class="col-sm-10">
-                          <select class="form-select" name="id" aria-label="Default select example" required>
+                          <select class="form-select" name="status" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
-                            {{-- @foreach ($admin as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach --}}
-                          
+                            <option value="1">Super Admin</option>
+                            <option value="2">Sub Admin</option>
+                            <option value="3">Sub Admin 2</option>
                           </select>
                         </div>
-                    </div>
+                        </div>
 
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Foto:</label>
                           <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile">
+                            <div class="input-group form-outline">
+                              <input name="foto" class="form-control" type="file" id="pics" onchange="readUrl(this)" required>
+                              <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row mb-2">
+                          <div class="col-sm-12 text-center">
+                            <img id="gam" width="200" src="" alt="">
                           </div>
                         </div>
         
@@ -120,27 +124,36 @@
                     </tr>
                   </thead>
                   <tbody>
+
+                    @foreach ($admin as $item) 
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Jhon</td>
-                      <td>Super Admin</td>
-                      <td>Admin</td>
-                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
+                      <th scope="row">{{$loop->iteration}}</th>
+                      <td>{{$item->nama}}</td>
+                      <td>{{$item->status}}</td>
+                      <td>{{$item->email}}</td>
+                      <td><img class="rounded-circle" style="height: 90px" src="{{asset('storage/img/'.$item->foto)}}" alt=""></td>
+                      <td>
+                        <form action="" method="POST">
+                          @csrf
+                          @method('delete')
+
+                          <a href="" class="btn btn-primary m-1" title="Edit ">
+                            <i class="bi bi-pencil-square fs-6"></i>
+                          </a>
+
+                          <a href="" class="btn btn-primary m-1" title="Detail ">
+                            <i class="bi bi-card-list fs-6"></i>
+                          </a>
+
+                          <button type="submit" data-id="" data-name="" class="btn btn-danger m-1 delete" value="hapus" title="Hapus ">
+                            <i class="bi bi-trash-fill fs-6"></i>
+                          </button>
+
+                        </form>
+                      </td>
                     </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Elly</td>
-                      <td>Sub Admin</td>
-                      <td>Ellysh</td>
-                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Ashleigh</td>
-                      <td>Sub Admin</td>
-                      <td>Ashle</td>
-                      <td><img style="height: 40px" src="../asset/img/admin.png" alt=""></td>
-                    </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
                 <!-- End Table with stripped rows -->
@@ -155,7 +168,7 @@
     </section>
 
 
-
+    @include('sweetalert::alert')
   
 
   @endsection
