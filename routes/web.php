@@ -80,10 +80,10 @@ Route::prefix('/admin/')->group(function () {
     // Route::get('administrator',[AdministratorController::class, 'create']);
     Route::get('banner',[BannerController::class, 'create']);
     Route::post('banner', [BannerController::class, 'store']);
-    Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);
-    Route::put('banner/{id_gambar}', [BannerController::class, 'update']);
-    Route::put('banner/{id_gambar}', [IklanController::class, 'update2']);
-    Route::delete('banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
+    Route::get('banner-edit/{id}',[BannerController::class, 'edit']);
+    Route::put('banner/{id}', [BannerController::class, 'update']);
+    Route::put('banner/{id}', [IklanController::class, 'update2']);
+    Route::delete('banner/{id}', [BannerController::class, 'destroy'])->name('banner.delete');
 
  
     //Akun

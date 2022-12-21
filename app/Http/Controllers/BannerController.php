@@ -10,22 +10,22 @@ use Illuminate\Http\Request;
 class BannerController extends Controller
 {
     public function create(){
-        $banner = Banner::all();
+        $banner = Banner::select('*')->where('status_gambar','banner')->get();
         $admin = admins::all();
         return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
     }
     
      
 
-    public function edit(Request $request, $id_gambar)
+    public function edit(Request $request, $id)
     {   
-        $banner = Banner::findOrFail($id_gambar);
+        $banner = Banner::findOrFail($id);
         return view('admin/banner-edit', ['banner' => $banner]);
     }
 
-    public function update(Request $request, $id_gambar)
+    public function update(Request $request, $id)
     {   
-        $banner = Banner::findOrFail($id_gambar);
+        $banner = Banner::findOrFail($id);
 
         $newName = $request->oldimage;
         if ($request->file('gambar')) {
@@ -70,7 +70,7 @@ class BannerController extends Controller
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
-       $banner->id = $request->id;
+       $banner->id_admin = $request->id;
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
        $banner->gambar = $newName;

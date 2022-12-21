@@ -11,14 +11,14 @@ use Illuminate\Http\Request;
 class IklanController extends Controller
 {
     public function create2(){
-        $iklan = Iklan::all();
+        $iklan = Iklan::select('*')->where('status_gambar','iklan')->get();
         $admin = admins::all();
         return view('/admin/iklan', ['iklan' => $iklan], ['admin' => $admin]);
     }  
 
-     public function update2(Request $request, $id_gambar)
+     public function update2(Request $request, $id)
     {   
-        $banner = Iklan::findOrFail($id_gambar);
+        $banner = Iklan::findOrFail($id);
 
         $newName = $request->oldimage;
         if ($request->file('gambar')) {
@@ -53,7 +53,7 @@ class IklanController extends Controller
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Iklan;
-       $banner->id = $request->id;
+       $banner->id_admin = $request->id;
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
        $banner->gambar = $newName;

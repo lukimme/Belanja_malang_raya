@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Iklan extends Model
 {
-    protected $primaryKey = 'id_gambar';
+    protected $primaryKey = 'id';
     use HasFactory;
     protected $table = 'banner_iklans';
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id',  'id');
+        return $this->hasMany(admins::class, 'id',  'id_admin');
     }
     
     

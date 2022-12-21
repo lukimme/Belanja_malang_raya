@@ -181,11 +181,11 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                     <form action="{{ route('banner.delete', $item->id_gambar) }}" method="POST">
+                     <form action="{{ route('banner.delete', $item->id) }}" method="POST">
                         @csrf
                         @method('delete') 
-                          <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
-                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id_gambar}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
+                          <a href="banner-edit/{{$item->id}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
+                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
                       </form>
                       </td> 
                       </tr>
