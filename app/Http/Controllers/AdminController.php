@@ -33,5 +33,35 @@ class AdminController extends Controller
     }
 
     
+    // Login
+    public function viewLogin() {
+
+        return view('/admin/login_admin');
+
+    }
+
+    public function login(Request $request) {
+
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ],[
+            'username.required' => 'Username wajib diisi!',
+            'password.required' => 'Password wajib diisi!'
+        ]);
+
+
+        $infoLogin = admins::get([
+            'email' => $request->username,
+            'sandi' => $request->password
+        ]);
+
+        if (Auth::attempt($infoLogin)) {
+            return 'sukses';
+        }else {
+            return 'gagal';
+        }
+
+    }
     
 }

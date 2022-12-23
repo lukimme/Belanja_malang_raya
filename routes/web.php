@@ -20,7 +20,7 @@ use App\Http\Controllers\KategoriController;
  */
 
 // Route::get('/', function () {
-//     return view('home');
+//     return view('welcome');
 // });
 
 /*
@@ -31,9 +31,8 @@ use App\Http\Controllers\KategoriController;
 Route::prefix('/admin/')->group(function () {
 
     // Login
-    Route::get('login', function () {
-        return view('admin.login_admin');
-    });
+    Route::get('', [AdminController::class, 'viewLogin']);
+    Route::post('login_admin', [AdminController::class, 'login']);
 
 
     // Dashboard
@@ -69,7 +68,7 @@ Route::prefix('/admin/')->group(function () {
     Route::get('detail_penjual/{id}', [PenjualController::class, 'detail']);
 
 
-    //Adminstrator
+    //Administrator
     Route::get('administrator', [AdminController::class, 'index']);
     Route::post('administrator', [AdminController::class, 'create']);
 
