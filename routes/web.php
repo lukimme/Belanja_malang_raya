@@ -31,8 +31,7 @@ use App\Http\Controllers\KategoriController;
 Route::prefix('/admin/')->group(function () {
 
     // Login
-    Route::get('', [AdminController::class, 'viewLogin']);
-    Route::post('login_admin', [AdminController::class, 'login']);
+    
 
 
     // Dashboard

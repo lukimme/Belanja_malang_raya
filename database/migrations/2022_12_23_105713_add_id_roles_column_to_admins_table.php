@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('nama', 100);
-            $table->string('email', 100);
-            $table->string('sandi', 100);
-            $table->string('foto', 100);
-            // $table->integer('status');
-            $table->timestamps();
+        Schema::table('admins', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_role')->after('id')->required();
+            $table->foreign('id_role')->references('id')->on('roles');
         });
     }
 
@@ -31,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::table('admins', function (Blueprint $table) {
+            $table->dropForeign(['id_role']);
+            $table->dropColumn('id_role');
+        });
     }
 };

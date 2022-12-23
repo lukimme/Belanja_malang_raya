@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\roles;
 use App\Models\kategori;
 use App\Models\penjuals;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class admins extends Model
 {
     use HasFactory;
+
+    public function roles()
+    {
+        return $this->hasMany(roles::class, 'id', 'id_role');
+    }
 
     public function kategoris()
     {

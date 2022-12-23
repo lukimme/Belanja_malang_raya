@@ -16,6 +16,7 @@
       </nav>
     </div><!-- End Page Title -->
 
+
     <section class="section profile">
       <div class="row">
 
@@ -74,9 +75,12 @@
                         <div class="col-sm-10">
                           <select class="form-select" name="status" aria-label="Default select example" required>
                             <option selected>Pilih Admin</option>
-                            <option value="1">Super Admin</option>
-                            <option value="2">Sub Admin</option>
-                            <option value="3">Sub Admin 2</option>
+
+                            @foreach ($role as $item)
+                              <option value="{{$item->id}}">{{$item->nama}}</option>
+                            @endforeach
+                            
+
                           </select>
                         </div>
                         </div>
@@ -129,7 +133,12 @@
                     <tr>
                       <th scope="row">{{$loop->iteration}}</th>
                       <td>{{$item->nama}}</td>
-                      <td>{{$item->status}}</td>
+
+                      @foreach ($item->roles as $role)
+                        <td>{{$role->nama}}</td>
+                      @endforeach
+
+
                       <td>{{$item->email}}</td>
                       <td><img class="rounded-circle" style="height: 90px" src="{{asset('storage/img/'.$item->foto)}}" alt=""></td>
                       <td>

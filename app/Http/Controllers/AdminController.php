@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\roles;
 use App\Models\admins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,8 @@ class AdminController extends Controller
     function index(){
 
         $admin = admins::all();
-        return view('/admin/administrator', ['admin' => $admin]);
+        $roles = roles::all();
+        return view('/admin/administrator', ['admin' => $admin, 'role' => $roles]);
         
     }
 
@@ -22,11 +24,11 @@ class AdminController extends Controller
         $request->file('foto')->storeAs('img', $newName);
 
         $admin = new admins;
+        $admin->id_role = $request->status;
         $admin->nama    = $request->nama;
         $admin->email   = $request->email;
         $admin->sandi   = Hash::make($request->password);
         $admin->foto    = $newName;
-        $admin->status  = $request->status;
         $admin->save();
         return back()->with('success', 'Upload berhasil!');
 
@@ -40,28 +42,6 @@ class AdminController extends Controller
 
     }
 
-    public function login(Request $request) {
-
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required'
-        ],[
-            'username.required' => 'Username wajib diisi!',
-            'password.required' => 'Password wajib diisi!'
-        ]);
-
-
-        $infoLogin = admins::get([
-            'email' => $request->username,
-            'sandi' => $request->password
-        ]);
-
-        if (Auth::attempt($infoLogin)) {
-            return 'sukses';
-        }else {
-            return 'gagal';
-        }
-
-    }
+    
     
 }
