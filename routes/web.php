@@ -74,11 +74,11 @@ Route::prefix('admin/')->group(function () {
     //Administrator
     Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
     Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
+    Route::get('detail_administrator/{id}', [AdminController::class, 'detail'])->middleware('auth');
 
     //Akun
-    Route::get('akun', function () {
-        return view('admin.akun');
-    })->middleware('auth');
+    Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');
+    Route::put('akun', [AdminController::class, 'update'])->middleware('auth');
 
     // Banner
     // Route::get('administrator',[AdministratorController::class, 'create']);

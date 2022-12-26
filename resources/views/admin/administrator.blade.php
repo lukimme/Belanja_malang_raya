@@ -1,5 +1,5 @@
 @extends('admin.layout.mainlayout')
-@section('title', 'administrator')
+@section('title', 'Administrator')
 
 
 @section('content')
@@ -54,7 +54,7 @@
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Username:</label>
                           <div class="col-sm-10">
-                            <input type="text" name="email" class="form-control" required>
+                            <input type="email" name="email" class="form-control" required>
                           </div>
                         </div>
 
@@ -123,7 +123,7 @@
                       <th scope="col">Nama</th>
                       <th scope="col">Status</th>
                       <th scope="col">Username</th>
-                      <th scope="col">Profile</th>
+                      <th scope="col">Foto</th>
                       <th scope="col">Aksi</th>
                     </tr>
                   </thead>
@@ -132,7 +132,7 @@
                     @foreach ($admin as $item) 
                     <tr>
                       <th scope="row">{{$loop->iteration}}</th>
-                      <td>{{$item->nama}}</td>
+                      <td>{{$item->name}}</td>
 
                       @foreach ($item->roles as $role)
                         <td>{{$role->nama}}</td>
@@ -146,11 +146,7 @@
                           @csrf
                           @method('delete')
 
-                          <a href="" class="btn btn-primary m-1" title="Edit ">
-                            <i class="bi bi-pencil-square fs-6"></i>
-                          </a>
-
-                          <a href="" class="btn btn-primary m-1" title="Detail ">
+                          <a href="/admin/detail_administrator/{{$item->id}}" class="btn btn-primary m-1" title="Detail ">
                             <i class="bi bi-card-list fs-6"></i>
                           </a>
 

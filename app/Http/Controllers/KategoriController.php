@@ -44,7 +44,6 @@ class KategoriController extends Controller
     public function edit($id) {
 
         $kategori   = kategori::find($id);
-        // $admin      = admins::where('id', '!=', $kategori->id_admin)->get(['id', 'nama']);
         return view('/admin/edit_kategori', ['kategoris' => $kategori]);
 
     }
