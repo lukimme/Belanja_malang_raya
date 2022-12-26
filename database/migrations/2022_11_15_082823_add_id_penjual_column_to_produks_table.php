@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('id_kategori')->references('id')->on('kategoris');
 
             $table->unsignedBigInteger('id_admin')->after('id_kategori')->required();
-            $table->foreign('id_admin')->references('id')->on('admins');
+            $table->foreign('id_admin')->references('id')->on('users');
         });
     }
 

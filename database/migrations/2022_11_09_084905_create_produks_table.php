@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('nama_produk', 50);
             $table->string('deskripsi_produk', 100);
+            $table->string('Harga', 100);
             $table->string('diskon', 7)->nullable();
             $table->string('gambar', 100);
             $table->string('pesan', 100);

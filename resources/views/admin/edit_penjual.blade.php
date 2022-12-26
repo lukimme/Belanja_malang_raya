@@ -32,26 +32,6 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="row mb-4">
-                      <label class="col-sm-2 col-form-label">Admin</label>
-                      <div class="col-sm-10">
-                        <select name="id_admin" class="form-select" aria-label="Default select example">
-                          @foreach ($penjual->admin as $item)
-
-                          <option value="{{$item->id}}">{{$item->nama}}</option>
-
-                          @endforeach
-
-
-                          @foreach ($admin as $data)
-                          
-                          <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                          @endforeach
-                        </select>
-                      </div>
-                    </div>
-
                     <div class="row mb-3">
                       <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                       <div class="col-sm-10">

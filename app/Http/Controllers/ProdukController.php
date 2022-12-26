@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admins;
 use App\Models\produks;
 use App\Models\kategori;
 use App\Models\penjuals;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
     
     public function index() {
         $produk     = produks::all();
-        $admin      = admins::all();
         $kategori   = kategori::all();
         $penjual    = penjuals::all();
-        return view('/admin/produk', ['produks' => $produk, 'admin' => $admin, 'kategori' => $kategori, 'penjual' => $penjual]);
+        return view('/admin/produk', ['produks' => $produk, 'kategori' => $kategori, 'penjual' => $penjual]);
     }
 
 
@@ -27,12 +26,14 @@ class ProdukController extends Controller
         $newName = 'prod'.now()->timestamp.'.'.$ekstensi;
         $request->file('gambar')->storeAs('img', $newName);
 
+
         $produk = new produks;
         $produk->id_penjual       = $request->penjual;
         $produk->id_kategori      = $request->kategori;
-        $produk->id_admin         = $request->id_admin;
+        $produk->id_admin         = Auth::user()->id;
         $produk->nama_produk      = $request->nama;
         $produk->deskripsi_produk = $request->deskripsi;
+        $produk->harga            = number_format($request->harga);
         $produk->diskon           = $request->diskon;
         $produk->gambar           = $newName;
         $produk->pesan            = $request->pesan;
@@ -48,8 +49,7 @@ class ProdukController extends Controller
         $produk     = produks::with('penjual', 'kategori', 'admin')->find($id);
         $penjual    = penjuals::where('id', '!=', $produk->id_penjual)->get(['id', 'nama_penjual']);
         $kategori   = kategori::where('id', '!=', $produk->id_kategori)->get(['id', 'nama_kategori']);
-        $admin      = admins::where('id', '!=', $produk->id_admin)->get(['id', 'nama']);
-        return view('/admin/edit_produk', ['produk' => $produk, 'penjual' => $penjual, 'kategori' => $kategori, 'admin' => $admin]);
+        return view('/admin/edit_produk', ['produk' => $produk, 'penjual' => $penjual, 'kategori' => $kategori]);
     }
 
 
@@ -65,9 +65,10 @@ class ProdukController extends Controller
         $produk = produks::find($id);
         $produk->id_penjual       = $request->penjual;
         $produk->id_kategori      = $request->kategori;
-        $produk->id_admin         = $request->id_admin;
+        $produk->id_admin         = Auth::user()->id;
         $produk->nama_produk      = $request->nama;
         $produk->deskripsi_produk = $request->deskripsi;
+        $produk->harga            = number_format($request->harga);
         $produk->diskon           = $request->diskon;
         $produk->gambar           = $newName;
         $produk->pesan            = $request->pesan;

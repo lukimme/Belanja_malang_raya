@@ -62,22 +62,6 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="admin">Admin:</label>
-                      <div class="col-sm-10">
-                        <select class="form-select" name="id_admin" aria-label="Default select example">
-                          @foreach ($produk->admin as $item)
-                            <option value="{{$item->id}}">{{$item->nama}}</option>
-                          @endforeach
-
-
-                          @foreach ($admin as $item)
-                            <option value="{{$item->id}}">{{$item->nama}}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                  </div>
-
-                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Kategori:</label>
                         <div class="col-sm-10">
                           <select class="form-select" name="kategori" aria-label="Default select example">

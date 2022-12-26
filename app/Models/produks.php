@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\admins;
+use App\Models\User;
 use App\Models\kategori;
 use App\Models\penjuals;
 use Illuminate\Database\Eloquent\Model;
@@ -26,6 +26,6 @@ class produks extends Model
     
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id_admin');
+        return $this->hasMany(User::class, 'id', 'id_admin');
     }
 }

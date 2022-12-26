@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\admins;
 use App\Models\kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KategoriController extends Controller
 {
     
     public function index() {
         $kategori = kategori::all();
-        $admin= admins::all();
-        return view('/admin/kategori', ['kategoris' => $kategori], ['admin' => $admin]);
+        return view('/admin/kategori', ['kategoris' => $kategori]);
     }
 
 
@@ -23,7 +23,7 @@ class KategoriController extends Controller
         $request->file('foto_kategori')->storeAs('img', $newName);
         
         $kategori = new kategori;
-        $kategori->id_admin = $request->id_admin;
+        $kategori->id_admin = Auth::user()->id;
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
@@ -43,9 +43,9 @@ class KategoriController extends Controller
     // Edit kategori
     public function edit($id) {
 
-        $kategori   = kategori::with('admin')->find($id);
-        $admin      = admins::where('id', '!=', $kategori->id_admin)->get(['id', 'nama']);
-        return view('/admin/edit_kategori', ['kategoris' => $kategori], ['admin' => $admin]);
+        $kategori   = kategori::find($id);
+        // $admin      = admins::where('id', '!=', $kategori->id_admin)->get(['id', 'nama']);
+        return view('/admin/edit_kategori', ['kategoris' => $kategori]);
 
     }
 
@@ -60,7 +60,7 @@ class KategoriController extends Controller
         }
 
         $kategori = kategori::find($id);
-        $kategori->id_admin = $request->id_admin;
+        $kategori->id_admin = Auth::user()->id;
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();

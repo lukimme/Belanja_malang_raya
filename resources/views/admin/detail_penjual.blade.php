@@ -50,9 +50,9 @@
                 <h5 class="card-title fs-4">Detail {{$penjual->nama_penjual}}</h5>
 
                 <div class="row">
-                  <div class="col-lg-3 col-md-4 label ">Penambah</div>
+                  <div class="col-lg-3 col-md-4 label ">Uploader</div>
                   @foreach ($penjual->admin as $item)
-                  <div class="col-lg-9 col-md-8">{{$item->nama}}</div>
+                  <div class="col-lg-9 col-md-8">{{$item->name}}</div>
                   @endforeach
                 </div>
 

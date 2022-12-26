@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\admins;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -14,7 +14,7 @@ class kategori extends Model
     protected $table = 'kategoris';
     public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id_admin');
+        return $this->hasMany(User::class, 'id', 'id_admin');
     }
 
 }

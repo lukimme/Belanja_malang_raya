@@ -31,20 +31,6 @@
                     <form action="penjual" method="post" enctype="multipart/form-data">
                       @csrf
 
-                      <div class="row mb-4">
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select name="id_admin" class="form-select" aria-label="Default select example" required>
-                            <option selected>--pilih--</option>
-                            @foreach ($admin as $data)
-                            
-                            <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                            @endforeach
-                          </select>
-                        </div>
-                      </div>
-
                       <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                         <div class="col-sm-10">
@@ -165,7 +151,7 @@
                           <thead>
                             <tr>
                               <th scope="col">No</th>
-                              <th scope="col">Penambah</th>
+                              <th scope="col">Uploader</th>
                               <th scope="col">Nama</th>
                               <th scope="col">Brand</th>
                               <th scope="col">Aksi</th>
@@ -178,7 +164,7 @@
                               <th scope="row">{{$loop->iteration}}</th>
             
                                 @foreach ($item->admin as $admin)
-                                <td>{{$admin->nama}}</td>
+                                <td>{{$admin->name}}</td>
                                 @endforeach
             
                               <td><p class="">{{$item->nama_penjual}}</p></td>

@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\admins;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,23 +18,21 @@ class AdminSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        admins::truncate();
+        User::truncate();
         Schema::enableForeignKeyConstraints();
 
         // $dataAdmin = [
-        //     ['nama' => 'Super Admin', 'email' => 'superadmin@bm.com', 'sandi' => '1234', 'foto' => 'halo.jpg', 'status' => 1],
-        //     ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2],
-        //     ['nama' => 'Sub Admin2', 'email' => 'subadmin2@bm.com', 'sandi' => '123456', 'foto' => 'halo02.jpg', 'status' => 3]
+        //     ['id_role' => 1,'name' => 'Lukman hakim', 'email' => 'lukman@bm.com', 'foto' => 'halo.jpg', 'password' => hash::make('1234')],
         // ];
 
         // foreach ($dataAdmin as $value) {
-        //     admins::insert([
+        //     User::insert([
 
-        //         'nama' => $value['nama'],
+        //         'id_role' => $value['id_role'],
+        //         'name' => $value['name'],
         //         'email' => $value['email'],
-        //         'sandi' => $value['sandi'],
         //         'foto' => $value['foto'],
-        //         'status' => $value['status']
+        //         'password' => $value['password']
 
         //     ]);
         // }

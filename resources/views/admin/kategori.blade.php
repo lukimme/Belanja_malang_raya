@@ -39,20 +39,6 @@
                         </div>
 
                         <div class="row mb-4">
-                          <label class="col-sm-2 col-form-label">Admin</label>
-                          <div class="col-sm-10">
-                            <select name="id_admin" class="form-select" aria-label="Default select example" required>
-                              <option selected>--pilih--</option>
-                              @foreach ($admin as $data)
-                              
-                              <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                              @endforeach
-                            </select>
-                          </div>
-                        </div>
-
-                        <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar:</label>
                           <div class="col-sm-10">
                             <div class="input-group form-outline">
@@ -118,7 +104,7 @@
                               <thead>
                                 <tr>
                                   <th scope="col">No</th>
-                                  <th scope="col">Admin</th>
+                                  <th scope="col">Uploader</th>
                                   <th scope="col">Nama</th>
                                   <th scope="col">Gambar</th>
                                   <th scope="col">Aksi</th>
@@ -131,7 +117,7 @@
                                   <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                                   @foreach ($item->admin as $admin)
 
-                                    <td><p class="m-2">{{$admin->nama}}</p></td>
+                                    <td><p class="m-2">{{$admin->name}}</p></td>
 
                                   @endforeach
                                   <td><p class="m-2">{{$item->nama_kategori}}</p></td>

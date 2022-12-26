@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\admins;
 use App\Models\penjuals;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PenjualController extends Controller
 {
     public function index() {
         $penjual = penjuals::all();
-        $admin   = admins::all();
-        return view('/admin/penjual', ['penjual' => $penjual], ['admin' => $admin]);
+        return view('/admin/penjual', ['penjual' => $penjual]);
     }
 
     public function create(Request $request) {
@@ -27,7 +27,7 @@ class PenjualController extends Controller
         $request->file('brand')->storeAs('img', $newNameBrand);
 
         $penjual = new penjuals;
-        $penjual->id_admin      = $request->id_admin;
+        $penjual->id_admin      = Auth::user()->id;
         $penjual->nama_penjual  = $request->nama;
         $penjual->brand_penjual = $newNameBrand;
         $penjual->nomor_penjual = $request->nomor;
@@ -44,8 +44,8 @@ class PenjualController extends Controller
     public function edit($id) {
 
         $penjual = penjuals::with('admin')->find($id);
-        $admin   = admins::where('id', '!=', $penjual->id_admin)->get(['id', 'nama']);
-        return view('/admin/edit_penjual', ['penjual' => $penjual], ['admin' => $admin]);
+        // $admin   = admins::where('id', '!=', $penjual->id_admin)->get(['id', 'nama']);
+        return view('/admin/edit_penjual', ['penjual' => $penjual]);
 
     }
 
@@ -67,7 +67,7 @@ class PenjualController extends Controller
         }
 
         $penjual = penjuals::find($id);
-        $penjual->id_admin      = $request->id_admin;
+        $penjual->id_admin      = Auth::user()->id;
         $penjual->nama_penjual  = $request->nama;
         $penjual->brand_penjual = $newNameBrand;
         $penjual->nomor_penjual = $request->nomor;

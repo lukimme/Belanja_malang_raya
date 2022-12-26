@@ -23,8 +23,8 @@
 
             <img src="{{asset('storage/img/'.$produk->gambar)}}" alt="{{$produk->nama_produk}}" title="{{$produk->nama_produk}}">
             <h2 class="mb-2">{{$produk->nama_produk}}</h2>
-          @foreach ($produk->admin as $item)
-              <h3>{{$item->nama}}</h3>
+          @foreach ($produk->penjual as $item)
+              <h3>{{$item->nama_penjual}}</h3>
           @endforeach
 
             {{-- <div class="social-links mt-2">
@@ -48,9 +48,9 @@
                 <h5 class="card-title">Detail {{$produk->nama_produk}}</h5>
 
                 <div class="row">
-                  <div class="col-lg-3 col-md-4 label ">Penambah</div>
+                  <div class="col-lg-3 col-md-4 label ">Uploader</div>
                   @foreach ($produk->admin as $item)
-                  <div class="col-lg-9 col-md-8">{{$item->nama}}</div>
+                  <div class="col-lg-9 col-md-8">{{$item->name}}</div>
                   @endforeach
                 </div>
 

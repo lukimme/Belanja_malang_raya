@@ -39,7 +39,7 @@
                           </div>
                         </div>
 
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                           <label class="col-sm-2 col-form-label">Admin</label>
                           <div class="col-sm-10">
                             <select name="id_admin" class="form-select" aria-label="Default select example">
@@ -54,7 +54,7 @@
                               @endforeach
                             </select>
                           </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row mb-4">
                           <label for="inputNumber" class="col-sm-2 col-form-label">Gambar:</label>

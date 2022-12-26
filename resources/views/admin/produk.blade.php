@@ -55,18 +55,6 @@
                   </div>
 
                   <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="admin">Admin:</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" name="id_admin" aria-label="Default select example">
-                        <option selected>--Pilih--</option>
-                        @foreach ($admin as $item)
-                            <option value="{{$item->id}}">{{$item->nama}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                </div>
-
-                  <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">Kategori:</label>
                       <div class="col-sm-10">
                         <select class="form-select" name="kategori" aria-label="Default select example">
@@ -93,6 +81,13 @@
                   <div class="row mb-2">
                     <div class="col-sm-12 text-center">
                       <img id="gam" width="200" src="" alt="">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="harga" class="form-control">
                     </div>
                   </div>
 

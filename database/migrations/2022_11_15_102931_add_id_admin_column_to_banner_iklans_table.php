@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('banner_iklans', function (Blueprint $table) {
             $table->unsignedBigInteger('id_admin')->after('id')->required();
-            $table->foreign('id_admin')->references('id')->on('admins');
+            $table->foreign('id_admin')->references('id')->on('users');
         });
     }
 
