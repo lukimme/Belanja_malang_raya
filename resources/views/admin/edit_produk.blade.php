@@ -97,6 +97,13 @@
                     </div>
 
                     <div class="row mb-3">
+                      <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="harga" class="form-control" value="{{$produk->Harga}}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
                       <label for="inputText" class="col-sm-2 col-form-label">Pesan Produk:</label>
                       <div class="col-sm-10">
                         <input type="text" name="pesan" class="form-control py-2" value="{{$produk->pesan}}">

@@ -87,7 +87,7 @@
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="harga" class="form-control">
+                      <input type="text" name="harga" class="form-control" required>
                     </div>
                   </div>
 
