@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Username:</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Email:</label>
                           <div class="col-sm-10">
                             <input type="email" name="email" class="form-control" required>
                           </div>
@@ -67,6 +67,13 @@
                                 <i class="bi bi-eye-fill fs-5"></i>
                               </span>
                             </div>
+                          </div>
+                        </div>
+
+                        <div class="row mb-4">
+                          <label for="inputText" class="col-sm-2 col-form-label">Nomor Telepon:</label>
+                          <div class="col-sm-10">
+                            <input type="text" name="nomor" class="form-control" required>
                           </div>
                         </div>
 
@@ -142,15 +149,11 @@
                       <td>{{$item->email}}</td>
                       <td><img class="rounded-circle" style="height: 90px" src="{{asset('storage/img/'.$item->foto)}}" alt=""></td>
                       <td>
-                        <form action="" method="POST">
+                        <form action="{{ route('admin.delete', $item->id) }}" method="POST">
                           @csrf
                           @method('delete')
 
-                          <a href="/admin/detail_administrator/{{$item->id}}" class="btn btn-primary m-1" title="Detail ">
-                            <i class="bi bi-card-list fs-6"></i>
-                          </a>
-
-                          <button type="submit" data-id="" data-name="" class="btn btn-danger m-1 delete" value="hapus" title="Hapus ">
+                          <button type="submit" data-id="{{$item->id}}" data-name="{{$item->name}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->name}}">
                             <i class="bi bi-trash-fill fs-6"></i>
                           </button>
 

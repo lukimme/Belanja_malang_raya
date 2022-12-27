@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use Doctrine\DBAL\Driver\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
@@ -8,7 +10,6 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PenjualController;
 use App\Http\Controllers\KategoriController;
-use Doctrine\DBAL\Driver\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,10 @@ Route::prefix('admin/')->group(function () {
 
 
     // Dashboard
+    // Route::get('/', function () {
+    //     $admin = User::with('roles')->get(['nama']);
+    //     return view('admin.layout.mainlayout', ['admin' => $admin]);
+    // })->middleware('auth');
     Route::get('/', function () {
         return view('admin.dashboard');
     })->middleware('auth');
@@ -74,7 +79,7 @@ Route::prefix('admin/')->group(function () {
     //Administrator
     Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
     Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
-    Route::get('detail_administrator/{id}', [AdminController::class, 'detail'])->middleware('auth');
+    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware('auth');
 
     //Akun
     Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');

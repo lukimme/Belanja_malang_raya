@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    function index(){
+    public function status() {
+
+        $admin = User::with('roles')->get(['nama']);
+        return view('admin.layout.mainlayout', ['admin' => $admin]);
+
+    }
+
+    public function index(){
 
         $admin = User::all();
         $roles = roles::all();
@@ -27,6 +34,7 @@ class AdminController extends Controller
         $admin->id_role = $request->status;
         $admin->name    = $request->nama;
         $admin->email   = $request->email;
+        $admin->nomor   = $request->nomor;
         $admin->foto    = $newName;
         $admin->password   = Hash::make($request->password);
         $admin->save();
@@ -35,10 +43,17 @@ class AdminController extends Controller
     }
 
 
-    public function detail($id) {
+    public function destroy($id) {
 
-        $admin = User::with('roles')->find($id);
-        return view('/admin/detail_administrator', ['admin' => $admin]);
+        $admin = User::findOrFail($id);
+
+        $file = public_path('storage/img/'.$admin->foto);
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+
+        $admin->delete();
+        return back()->with('success', 'Data berhasil di hapus!');
 
     }
 
@@ -65,6 +80,7 @@ class AdminController extends Controller
         $admin->id_role = $request->status;
         $admin->name    = $request->nama;
         $admin->email   = $request->email;
+        $admin->nomor   = $request->nomor;
         $admin->foto    = $newName;
         $admin->save();
         return redirect('/admin/akun')->with('success', 'Data berhasil di ubah!');

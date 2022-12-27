@@ -87,6 +87,13 @@
                           </div>
                         </div>
 
+                        <div class="row mb-4">
+                          <label for="inputText" class="col-sm-2 col-form-label">Nomor Telepon:</label>
+                          <div class="col-sm-10">
+                            <input type="text" name="nomor" class="form-control" value="{{$admin->nomor}}">
+                          </div>
+                        </div>
+
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label">Status Admin:</label>
                           <div class="col-sm-10">
