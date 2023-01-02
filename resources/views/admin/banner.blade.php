@@ -31,23 +31,7 @@
                       <!-- General Form Elements -->
                       <form method="POST" action="banner" enctype="multipart/form-data">
                         @csrf
-                    <div class="row mb-3">
-                         
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select class="form-select @error('id') is-invalid @enderror" name="id" aria-label="Default select example ">
-                            <option selected>Pilih Admin</option>
-                            @foreach ($admin as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
-                          </select>
-                           @error('id')
-                            <div class="invalid-feedback">
-                            {{ 'Pilih admin tidak boleh kosong!' }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
+                    
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
@@ -138,6 +122,8 @@
         </div>
        </section><!-- End Form Input -->
 
+       {{$admin}}
+
        <!-- Tables -->
        <section class="section">
         <div class="row">
@@ -165,7 +151,7 @@
                       <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                       
                       @foreach ($item->admin as $admin)
-                      <td><p class="m-2">{{$admin->nama}}</p></td>
+                      <td><p class="m-2">{{$admin->name}}</p></td>
                       @endforeach
                       
                       <td><p class="m-2">{{$item->nama_gambar}}</p></td>

@@ -299,12 +299,16 @@
       {{-- Halaman --}}
       <li class="nav-heading">Halaman</li>
 
+      @if (Auth::user()->id_role != 1)
+
+      @else
        <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/administrator">
           <i class="bi bi-people"></i>
           <span>Administrator</span>
         </a>
       </li>
+      @endif
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="/admin/akun">
@@ -386,8 +390,39 @@
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
 
-      <!-- Javascript untuk textarea -->
-    
+      <!-- Show input multiple image -->
+      <script>
+        let fileInput = document.getElementById("file-input");
+        let imageContainer = document.getElementById("images");
+        let numOfFiles = document.getElementById("num-of-files");
+
+        function preview(input) {
+            imageContainer.innerHTML = "";
+            numOfFiles.textContent = `${fileInput.files.length}
+            Files Selected`;
+
+            for(i of fileInput.files){
+
+                let reader = new FileReader();
+                let figure = document.createElement("figure");
+                let figCap = document.createElement("figcaption");
+                figCap.innerText = i.name;
+                figure.appendChild(figCap);
+                reader.onload=()=>{
+                    let img = document.createElement("img");
+                    img.setAttribute("src",reader.result);
+                    figure.insertBefore(img,figCap);
+                }
+
+                imageContainer.appendChild(figure);
+                reader.readAsDataURL(i);
+
+
+            }
+
+        }
+      </script>
+
 
       <!-- Javascript untuk gambar di input -->
       <script>
@@ -479,6 +514,67 @@
         }
       </script>
       {{-- end show password  --}}
+
+
+      <!-- JS show passowrd2 -->
+      <script>
+        // membuat fungsi change
+        function ubah() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('password').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('password').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('button').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('password').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('button').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password2  --}}
+
+
+      <!-- JS show passowrd3 -->
+      <script>
+        // membuat fungsi change
+        function rubah() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('sandi').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('sandi').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('tombol').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('sandi').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('tombol').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password3  --}}
+
     
     </body>
     

@@ -87,4 +87,11 @@ class AdminController extends Controller
 
     }
 
+
+    public function newPass(Request $request) {
+
+        
+
+    }
+
 }

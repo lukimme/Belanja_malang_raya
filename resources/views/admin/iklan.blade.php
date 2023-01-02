@@ -32,25 +32,7 @@
                       <!-- General Form Elements -->
                       <form method="POST" action="iklan" enctype="multipart/form-data">
                         @csrf
-                      <div class="row mb-3">
-                         
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select class="form-select @error('id') is-invalid @enderror" name="id" aria-label="Default select example">
-                            
-                            <option selected>Pilih Admin</option>
-                            @foreach ($admin as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
-                          
-                          </select>
-                           @error('id')
-                            <div class="invalid-feedback">
-                            {{ 'Pilih admin tidak boleh kosong!' }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
+                      
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">

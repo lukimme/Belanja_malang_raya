@@ -40,10 +40,6 @@ Route::prefix('admin/')->group(function () {
 
 
     // Dashboard
-    // Route::get('/', function () {
-    //     $admin = User::with('roles')->get(['nama']);
-    //     return view('admin.layout.mainlayout', ['admin' => $admin]);
-    // })->middleware('auth');
     Route::get('/', function () {
         return view('admin.dashboard');
     })->middleware('auth');
@@ -77,13 +73,14 @@ Route::prefix('admin/')->group(function () {
 
 
     //Administrator
-    Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
-    Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
-    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware('auth');
+    Route::get('administrator', [AdminController::class, 'index'])->middleware(['auth', 'must-super-admin']);
+    Route::post('administrator', [AdminController::class, 'create'])->middleware(['auth', 'must-super-admin']);
+    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware(['auth', 'must-super-admin']);
 
     //Akun
     Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');
     Route::put('akun', [AdminController::class, 'update'])->middleware('auth');
+    Route::put('akun', [AdminController::class, 'newPass'])->middleware('auth');
 
     // Banner
     // Route::get('administrator',[AdministratorController::class, 'create']);

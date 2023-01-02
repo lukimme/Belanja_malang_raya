@@ -74,14 +74,14 @@
                         </div>
         
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
                             <input type="text" name="nama" class="form-control" value="{{$admin->name}}">
                           </div>
                         </div>
 
                         <div class="row mb-4">
-                          <label for="inputText" class="col-sm-2 col-form-label">Email</label>
+                          <label for="inputText" class="col-sm-2 col-form-label">Email:</label>
                           <div class="col-sm-10">
                             <input type="text" name="email" class="form-control" value="{{$admin->email}}">
                           </div>
@@ -123,26 +123,43 @@
 
                   <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="/admin/akun" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Password saat ini</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                      <label for="inputText" class="col-sm-2 col-form-label">Password saat ini:</label>
+                      <div class="col-sm-10">
+                        <div class="input-group form-outline">
+                          <input type="password" name="password" class="form-control" id="pass" required>
+                          <span class="input-group-text" id="mybutton" onclick="change()" style="background-color: #adb5bd; cursor: pointer;">
+                            <i class="bi bi-eye-fill fs-5"></i>
+                          </span>
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Password baru</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                      <label for="inputText" class="col-sm-2 col-form-label">Password baru:</label>
+                      <div class="col-sm-10">
+                        <div class="input-group form-outline">
+                          <input type="password" name="newpassword" class="form-control" id="password" required>
+                          <span class="input-group-text" id="button" onclick="ubah()" style="background-color: #adb5bd; cursor: pointer;">
+                            <i class="bi bi-eye-fill fs-5"></i>
+                          </span>
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Konfirmasi password baru</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                      <label for="inputText" class="col-sm-2 col-form-label">Konfirmasi password baru:</label>
+                      <div class="col-sm-10">
+                        <div class="input-group form-outline">
+                          <input type="password" name="renewpassword" class="form-control" id="sandi" required>
+                          <span class="input-group-text" id="tombol" onclick="rubah()" style="background-color: #adb5bd; cursor: pointer;">
+                            <i class="bi bi-eye-fill fs-5"></i>
+                          </span>
+                        </div>
                       </div>
                     </div>
 

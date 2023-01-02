@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\User;
 use App\Models\Iklan;
-use App\Models\admins;
 use Illuminate\Http\Request;
 
 class IklanController extends Controller
 {
     public function create2(){
         $iklan = Iklan::select('*')->where('status_gambar','iklan')->get();
-        $admin = admins::all();
+        $admin = User::all();
         return view('/admin/iklan', ['iklan' => $iklan], ['admin' => $admin]);
     }  
 
