@@ -6,6 +6,8 @@ use App\Models\roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -76,7 +78,7 @@ class AdminController extends Controller
             $request->file('foto')->storeAs('img', $newName);
         }
 
-        $admin = User::find(Auth::user()->id);
+        $admin          = User::find(Auth::user()->id);
         $admin->id_role = $request->status;
         $admin->name    = $request->nama;
         $admin->email   = $request->email;
@@ -90,8 +92,25 @@ class AdminController extends Controller
 
     public function newPass(Request $request) {
 
-        
+        // dd($request);
+        $validator = Validator::make($request->all(), [
+            'password' => 'required',
+            'newpassword' => 'required|confirmed',
+            'renewpassword' => 'required',
+        ]);
 
+
+        $current_password = Auth::user()->password;
+        if (Hash::check($request->password, $current_password)) {
+            $user_id = Auth::user()->id;
+            $obj_user = User::find($user_id);
+            $obj_user->password = Hash::make($request->newpassword);
+            $obj_user->save();
+            return back()->with('success', 'Password changed successfully');
+        } else{
+            Session::flash('message', 'password anda salah!');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
     }
 
 }

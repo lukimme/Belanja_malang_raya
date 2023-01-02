@@ -16,8 +16,6 @@
       </nav>
     </div><!-- End Page Title -->
 
-    
-
     <section class="section profile">
       <div class="row">
         <div class="col-xl-4">
@@ -128,7 +126,7 @@
                     @method('PUT')
 
                     <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">Password saat ini:</label>
+                      <label for="inputText" class="col-sm-2 col-form-label">Password lama:</label>
                       <div class="col-sm-10">
                         <div class="input-group form-outline">
                           <input type="password" name="password" class="form-control" id="pass" required>
@@ -163,8 +161,16 @@
                       </div>
                     </div>
 
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Ubah Password</button>
+                    @if (Session::has('status'))
+                      <div class="alert alert-primary" role="alert">
+                        {{Session::get('message')}}
+                      </div>
+                    @endif
+
+                    <div class="row mb-4 text-end">
+                      <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary">Ubah Password</button>
+                      </div>
                     </div>
                   </form><!-- End Change Password Form -->
 
