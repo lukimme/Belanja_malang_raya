@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::table('produks', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_penjual')->after('id_produk')->required();
-            $table->foreign('id_penjual')->references('id_penjual')->on('penjuals');
+            $table->unsignedBigInteger('id_penjual')->after('id')->required();
+            $table->foreign('id_penjual')->references('id')->on('penjuals')->onDelete('cascade');
             
             $table->unsignedBigInteger('id_kategori')->after('id_penjual')->required();
-            $table->foreign('id_kategori')->references('id_kategori')->on('kategoris');
+            $table->foreign('id_kategori')->references('id')->on('kategoris');
 
-            $table->unsignedBigInteger('id')->after('id_kategori')->required();
-            $table->foreign('id')->references('id')->on('admins');
+            $table->unsignedBigInteger('id_admin')->after('id_kategori')->required();
+            $table->foreign('id_admin')->references('id')->on('users');
         });
     }
 
@@ -37,8 +37,8 @@ return new class extends Migration
             $table->dropColumn('id_penjual');
             $table->dropForeign(['id_kategori']);
             $table->dropColumn('id_kategori');
-            $table->dropForeign(['id']);
-            $table->dropColumn('id');
+            $table->dropForeign(['id_admin']);
+            $table->dropColumn('id_admin');
         });
     }
 };

@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('kategoris', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_admin')->after('id_kategori')->required();
-            $table->foreign('id_admin')->references('id')->on('admins');
+            $table->unsignedBigInteger('id_admin')->after('id')->required();
+            $table->foreign('id_admin')->references('id')->on('users');
         });
     }
 
