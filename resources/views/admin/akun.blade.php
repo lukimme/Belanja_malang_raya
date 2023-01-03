@@ -65,7 +65,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of d971488... pemberian hak akses
 =======
 >>>>>>> parent of d971488... pemberian hak akses
 =======
@@ -79,6 +82,9 @@
                           <label for="inputText" class="col-sm-2 col-form-label">Email</label>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of d971488... pemberian hak akses
+=======
 >>>>>>> parent of d971488... pemberian hak akses
 =======
 >>>>>>> parent of d971488... pemberian hak akses

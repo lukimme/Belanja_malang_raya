@@ -23,6 +23,7 @@ class AdminSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // $dataAdmin = [
         //     ['nama' => 'Super Admin', 'email' => 'superadmin@bm.com', 'sandi' => '1234', 'foto' => 'halo.jpg', 'status' => 1],
         //     ['nama' => 'Sub Admin', 'email' => 'subadmin@bm.com', 'sandi' => '12345', 'foto' => 'halo0.jpg', 'status' => 2],
@@ -53,6 +54,22 @@ class AdminSeeder extends Seeder
                 'password' => $value['password']
 >>>>>>> parent of d971488... pemberian hak akses
 
+=======
+        $dataAdmin = [
+            ['id_role' => 1,'name' => 'Lukman hakim', 'email' => 'lukman@bm.com', 'nomor' => '081233422006','foto' => 'halo.jpg', 'password' => hash::make('1234')],
+        ];
+
+        foreach ($dataAdmin as $value) {
+            User::insert([
+
+                'id_role' => $value['id_role'],
+                'name' => $value['name'],
+                'email' => $value['email'],
+                'nomor' => $value['nomor'],
+                'foto' => $value['foto'],
+                'password' => $value['password']
+
+>>>>>>> parent of d971488... pemberian hak akses
 =======
         $dataAdmin = [
             ['id_role' => 1,'name' => 'Lukman hakim', 'email' => 'lukman@bm.com', 'nomor' => '081233422006','foto' => 'halo.jpg', 'password' => hash::make('1234')],
