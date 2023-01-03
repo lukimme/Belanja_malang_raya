@@ -29,63 +29,54 @@ use App\Http\Controllers\KategoriController;
  */
 Route::prefix('admin/')->group(function () {
 
+    // Login
+    Route::get('login', [AuthController::class, 'login'])->name('login')->Middleware('guest');
+    Route::post('login', [AuthController::class, 'autentikasi']);
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
     // Dashboard
-    // Route::get('/', function () {
-    //     $admin = User::with('roles')->get(['nama']);
-    //     return view('admin.layout.mainlayout', ['admin' => $admin]);
-    // })->middleware('auth');
     Route::get('/', function () {
         return view('admin.dashboard');
-    });
-    Route::get('dashboard', function () {
-        return view('admin.dashboard');
-    });
+    })->middleware('auth');
+
 
     // Kategori
-    Route::get('kategori', [KategoriController::class, 'index']);
-    Route::post('kategori', [KategoriController::class, 'create']);
-    Route::get('edit_kategori/{id}', [KategoriController::class, 'edit']);
-    Route::put('kategori/{id}', [KategoriController::class, 'update']);
-    Route::delete('kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.delete');
+    Route::get('kategori', [KategoriController::class, 'index'])->middleware('auth');
+    Route::post('kategori', [KategoriController::class, 'create'])->middleware('auth');
+    // Route::get('detail_kategori/{id}', [KategoriController::class, 'detail'])->middleware('auth'); //Detail kategori
+    Route::get('edit_kategori/{id}', [KategoriController::class, 'edit'])->middleware('auth');
+    Route::put('kategori/{id}', [KategoriController::class, 'update'])->middleware('auth');
+    Route::delete('kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.delete')->middleware('auth');
 
     
     // Produk
-    Route::get('/produk', [ProdukController::class, 'index']);
-    Route::get('/add_produk', [ProdukController::class, 'tampil']);
-    Route::post('/add_produk', [ProdukController::class, 'create']);
-    Route::get('/edit_produk/{id}', [ProdukController::class, 'editProduk']);
+    Route::get('produk', [ProdukController::class, 'index'])->middleware('auth');
+    Route::post('produk', [ProdukController::class, 'create'])->middleware('auth');
+    Route::get('edit_produk/{id}', [ProdukController::class, 'edit'])->middleware('auth');
+    Route::put('produk/{id}', [ProdukController::class, 'update'])->middleware('auth');
+    Route::get('detail_produk/{id}', [ProdukController::class, 'detail'])->middleware('auth');
+    Route::delete('produk/{id}', [ProdukController::class, 'destroy'])->name('produk.delete')->middleware('auth');
 
 
     // Penjual
-    Route::get('penjual', [PenjualController::class, 'index']);
-    Route::post('penjual', [PenjualController::class, 'create']);
+    Route::get('penjual', [PenjualController::class, 'index'])->middleware('auth');
+    Route::post('penjual', [PenjualController::class, 'create'])->middleware('auth');
+    Route::get('edit_penjual/{id}', [PenjualController::class, 'edit'])->middleware('auth');
+    Route::put('penjual/{id}', [PenjualController::class, 'update'])->middleware('auth');
+    Route::delete('penjual/{id}', [PenjualController::class, 'destroy'])->name('penjual.delete')->middleware('auth');
+    Route::get('detail_penjual/{id}', [PenjualController::class, 'detail'])->middleware('auth');
 
-
-    //Adminstrator
-    Route::get('administrator', function () {
-        return view('admin.administrator');
-    });
-
-    //Akun
-    Route::get('akun', function () {
-        return view('admin.akun');
-    });
-    Route::get('administrator',[AdministratorController::class, 'create']);
-    Route::get('banner',[BannerController::class, 'create']);
-    Route::post('banner', [BannerController::class, 'store']);
-    Route::get('banner-edit/{id_gambar}',[BannerController::class, 'edit']);
-    Route::put('/banner/{id_gambar}', [BannerController::class, 'update']);
-    Route::put('/banner/{id_gambar}', [IklanController::class, 'update2']);
-    Route::delete('/banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
 
     //Administrator
-    Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
-    Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
-    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware('auth');
+    Route::get('administrator', [AdminController::class, 'index'])->middleware(['auth', 'must-super-admin']);
+    Route::post('administrator', [AdminController::class, 'create'])->middleware(['auth', 'must-super-admin']);
+    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware(['auth', 'must-super-admin']);
 
     //Akun
     Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');
     Route::put('akun', [AdminController::class, 'update'])->middleware('auth');
+    Route::put('akun', [AdminController::class, 'newPass'])->middleware('auth');
 
     // Banner
     // Route::get('administrator',[AdministratorController::class, 'create']);
@@ -96,14 +87,13 @@ Route::prefix('admin/')->group(function () {
     Route::put('banner/{id}', [IklanController::class, 'update2'])->middleware('auth');
     Route::delete('banner/{id}', [BannerController::class, 'destroy'])->name('banner.delete')->middleware('auth');
 
-
  
     //Akun
     // Route::get('iklan', function () {
     //     return view('admin.iklan');
     // });
-    Route::get('iklan',[IklanController::class, 'create2']);
-    Route::post('iklan', [IklanController::class, 'store2']);
+    Route::get('iklan',[IklanController::class, 'create2'])->middleware('auth');
+    Route::post('iklan', [IklanController::class, 'store2'])->middleware('auth');
 
 });
 
