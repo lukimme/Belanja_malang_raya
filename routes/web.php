@@ -60,7 +60,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('penjual', [PenjualController::class, 'index']);
     Route::post('penjual', [PenjualController::class, 'create']);
 
-<<<<<<< HEAD
+
     //Adminstrator
     Route::get('administrator', function () {
         return view('admin.administrator');
@@ -77,7 +77,7 @@ Route::prefix('admin/')->group(function () {
     Route::put('/banner/{id_gambar}', [BannerController::class, 'update']);
     Route::put('/banner/{id_gambar}', [IklanController::class, 'update2']);
     Route::delete('/banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
-=======
+
     //Administrator
     Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
     Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
@@ -95,7 +95,7 @@ Route::prefix('admin/')->group(function () {
     Route::put('banner/{id}', [BannerController::class, 'update'])->middleware('auth');
     Route::put('banner/{id}', [IklanController::class, 'update2'])->middleware('auth');
     Route::delete('banner/{id}', [BannerController::class, 'destroy'])->name('banner.delete')->middleware('auth');
->>>>>>> parent of d971488... pemberian hak akses
+
 
  
     //Akun
