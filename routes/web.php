@@ -30,15 +30,11 @@ use App\Http\Controllers\KategoriController;
 Route::prefix('admin/')->group(function () {
 
     // Dashboard
-<<<<<<< HEAD
-    Route::get('', function () {
-=======
     // Route::get('/', function () {
     //     $admin = User::with('roles')->get(['nama']);
     //     return view('admin.layout.mainlayout', ['admin' => $admin]);
     // })->middleware('auth');
     Route::get('/', function () {
->>>>>>> parent of d971488... pemberian hak akses
         return view('admin.dashboard');
     });
     Route::get('dashboard', function () {
@@ -64,7 +60,6 @@ Route::prefix('admin/')->group(function () {
     Route::get('penjual', [PenjualController::class, 'index']);
     Route::post('penjual', [PenjualController::class, 'create']);
 
-<<<<<<< HEAD
     //Adminstrator
     Route::get('administrator', function () {
         return view('admin.administrator');
@@ -81,25 +76,6 @@ Route::prefix('admin/')->group(function () {
     Route::put('/banner/{id_gambar}', [BannerController::class, 'update']);
     Route::put('/banner/{id_gambar}', [IklanController::class, 'update2']);
     Route::delete('/banner/{id_gambar}', [BannerController::class, 'destroy'])->name('banner.delete');
-=======
-    //Administrator
-    Route::get('administrator', [AdminController::class, 'index'])->middleware('auth');
-    Route::post('administrator', [AdminController::class, 'create'])->middleware('auth');
-    Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware('auth');
-
-    //Akun
-    Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');
-    Route::put('akun', [AdminController::class, 'update'])->middleware('auth');
-
-    // Banner
-    // Route::get('administrator',[AdministratorController::class, 'create']);
-    Route::get('banner',[BannerController::class, 'create'])->middleware('auth');
-    Route::post('banner', [BannerController::class, 'store'])->middleware('auth');
-    Route::get('banner-edit/{id}',[BannerController::class, 'edit'])->middleware('auth');
-    Route::put('banner/{id}', [BannerController::class, 'update'])->middleware('auth');
-    Route::put('banner/{id}', [IklanController::class, 'update2'])->middleware('auth');
-    Route::delete('banner/{id}', [BannerController::class, 'destroy'])->name('banner.delete')->middleware('auth');
->>>>>>> parent of d971488... pemberian hak akses
 
  
     //Akun
