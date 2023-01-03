@@ -64,7 +64,10 @@
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of d971488... pemberian hak akses
 =======
 >>>>>>> parent of d971488... pemberian hak akses
                           <div class="col-sm-10">
@@ -75,6 +78,9 @@
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Email</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of d971488... pemberian hak akses
+=======
 >>>>>>> parent of d971488... pemberian hak akses
 =======
 >>>>>>> parent of d971488... pemberian hak akses

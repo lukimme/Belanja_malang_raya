@@ -6,7 +6,11 @@ namespace App\Http\Controllers;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\Banner;
+=======
+use App\Models\Iklan;
+>>>>>>> parent of d971488... pemberian hak akses
 =======
 use App\Models\Iklan;
 >>>>>>> parent of d971488... pemberian hak akses

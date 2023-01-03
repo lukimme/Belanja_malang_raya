@@ -12,7 +12,11 @@ class BannerController extends Controller
     public function create(){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $banner = Banner::all();
+=======
+        $banner = Banner::select('*')->where('status_gambar','banner')->get();
+>>>>>>> parent of d971488... pemberian hak akses
 =======
         $banner = Banner::select('*')->where('status_gambar','banner')->get();
 >>>>>>> parent of d971488... pemberian hak akses
@@ -27,7 +31,11 @@ class BannerController extends Controller
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function edit(Request $request, $id_gambar)
+=======
+    public function edit(Request $request, $id)
+>>>>>>> parent of d971488... pemberian hak akses
 =======
     public function edit(Request $request, $id)
 >>>>>>> parent of d971488... pemberian hak akses
@@ -88,7 +96,11 @@ class BannerController extends Controller
        $banner = new Banner;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        $banner->id = $request->id;
+=======
+       $banner->id_admin = $request->id;
+>>>>>>> parent of d971488... pemberian hak akses
 =======
        $banner->id_admin = $request->id;
 >>>>>>> parent of d971488... pemberian hak akses
