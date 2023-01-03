@@ -43,10 +43,13 @@ class AdminController extends Controller
 
        }else{
 
+<<<<<<< HEAD
         return 'gagal';
 
        }
 
     }
 
+=======
+>>>>>>> parent of d971488... pemberian hak akses
 }
