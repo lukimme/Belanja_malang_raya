@@ -13,15 +13,6 @@
     </nav>
 </div><!-- End Page Title -->
 
-<<<<<<< Updated upstream
-{{-- {{$dol}} --}}
-{{-- <br><br><br> --}}
-{{-- {{$adminProduk}} --}}
-{{-- <br><br><br> --}}
-{{-- {{$kategoris}} --}}
-{{-- <br><br><br> --}}
-{{-- {{$produks}} --}}
-=======
  <section class="section dashboard">
   <div class="row justify-content-center">
 
@@ -75,130 +66,24 @@
                       </div>
                   </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  <div class="row align-items-center">
-                    <div class="col-12">
-                      <div class="row mb-4 align-items-center">
-                        <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                        <div class="col-">
-                            <div class="input-group form-outline">
-                                <input name="gambar" class="form-control" type="file" id="file-input" onchange="preview(this)" multiple>
-                                <div class="input-group-append">
-                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                                </div>
+                  <div class="row mb-4">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
+                    <div class="col-sm-10">
+                        <div class="input-group form-outline">
+                            <input name="gambar" class="form-control" type="file" id="file-input" onchange="preview(this)" multiple>
+                            <div class="input-group-append">
+                            <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
                             </div>
                         </div>
-                        <div class="col-5">
-                          <button type="button" name="button" class="btn btn-primary btn-tambah"><i class="fa fa-plus"></i></button>
-                          <button type="button" class="btn btn-danger btn-hapus" style="display:none;"><i class="fa fa-times"></i></button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             
                 <div class="row mb-2">
                     <div class="col-sm-10 text-center">
                       <p id="num-of-files"></p>
                       <div id="images" ></div>
-=======
-                  <div class="row mb-4">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                    <div class="col-sm-10">
-                      <div class="input-group form-outline">
-                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
-                        <div class="input-group-append">
-                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                      <img id="gam" width="200" src="" alt="">
->>>>>>> parent of d971488... pemberian hak akses
-                    </div>
-                  </div>
-=======
-                  <div class="row mb-4">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                    <div class="col-sm-10">
-                      <div class="input-group form-outline">
-                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
-                        <div class="input-group-append">
-                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                      <img id="gam" width="200" src="" alt="">
-                    </div>
-                  </div>
->>>>>>> parent of d971488... pemberian hak akses
-=======
-                  <div class="row mb-4">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                    <div class="col-sm-10">
-                      <div class="input-group form-outline">
-                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
-                        <div class="input-group-append">
-                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                      <img id="gam" width="200" src="" alt="">
-                    </div>
-                  </div>
->>>>>>> parent of d971488... pemberian hak akses
-=======
-                  <div class="row mb-4">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                    <div class="col-sm-10">
-                      <div class="input-group form-outline">
-                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
-                        <div class="input-group-append">
-                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                      <img id="gam" width="200" src="" alt="">
-                    </div>
-                  </div>
->>>>>>> parent of d971488... pemberian hak akses
-=======
-                  <div class="row mb-4">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                    <div class="col-sm-10">
-                      <div class="input-group form-outline">
-                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
-                        <div class="input-group-append">
-                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                      <img id="gam" width="200" src="" alt="">
-                    </div>
-                  </div>
->>>>>>> parent of d971488... pemberian hak akses
+                </div>
 
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
@@ -231,9 +116,12 @@
   
               </div>
           </div>
->>>>>>> Stashed changes
 
-   {{-- {{$produks}} --}}
+      </div>
+    </div><!-- End Left side columns -->
+
+  </div>
+  </section><!-- End Form Input -->
 
    <!-- Tables -->
    <section class="section dashboard">
@@ -243,14 +131,7 @@
 
         <div class="card">
           <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-md-3 text-start">
-                <h5 class="card-title">Tabel data produk</h5>
-              </div>
-              <div class="col-md-9 text-end">
-                <a class="btn btn-primary" href="add_produk">Tambah produk</a>
-              </div>
-            </div>
+              <h5 class="card-title">Tabel data produk</h5>
 
             <!-- Default Accordion -->
             <div class="accordion" id="accordionExample">
@@ -273,7 +154,6 @@
                           <thead>
                             <tr>
                               <th scope="col">No</th>
-                              <th scope="col">Admin</th>
                               <th scope="col">Penjual</th>
                               <th scope="col">Nama</th>
                               <th scope="col">Kategori</th>
@@ -290,30 +170,41 @@
 
                               <th scope="row"><p class="m-2"></p>{{$loop->iteration}}</th>
 
-                                @foreach ($item->adminProduk as $adminProduks)
-                                <td><p class="m-2">{{$adminProduks->nama}}</p></td>
-                                @endforeach
-
-                                @foreach ($item->penjualProduk as $penjualProduks)
+                                @foreach ($item->penjual as $penjualProduks)
                                 <td><p class="m-2"></p>{{$penjualProduks->nama_penjual}}</td>
                                 @endforeach
 
                                 <td><p class="m-2">{{$item->nama_produk}}</p></td>
 
-                                @foreach ($item->kategoriProduk as $kategoriProduks)
+                                @foreach ($item->kategori as $kategoriProduks)
                                 <td><p class="m-2">{{$kategoriProduks->nama_kategori}}</p></td>
                                 @endforeach
                               
 
                               <td>
-                              <img class="m-2" src="" width="70" alt="">
-                              {{$item->gambar}}
+                              <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                               </td>
 
                               <td><p class="m-2">{{$item->diskon}}</p></td>
 
                               <td>
-                                <a href="edit_produk/{{$item->id_produk}}" class="btn btn-primary m-1" title="Edit {{$item->nama_produk}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_produk}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_produk}}"><i class="bx bxs-trash"></i></a>
+                                <form action="{{ route('produk.delete', $item->id) }}" method="POST">
+                                  @csrf
+                                  @method('delete')
+
+                                  <a href="edit_produk/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_produk}}">
+                                    <i class="bi bi-pencil-square"></i>
+                                  </a>
+                                  
+                                  <a href="detail_produk/{{$item->id}}" class="btn btn-primary m-1" title="Detail {{$item->nama_produk}}">
+                                    <i class="bi bi-card-list"></i>
+                                  </a>
+
+                                  <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_produk}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_produk}}">
+                                    <i class="bi bi-trash-fill fs-6"></i>
+                                  </button>
+
+                                </form>
                               </td> 
                             </tr>
 
@@ -337,22 +228,8 @@
     </div>
     </div>
   </section><!-- End Tables -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
+  
 
   @include('sweetalert::alert')
->>>>>>> parent of d971488... pemberian hak akses
 
 @endsection

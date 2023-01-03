@@ -62,20 +62,7 @@
         
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
+
                           <div class="col-sm-10">
                             <input type="text" name="nama" class="form-control" value="{{$admin->name}}">
                           </div>
@@ -83,19 +70,7 @@
 
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Email</label>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
-=======
->>>>>>> parent of d971488... pemberian hak akses
+
                           <div class="col-sm-10">
                             <input type="text" class="form-control">
                           </div>
