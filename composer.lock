@@ -3448,6 +3448,7 @@
         },
         {
             "name": "symfony/console",
+<<<<<<< HEAD
             "version": "v6.2.1",
             "source": {
                 "type": "git",
@@ -3458,6 +3459,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/58f6cef5dc5f641b7bbdbf8b32b44cc926c35f3f",
                 "reference": "58f6cef5dc5f641b7bbdbf8b32b44cc926c35f3f",
+=======
+            "version": "v6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "5a9bd5c543f00157c55face973c149957467db31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/5a9bd5c543f00157c55face973c149957467db31",
+                "reference": "5a9bd5c543f00157c55face973c149957467db31",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -3524,7 +3537,11 @@
                 "terminal"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/console/tree/v6.2.1"
+=======
+                "source": "https://github.com/symfony/console/tree/v6.2.2"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -3540,7 +3557,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-12-01T13:44:20+00:00"
+=======
+            "time": "2022-12-16T15:08:36+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "symfony/css-selector",
@@ -3676,6 +3697,7 @@
         },
         {
             "name": "symfony/error-handler",
+<<<<<<< HEAD
             "version": "v6.2.1",
             "source": {
                 "type": "git",
@@ -3686,6 +3708,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/error-handler/zipball/b4e41f62c1124378863ff2705158a60da3e4c6b9",
                 "reference": "b4e41f62c1124378863ff2705158a60da3e4c6b9",
+=======
+            "version": "v6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/error-handler.git",
+                "reference": "12a25d01cc5273b2445e125d62b61d34db42297e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/error-handler/zipball/12a25d01cc5273b2445e125d62b61d34db42297e",
+                "reference": "12a25d01cc5273b2445e125d62b61d34db42297e",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -3727,7 +3761,11 @@
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/error-handler/tree/v6.2.1"
+=======
+                "source": "https://github.com/symfony/error-handler/tree/v6.2.2"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -3743,7 +3781,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-12-01T21:07:46+00:00"
+=======
+            "time": "2022-12-14T16:11:27+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4051,6 +4093,7 @@
         },
         {
             "name": "symfony/http-kernel",
+<<<<<<< HEAD
             "version": "v6.2.1",
             "source": {
                 "type": "git",
@@ -4061,6 +4104,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bcbd2ea12fee651a4c8bff4f6f00cce2ac1f8404",
                 "reference": "bcbd2ea12fee651a4c8bff4f6f00cce2ac1f8404",
+=======
+            "version": "v6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-kernel.git",
+                "reference": "860a0189969b755cd571709bd32313aa8599867a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/860a0189969b755cd571709bd32313aa8599867a",
+                "reference": "860a0189969b755cd571709bd32313aa8599867a",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -4142,7 +4197,11 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/http-kernel/tree/v6.2.1"
+=======
+                "source": "https://github.com/symfony/http-kernel/tree/v6.2.2"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -4158,7 +4217,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-12-06T17:28:26+00:00"
+=======
+            "time": "2022-12-16T19:38:34+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "symfony/mailer",
@@ -5381,6 +5444,7 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< HEAD
             "version": "v6.2.0",
             "source": {
                 "type": "git",
@@ -5391,6 +5455,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/c08de62caead8357244efcb809d0b1a2584f2198",
                 "reference": "c08de62caead8357244efcb809d0b1a2584f2198",
+=======
+            "version": "v6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "3294288c335b6267eab14964bf2c46015663d93f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/3294288c335b6267eab14964bf2c46015663d93f",
+                "reference": "3294288c335b6267eab14964bf2c46015663d93f",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -5459,7 +5535,11 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation/tree/v6.2.0"
+=======
+                "source": "https://github.com/symfony/translation/tree/v6.2.2"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -5475,7 +5555,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-11-02T09:08:04+00:00"
+=======
+            "time": "2022-12-13T18:04:17+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "symfony/translation-contracts",
@@ -5634,6 +5718,7 @@
         },
         {
             "name": "symfony/var-dumper",
+<<<<<<< HEAD
             "version": "v6.2.1",
             "source": {
                 "type": "git",
@@ -5644,6 +5729,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1e7544c8698627b908657e5276854d52ab70087a",
                 "reference": "1e7544c8698627b908657e5276854d52ab70087a",
+=======
+            "version": "v6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "6168f544827e897f708a684f75072a8c33a5e309"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/6168f544827e897f708a684f75072a8c33a5e309",
+                "reference": "6168f544827e897f708a684f75072a8c33a5e309",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -5702,7 +5799,11 @@
                 "dump"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/var-dumper/tree/v6.2.1"
+=======
+                "source": "https://github.com/symfony/var-dumper/tree/v6.2.2"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -5718,7 +5819,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-12-03T22:32:58+00:00"
+=======
+            "time": "2022-12-14T16:11:27+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -6642,6 +6747,7 @@
         },
         {
             "name": "phpunit/php-code-coverage",
+<<<<<<< HEAD
             "version": "9.2.19",
             "source": {
                 "type": "git",
@@ -6652,6 +6758,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c77b56b63e3d2031bd8997fcec43c1925ae46559",
                 "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559",
+=======
+            "version": "9.2.22",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "e4bf60d2220b4baaa0572986b5d69870226b06df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/e4bf60d2220b4baaa0572986b5d69870226b06df",
+                "reference": "e4bf60d2220b4baaa0572986b5d69870226b06df",
+>>>>>>> parent of d971488... pemberian hak akses
                 "shasum": ""
             },
             "require": {
@@ -6707,7 +6825,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.19"
+=======
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.22"
+>>>>>>> parent of d971488... pemberian hak akses
             },
             "funding": [
                 {
@@ -6715,7 +6837,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-11-18T07:47:47+00:00"
+=======
+            "time": "2022-12-18T16:40:55+00:00"
+>>>>>>> parent of d971488... pemberian hak akses
         },
         {
             "name": "phpunit/php-file-iterator",

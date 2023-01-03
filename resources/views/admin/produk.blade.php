@@ -75,6 +75,7 @@
                       </div>
                   </div>
 
+<<<<<<< HEAD
                   <div class="row align-items-center">
                     <div class="col-12">
                       <div class="row mb-4 align-items-center">
@@ -99,8 +100,25 @@
                     <div class="col-sm-10 text-center">
                       <p id="num-of-files"></p>
                       <div id="images" ></div>
+=======
+                  <div class="row mb-4">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
+                    <div class="col-sm-10">
+                      <div class="input-group form-outline">
+                        <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)" >
+                        <div class="input-group-append">
+                          <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <div class="col-sm-12 text-center">
+                      <img id="gam" width="200" src="" alt="">
+>>>>>>> parent of d971488... pemberian hak akses
+                    </div>
+                  </div>
 
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
@@ -239,5 +257,10 @@
     </div>
     </div>
   </section><!-- End Tables -->
+<<<<<<< HEAD
+=======
+
+  @include('sweetalert::alert')
+>>>>>>> parent of d971488... pemberian hak akses
 
 @endsection

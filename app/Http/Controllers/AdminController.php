@@ -41,6 +41,7 @@ class AdminController extends Controller
         return 'sukses';
         // dd($infoLogin);
 
+<<<<<<< HEAD
        }else{
 
         return 'gagal';
@@ -48,4 +49,6 @@ class AdminController extends Controller
        }
 
     }
+=======
+>>>>>>> parent of d971488... pemberian hak akses
 }

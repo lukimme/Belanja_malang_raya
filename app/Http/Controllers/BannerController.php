@@ -10,14 +10,22 @@ use Illuminate\Http\Request;
 class BannerController extends Controller
 {
     public function create(){
+<<<<<<< HEAD
         $banner = Banner::all();
+=======
+        $banner = Banner::select('*')->where('status_gambar','banner')->get();
+>>>>>>> parent of d971488... pemberian hak akses
         $admin = admins::all();
         return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
     }
     
      
 
+<<<<<<< HEAD
     public function edit(Request $request, $id_gambar)
+=======
+    public function edit(Request $request, $id)
+>>>>>>> parent of d971488... pemberian hak akses
     {   
         $banner = Banner::findOrFail($id_gambar);
         return view('admin/banner-edit', ['banner' => $banner]);
@@ -70,7 +78,11 @@ class BannerController extends Controller
         $request->file('gambar')->storeAs('img', $newName);
 
        $banner = new Banner;
+<<<<<<< HEAD
        $banner->id = $request->id;
+=======
+       $banner->id_admin = $request->id;
+>>>>>>> parent of d971488... pemberian hak akses
        $banner->nama_gambar = $request->nama_gambar;
        $banner->status_gambar = $request->status_gambar;
        $banner->gambar = $newName;

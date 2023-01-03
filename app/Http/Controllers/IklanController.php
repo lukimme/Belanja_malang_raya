@@ -4,16 +4,26 @@ namespace App\Http\Controllers;
 
 
 
+<<<<<<< HEAD
 use App\Models\Banner;
+=======
+use App\Models\Iklan;
+>>>>>>> parent of d971488... pemberian hak akses
 use App\Models\admins;
 use Illuminate\Http\Request;
 
 class IklanController extends Controller
 {
     public function create2(){
+<<<<<<< HEAD
         $banner = Banner::all();
         $admin = admins::all();
         return view('/admin/iklan', ['banner' => $banner], ['admin' => $admin]);
+=======
+        $iklan = Iklan::select('*')->where('status_gambar','iklan')->get();
+        $admin = admins::all();
+        return view('/admin/iklan', ['iklan' => $iklan], ['admin' => $admin]);
+>>>>>>> parent of d971488... pemberian hak akses
     }  
 
      public function update2(Request $request, $id_gambar)
