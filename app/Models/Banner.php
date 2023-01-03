@@ -14,7 +14,11 @@ class Banner extends Model
     public function admin()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $this->hasMany(admins::class, 'id',  'id');
+=======
+        return $this->hasMany(admins::class, 'id',  'id_admin');
+>>>>>>> parent of d971488... pemberian hak akses
 =======
         return $this->hasMany(admins::class, 'id',  'id_admin');
 >>>>>>> parent of d971488... pemberian hak akses

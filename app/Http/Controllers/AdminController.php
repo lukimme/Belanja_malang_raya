@@ -42,6 +42,7 @@ class AdminController extends Controller
         // dd($infoLogin);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        }else{
 
         return 'gagal';
@@ -49,6 +50,8 @@ class AdminController extends Controller
        }
 
     }
+=======
+>>>>>>> parent of d971488... pemberian hak akses
 =======
 >>>>>>> parent of d971488... pemberian hak akses
 }
