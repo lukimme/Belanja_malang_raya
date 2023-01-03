@@ -12,12 +12,8 @@ class AdminController extends Controller
 
         // sama dengan "select * all"
         $admin = admins::all();
-<<<<<<< HEAD
         return view('/admin/login', ['adminList' => $admin]);
         dd();
-=======
-        return view('/admin/administrator', ['admin' => $admin]);
->>>>>>> parent of 9e1a339... roles
         
     }
 
@@ -25,7 +21,6 @@ class AdminController extends Controller
 
         
 
-<<<<<<< HEAD
        $request->validate([
         'email' => 'required',
         'password' => 'required'
@@ -33,16 +28,6 @@ class AdminController extends Controller
         'email.required' => 'Email anda salah',
         'password.required' => 'Password anda salah'
        ]);
-=======
-        $admin = new admins;
-        $admin->nama    = $request->nama;
-        $admin->email   = $request->email;
-        $admin->sandi   = Hash::make($request->password);
-        $admin->foto    = $newName;
-        $admin->status  = $request->status;
-        $admin->save();
-        return back()->with('success', 'Upload berhasil!');
->>>>>>> parent of 9e1a339... roles
 
 
        $infoLogin = [
@@ -64,31 +49,4 @@ class AdminController extends Controller
 
     }
 
-<<<<<<< HEAD
-=======
-    public function login(Request $request) {
-
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required'
-        ],[
-            'username.required' => 'Username wajib diisi!',
-            'password.required' => 'Password wajib diisi!'
-        ]);
-
-
-        $infoLogin = admins::get([
-            'email' => $request->username,
-            'sandi' => $request->password
-        ]);
-
-        if (Auth::attempt($infoLogin)) {
-            return 'sukses';
-        }else {
-            return 'gagal';
-        }
-
-    }
-    
->>>>>>> parent of 9e1a339... roles
 }

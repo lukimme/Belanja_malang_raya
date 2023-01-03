@@ -30,14 +30,10 @@ use App\Http\Controllers\KategoriController;
 Route::prefix('admin/')->group(function () {
 
     // Login
-<<<<<<< HEAD
     Route::get('login', [AuthController::class, 'login'])->name('login')->Middleware('guest');
     Route::post('login', [AuthController::class, 'autentikasi']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-=======
-    Route::get('', [AdminController::class, 'viewLogin']);
-    Route::post('login_admin', [AdminController::class, 'login']);
->>>>>>> parent of 9e1a339... roles
+
 
 
     // Dashboard
