@@ -13,6 +13,7 @@
     </nav>
 </div><!-- End Page Title -->
 
+<<<<<<< Updated upstream
 {{-- {{$dol}} --}}
 {{-- <br><br><br> --}}
 {{-- {{$adminProduk}} --}}
@@ -20,6 +21,119 @@
 {{-- {{$kategoris}} --}}
 {{-- <br><br><br> --}}
 {{-- {{$produks}} --}}
+=======
+ <section class="section dashboard">
+  <div class="row justify-content-center">
+
+    <!-- Left side columns -->
+    <div class="col-lg-12">
+      <div class="row">
+
+          <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">General Form Elements</h5>
+  
+                <!-- General Form Elements -->
+                <form action="produk" method="post" enctype="multipart/form-data">
+                  @csrf
+
+                  <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Penjual:</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="penjual" aria-label="Default select example">
+                          <option selected>--Pilih--</option>
+                          @foreach ($penjual as $data)
+                              <option value="{{$data->id}}">{{$data->nama_penjual}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="nama" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Diskon:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="diskon" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Kategori:</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" name="kategori" aria-label="Default select example">
+                          <option selected>--Pilih--</option>
+                          @foreach ($kategori as $item)
+                              <option value="{{$item->id}}">{{$item->nama_kategori}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="row align-items-center">
+                    <div class="col-12">
+                      <div class="row mb-4 align-items-center">
+                        <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
+                        <div class="col-">
+                            <div class="input-group form-outline">
+                                <input name="gambar" class="form-control" type="file" id="file-input" onchange="preview(this)" multiple>
+                                <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                          <button type="button" name="button" class="btn btn-primary btn-tambah"><i class="fa fa-plus"></i></button>
+                          <button type="button" class="btn btn-danger btn-hapus" style="display:none;"><i class="fa fa-times"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+                <div class="row mb-2">
+                    <div class="col-sm-10 text-center">
+                      <p id="num-of-files"></p>
+                      <div id="images" ></div>
+                    </div>
+                </div>
+
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="harga" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 col-form-label">Pesan Produk:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="pesan" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                      <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi Produk:</label>
+                      <div class="col-sm-10">
+                          <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
+                      </div>
+                  </div>
+  
+                  <div class="row mb-3 text-end">
+                    <div class="col-sm-12 ">
+                      <button type="submit" class="btn btn-primary">Tambah produk</button>
+                    </div>
+                  </div>
+  
+                </form><!-- End General Form Elements -->
+  
+              </div>
+          </div>
+>>>>>>> Stashed changes
 
    {{-- {{$produks}} --}}
 
