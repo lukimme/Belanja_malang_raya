@@ -16,6 +16,7 @@
   </div><!-- End Page Title -->
 
 
+
   <section class="section profile">
     <div class="row">
       <div class="col-xl-4">
@@ -25,9 +26,7 @@
 
             <img src="{{asset('storage/img/'.$penjual->brand_penjual)}}" alt="brand {{$penjual->nama_penjual}}" title="brand {{$penjual->nama_penjual}}">
             <h2 class="mb-2">{{$penjual->nama_penjual}}</h2>
-          @foreach ($penjual->admin as $item)
-              <h3>{{$item->nama}}</h3>
-          @endforeach
+            <h3>Uploader: {{Auth::user()->name}}</h3>
 
             {{-- <div class="social-links mt-2">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>

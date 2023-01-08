@@ -33,7 +33,7 @@ class ProdukController extends Controller
         $produk->id_admin         = Auth::user()->id;
         $produk->nama_produk      = $request->nama;
         $produk->deskripsi_produk = $request->deskripsi;
-        $produk->harga            = number_format($request->harga);
+        $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
         $produk->gambar           = $newName;
         $produk->pesan            = $request->pesan;
@@ -68,7 +68,7 @@ class ProdukController extends Controller
         $produk->id_admin         = Auth::user()->id;
         $produk->nama_produk      = $request->nama;
         $produk->deskripsi_produk = $request->deskripsi;
-        $produk->harga            = number_format($request->harga);
+        $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
         $produk->gambar           = $newName;
         $produk->pesan            = $request->pesan;
