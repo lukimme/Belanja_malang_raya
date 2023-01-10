@@ -75,12 +75,14 @@ Route::prefix('admin/')->group(function () {
     //Administrator
     Route::get('administrator', [AdminController::class, 'index'])->middleware(['auth', 'must-super-admin']);
     Route::post('administrator', [AdminController::class, 'create'])->middleware(['auth', 'must-super-admin']);
+    Route::get('edit_admin/{id}', [AdminController::class, 'edit_admin'])->middleware(['auth', 'must-super-admin']);
+    Route::put('edit_admin/{id}', [AdminController::class, 'update_admin'])->middleware(['auth', 'must-super-admin']);
     Route::delete('administrator/{id}', [AdminController::class, 'destroy'])->name('admin.delete')->middleware(['auth', 'must-super-admin']);
 
     //Akun
     Route::get('akun', [AdminController::class, 'edit'])->middleware('auth');
     Route::put('akun', [AdminController::class, 'update'])->middleware('auth');
-    Route::put('akun', [AdminController::class, 'newPass'])->middleware('auth');
+    // Route::post('akun', [AdminController::class, 'newPass'])->middleware('auth');
 
     // Banner
     // Route::get('administrator',[AdministratorController::class, 'create']);

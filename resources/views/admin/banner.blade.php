@@ -121,8 +121,7 @@
     
         </div>
        </section><!-- End Form Input -->
-
-       {{$admin}}
+       
 
        <!-- Tables -->
        <section class="section">

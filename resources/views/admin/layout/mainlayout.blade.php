@@ -327,11 +327,11 @@
               <i class="bi bi-circle"></i><span>Banner</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="/admin/iklan">
               <i class="bi bi-circle"></i><span>Iklan Masyarakat</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </li>
 
@@ -387,6 +387,9 @@
     
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+ 
+    
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
 
@@ -489,6 +492,35 @@
       <!-- JS show passowrd -->
       <script>
         // membuat fungsi change
+        function ganti() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('pswrd').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('pswrd').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('btn').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('pswrd').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('btn').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password  --}}
+
+      <!-- JS show passowrd -->
+      <script>
+        // membuat fungsi change
         function change() {
     
         // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
@@ -516,7 +548,7 @@
       {{-- end show password  --}}
 
 
-      <!-- JS show passowrd2 -->
+      <!-- JS show password2 -->
       <script>
         // membuat fungsi change
         function ubah() {

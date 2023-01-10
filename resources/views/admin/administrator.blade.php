@@ -153,6 +153,10 @@
                           @csrf
                           @method('delete')
 
+                          <a href="/admin/edit_admin/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->name}}">
+                            <i class="bi bi-pencil-square fs-6"></i>
+                          </a>
+
                           <button type="submit" data-id="{{$item->id}}" data-name="{{$item->name}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->name}}">
                             <i class="bi bi-trash-fill fs-6"></i>
                           </button>

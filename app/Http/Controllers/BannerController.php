@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Auth;
 class BannerController extends Controller
 {
     public function create(){
-        $banner = Banner::with('admin')->select('*')->where('status_gambar','banner')->get();
+        // $banner = Banner::with('admin')->select('*')->where('status_gambar','banner')->get();
+        $banner = Banner::all();
         $admin = User::all();
         return view('/admin/banner', ['banner' => $banner], ['admin' => $admin]);
     }

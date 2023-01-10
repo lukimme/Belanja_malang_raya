@@ -12,9 +12,9 @@
       </ol>
     </nav>
   </div><!-- End Page Title -->
-{{Auth::user()}}
+{{-- {{Auth::user()}}
 <br><br>
-{{Auth::user()->email}}
+{{Auth::user()->email}} --}}
 
 
   <section class="section dashboard">

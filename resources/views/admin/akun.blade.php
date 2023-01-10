@@ -6,15 +6,16 @@
 
   
     <div class="pagetitle">
-      <h1>Administrator</h1>
+      <h1>Akun</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Halaman</li>
-          <li class="breadcrumb-item active">Administrator</li>
+          <li class="breadcrumb-item active">Akun</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    
 
     <section class="section profile">
       <div class="row">
@@ -85,13 +86,26 @@
                           </div>
                         </div>
 
-                        <div class="row mb-4">
+                        <div class="row mb-1">
                           <label for="inputText" class="col-sm-2 col-form-label">Nomor Telepon:</label>
                           <div class="col-sm-10">
                             <input type="text" name="nomor" class="form-control" value="{{$admin->nomor}}">
                           </div>
                         </div>
 
+
+                        
+                        @if (Auth::user()->id_role != 1)
+                        <div class="row mb-4 d-flex align-items-center">
+                          <label for="inputText" class="col-sm-2 col-form-label">Status:</label>
+                          <div class="col-sm-10">
+                            @foreach ($admin->roles as $item)
+                            <input type="hidden" name="status" class="form-control" value="{{$item->nama}}">
+                            <p class="mt-3">{{$item->nama}}</p>
+                            @endforeach
+                          </div>
+                        </div>
+                        @else
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label">Status Admin:</label>
                           <div class="col-sm-10">
@@ -108,6 +122,7 @@
                             </select>
                           </div>
                           </div>
+                          @endif
 
                         <div class="row mb-4 text-end">
                           <div class="col-sm-12">

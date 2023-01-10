@@ -13,7 +13,6 @@
           </ol>
         </nav>
     </div><!-- End Page Title -->
-    {{-- {{$kategoriList}} --}}
 
       <!-- Form Input -->
       <section class="section dashboard">
