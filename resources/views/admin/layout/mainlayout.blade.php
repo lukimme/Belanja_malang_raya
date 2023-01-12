@@ -26,10 +26,102 @@
   <link href="{{('/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{('/vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
+  <!-- CSS multiple image -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{('/css/image-uploader.min.css')}}">
+
   <!-- Template Main CSS File -->
   <link href="{{('/css/style.css')}}" rel="stylesheet">
 
-  <!-- Sambungan ke link untuk teks area -->
+  <style>
+
+    input:focus {
+        background-size: 100% 2px, 100% 1px;
+        outline: 0 none;
+        -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        border-bottom: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .input-field label {
+        width: 100%;
+        color: #9e9e9e;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        font-size: 1em;
+        cursor: text;
+        -webkit-transition: -webkit-transform .2s ease-out;
+        transition: -webkit-transform .2s ease-out;
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        text-align: initial;
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+        pointer-events: none;
+    }
+
+    input:focus + label {
+        color: #2196f3;
+    }
+
+    .input-field {
+        position: relative;
+        margin-top: 2.2rem;
+    }
+
+    .input-field label.active {
+        -webkit-transform: translateY(-15px) scale(0.8);
+        transform: translateY(-15px) scale(0.8);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+    .container {
+        width: 60%;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .step {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin-right: .5rem;
+    }
+
+    .option {
+        margin-top: 2rem;
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal .content {
+        background: #fff;
+        display: inline-block;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .modal .content h4 {
+        margin-top: 0;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.0
@@ -384,7 +476,16 @@
       {{-- jQuery --}}
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       {{-- SweetAlert --}}
-    
+
+
+      <!-- CSS multiple image -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
+
+      <script>
+        $('.input-images-1').imageUploader();
+      </script>
+      <!-- End CSS multiple image -->
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 

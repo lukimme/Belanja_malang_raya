@@ -21,10 +21,12 @@ class ProdukController extends Controller
 
     public function create(Request $request) {
 
+        // dd($request);
+
         // insert
-        $ekstensi = $request->file('gambar')->getClientOriginalExtension();
+        $ekstensi = $request->count(file('images'))->getClientOriginalExtension();
         $newName = 'prod'.now()->timestamp.'.'.$ekstensi;
-        $request->file('gambar')->storeAs('img', $newName);
+        $request->file('images')->storeAs('img', $newName);
 
 
         $produk = new produks;
@@ -35,12 +37,10 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->deskripsi;
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
-        $produk->gambar           = $newName;
+        $produk->gambar           = json_encode($newName);
         $produk->pesan            = $request->pesan;
         $produk->save();
         return redirect('/admin/produk')->with('success', 'Upload berhasil!');
-
-        // dd($request);
 
     }
 

@@ -25,7 +25,7 @@
                 <h5 class="card-title">General Form Elements</h5>
   
                 <!-- General Form Elements -->
-                <form action="produk" method="post" enctype="multipart/form-data">
+                <form action="produk" method="post" name="form-example-1" id="form-example-1" enctype="multipart/form-data">
                   @csrf
 
                   <div class="row mb-3">
@@ -66,7 +66,7 @@
                       </div>
                   </div>
 
-                  <div class="row mb-4">
+                  {{-- <div class="row mb-4">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
                     <div class="col-sm-10">
                         <div class="input-group form-outline">
@@ -82,6 +82,13 @@
                     <div class="col-sm-10 text-center">
                       <p id="num-of-files"></p>
                       <div id="images" ></div>
+                    </div>
+                </div> --}}
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Gambar Produk:</label>
+                    <div class="col-sm-10">
+                      <div class="input-images-1" style="padding-top: .5rem;"></div>
                     </div>
                 </div>
 
