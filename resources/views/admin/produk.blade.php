@@ -89,6 +89,7 @@
                     <label class="col-sm-2 col-form-label">Gambar Produk:</label>
                     <div class="col-sm-10">
                       <div class="input-images-1" style="padding-top: .5rem;"></div>
+                      {{-- <input type="file" name="images[]" multiple> --}}
                     </div>
                 </div>
 
@@ -189,7 +190,13 @@
                               
 
                               <td>
-                              <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
+                                @php
+                                    $gam = (array) json_decode($item->gambar);
+                                    $g = $gam[0];
+                                @endphp
+                               
+                                <img class="m-2" src="{{asset('storage/produk/'.$g)}}" width="70" alt="">
+                              
                               </td>
 
                               <td><p class="m-2">{{$item->diskon}}</p></td>

@@ -20,14 +20,15 @@ class ProdukController extends Controller
 
 
     public function create(Request $request) {
-
-        // dd($request);
-
-        // insert
-        $ekstensi = $request->count(file('images'))->getClientOriginalExtension();
-        $newName = 'prod'.now()->timestamp.'.'.$ekstensi;
-        $request->count(file('images'))->storeAs('img', $newName);
-
+        $images = [];
+    foreach ($request->file('images') as $image) {
+        $eks =  $image->getClientOriginalExtension();
+        $filename = 'produk-' . uniqid() . '.' . $eks;
+        $image->move(public_path().'/storage/produk/',$filename);
+        array_push($images, $filename);
+    
+}
+$json = json_encode($images);
 
         $produk = new produks;
         $produk->id_penjual       = $request->penjual;
@@ -37,9 +38,10 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->deskripsi;
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
-        $produk->gambar           = json_encode($newName);
+        $produk->gambar           = $json;
         $produk->pesan            = $request->pesan;
         $produk->save();
+    
         return redirect('/admin/produk')->with('success', 'Upload berhasil!');
 
     }
