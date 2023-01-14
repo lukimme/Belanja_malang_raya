@@ -26,7 +26,7 @@ class ProdukController extends Controller
         // insert
         $ekstensi = $request->count(file('images'))->getClientOriginalExtension();
         $newName = 'prod'.now()->timestamp.'.'.$ekstensi;
-        $request->file('images')->storeAs('img', $newName);
+        $request->count(file('images'))->storeAs('img', $newName);
 
 
         $produk = new produks;
