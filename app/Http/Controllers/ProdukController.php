@@ -21,14 +21,16 @@ class ProdukController extends Controller
 
     public function create(Request $request) {
         $images = [];
-    foreach ($request->file('images') as $image) {
-        $eks =  $image->getClientOriginalExtension();
-        $filename = 'produk-' . uniqid() . '.' . $eks;
-        $image->move(public_path().'/storage/produk/',$filename);
-        array_push($images, $filename);
-    
-}
-$json = json_encode($images);
+
+        foreach ($request->file('images') as $image) {
+            $eks =  $image->getClientOriginalExtension();
+            $filename = 'produk-' . uniqid() . '.' . $eks;
+            $image->move(public_path().'/storage/produk/',$filename);
+            array_push($images, $filename);
+        
+        }
+        
+        $json = json_encode($images);
 
         $produk = new produks;
         $produk->id_penjual       = $request->penjual;

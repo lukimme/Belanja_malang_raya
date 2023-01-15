@@ -81,23 +81,12 @@
         transform-origin: 0 0;
     }
 
-    .container {
-        width: 60%;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-    }
-
     .step {
         font-size: 1.6em;
         font-weight: 600;
         margin-right: .5rem;
     }
 
-    .option {
-        margin-top: 2rem;
-        border-bottom: 1px solid #d9d9d9;
-    }
 
     .modal {
         position: fixed;

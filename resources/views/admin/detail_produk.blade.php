@@ -14,6 +14,12 @@
     </nav>
 </div><!-- End Page Title -->
 
+      @php
+        $gam = (array) json_decode($produk->gambar);
+        $g = $gam[0];
+        // var_dump($gam);
+      @endphp
+
 <section class="section profile">
     <div class="row">
       <div class="col-xl-4">
@@ -21,7 +27,8 @@
         <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="{{asset('storage/img/'.$produk->gambar)}}" alt="{{$produk->nama_produk}}" title="{{$produk->nama_produk}}">
+            <img src="{{asset('storage/produk/'.$g)}}" alt="{{$produk->nama_produk}}" title="{{$produk->nama_produk}}">
+
             <h2 class="mb-2">{{$produk->nama_produk}}</h2>
           @foreach ($produk->penjual as $item)
               <h3>{{$item->nama_penjual}}</h3>
@@ -91,6 +98,41 @@
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Ditambahkan</div>
                   <div class="col-lg-9 col-md-8">{{$produk->created_at}}</div>
+                </div>
+
+                <div class="row">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Table with hoverable rows</h5>
+        
+                      <!-- Table with hoverable rows -->
+                      <table class="table table-hover ">
+                        <thead class="table-dark">
+                          <tr >
+                            <th scope="col">No</th>
+                            <th scope="col">Gambar</th>
+                            <th scope="col">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                          @foreach ($gam as $g)
+                          <tr>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>
+                              <img class="m-2" src="{{asset('storage/produk/'.$g)}}" width="70" alt="">
+                            </td>
+                            <td>
+                              Designer
+                            </td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                      <!-- End Table with hoverable rows -->
+        
+                    </div>
+                  </div>
                 </div>
 
               </div>

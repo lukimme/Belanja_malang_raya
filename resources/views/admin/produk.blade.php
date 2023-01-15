@@ -191,6 +191,7 @@
 
                               <td>
                                 @php
+                                // var_dump($item->gambar);
                                     $gam = (array) json_decode($item->gambar);
                                     $g = $gam[0];
                                 @endphp

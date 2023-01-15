@@ -20,7 +20,7 @@ class KategoriController extends Controller
         // insert
         $ekstensi = $request->file('foto_kategori')->getClientOriginalExtension();
         $newName = 'kat'.now()->timestamp.'.'.$ekstensi;
-        $request->file('foto_kategori')->storeAs('img', $newName);
+        $request->file('foto_kategori')->storeAs('kategori', $newName);
         
         $kategori = new kategori;
         $kategori->id_admin = Auth::user()->id;
@@ -55,7 +55,7 @@ class KategoriController extends Controller
         if ($request->file('foto_kategori')) {
             $ekstensi = $request->file('foto_kategori')->getClientOriginalExtension();
             $newName = 'kat'.now()->timestamp.'.'.$ekstensi;
-            $request->file('foto_kategori')->storeAs('img', $newName);
+            $request->file('foto_kategori')->storeAs('kategori', $newName);
         }
 
         $kategori = kategori::find($id);
@@ -73,7 +73,7 @@ class KategoriController extends Controller
         
         $kategori = kategori::findOrFail($id);
 
-        $file = public_path('storage/img/'.$kategori->foto_kategori);
+        $file = public_path('storage/kategori/'.$kategori->foto_kategori);
         if (file_exists($file)) {
             @unlink($file);
         }

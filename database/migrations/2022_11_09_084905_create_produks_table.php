@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('deskripsi_produk', 100);
             $table->string('Harga', 100);
             $table->string('diskon', 7)->nullable();
-            $table->string('gambar', 100);
+            $table->text('gambar');
             $table->string('pesan', 100);
             $table->timestamps();
         });
