@@ -9,7 +9,7 @@
       <h1>Akun</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
           <li class="breadcrumb-item">Halaman</li>
           <li class="breadcrumb-item active">Akun</li>
         </ol>
@@ -24,7 +24,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img id="gam" width="200" src="{{asset('storage/img/'.Auth::user()->foto)}}" alt="Profile" class="rounded-circle">
+              <img id="gam" width="200" src="{{asset('storage/admin/'.Auth::user()->foto)}}" alt="Profile" class="rounded-circle">
               <h2>{{$admin->name}}</h2>
               @foreach ($admin->roles as $item)
               <h3>{{$item->nama}}</h3>

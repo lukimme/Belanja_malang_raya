@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         $ekstensi = $request->file('foto')->getClientOriginalExtension();
         $newName = 'admin'.now()->timestamp.'.'.$ekstensi;
-        $request->file('foto')->storeAs('img', $newName);
+        $request->file('foto')->storeAs('admin', $newName);
 
         $admin = new User;
         $admin->id_role = $request->status;
@@ -60,7 +60,7 @@ class AdminController extends Controller
         if ($request->file('foto')) {
             $ekstensi = $request->file('foto')->getClientOriginalExtension();
             $newName = 'admin'.now()->timestamp.'.'.$ekstensi;
-            $request->file('foto')->storeAs('img', $newName);
+            $request->file('foto')->storeAs('admin', $newName);
         }
 
         $admin = User::find($id);
@@ -80,7 +80,7 @@ class AdminController extends Controller
 
         $admin = User::findOrFail($id);
 
-        $file = public_path('storage/img/'.$admin->foto);
+        $file = public_path('storage/admin/'.$admin->foto);
         if (file_exists($file)) {
             @unlink($file);
         }
@@ -106,7 +106,7 @@ class AdminController extends Controller
         if ($request->file('foto')) {
             $ekstensi = $request->file('foto')->getClientOriginalExtension();
             $newName = 'admin'.now()->timestamp.'.'.$ekstensi;
-            $request->file('foto')->storeAs('img', $newName);
+            $request->file('foto')->storeAs('admin', $newName);
         }
 
 

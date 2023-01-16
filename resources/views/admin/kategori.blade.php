@@ -122,7 +122,7 @@
                                   <td><p class="m-2">{{$item->nama_kategori}}</p></td>
                                   <td>
                                     {{-- {{$item->foto_kategori}} --}}
-                                  <img class="m-2" src="{{asset('storage/img/'.$item->foto_kategori)}}" width="70" alt="">
+                                  <img class="m-2" src="{{asset('storage/kategori/'.$item->foto_kategori)}}" width="70" alt="">
                                   </td>
                                   <td>
                                     <form action="{{ route('kategori.delete', $item->id) }}" method="POST">

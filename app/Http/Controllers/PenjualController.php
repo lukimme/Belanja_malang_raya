@@ -19,12 +19,12 @@ class PenjualController extends Controller
         // foto_penjual
         $ekstensi = $request->file('foto')->getClientOriginalExtension();
         $newNamePenjual = 'fotopenjual'.now()->timestamp.'.'.$ekstensi;
-        $request->file('foto')->storeAs('img', $newNamePenjual);
+        $request->file('foto')->storeAs('penjual', $newNamePenjual);
 
         // brand_penjual
         $ekstensi = $request->file('brand')->getClientOriginalExtension();
         $newNameBrand = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
-        $request->file('brand')->storeAs('img', $newNameBrand);
+        $request->file('brand')->storeAs('brandPenjual', $newNameBrand);
 
         $penjual = new penjuals;
         $penjual->id_admin      = Auth::user()->id;
@@ -55,15 +55,15 @@ class PenjualController extends Controller
         $newNameFoto = $request->oldimage;
         if ($request->file('foto')) {
             $ekstensi = $request->file('foto')->getClientOriginalExtension();
-            $newNameFoto = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
-            $request->file('foto')->storeAs('img', $newNameFoto);
+            $newNameFoto = 'fotopenjual'.now()->timestamp.'.'.$ekstensi;
+            $request->file('foto')->storeAs('penjual', $newNameFoto);
         }
 
         $newNameBrand = $request->oldimage2;
         if ($request->file('brand')) {
             $ekstensi = $request->file('brand')->getClientOriginalExtension();
             $newNameBrand = 'brandpenjual'.now()->timestamp.'.'.$ekstensi;
-            $request->file('brand')->storeAs('img', $newNameBrand);
+            $request->file('brand')->storeAs('brandPenjual', $newNameBrand);
         }
 
         $penjual = penjuals::find($id);
@@ -85,8 +85,8 @@ class PenjualController extends Controller
     {
         $penjual = penjuals::findOrFail($id);
 
-        $fileBrand = public_path('storage/img/'.$penjual->brand_penjual);
-        $fileFoto = public_path('storage/img/'.$penjual->foto);
+        $fileBrand = public_path('storage/brandPenjual/'.$penjual->brand_penjual);
+        $fileFoto = public_path('storage/penjual/'.$penjual->foto);
         if (file_exists($fileBrand) && file_exists($fileFoto)) {
             @unlink($fileBrand);
             @unlink($fileFoto);

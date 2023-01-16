@@ -169,7 +169,7 @@
             
                               <td><p class="">{{$item->nama_penjual}}</p></td>
                               <td>
-                                <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="95%" alt="">
+                                <img src="{{asset('storage/brandPenjual/'.$item->brand_penjual)}}" width="95%" alt="">
                               </td>
                               <td>
 

@@ -23,8 +23,7 @@ class RoleSeeder extends Seeder
 
         // $dataRole = [
         //     ['nama' => 'Super Admin'],
-        //     ['nama' => 'Sub Admin'],
-        //     ['nama' => 'Sub Admin 2']
+        //     ['nama' => 'Sub Admin']
         // ];
 
         // foreach ($dataRole as $value) {

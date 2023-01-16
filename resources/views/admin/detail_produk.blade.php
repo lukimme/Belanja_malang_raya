@@ -103,15 +103,15 @@
                 <div class="row">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Table with hoverable rows</h5>
+                      <h5 class="card-title">Gambar Produk {{$produk->nama_produk}}</h5>
         
                       <!-- Table with hoverable rows -->
-                      <table class="table table-hover ">
-                        <thead class="table-dark">
+                      <table class="table table-hover">
+                        <thead class="table-primary">
                           <tr >
                             <th scope="col">No</th>
                             <th scope="col">Gambar</th>
-                            <th scope="col">Aksi</th>
+                            <th scope="col">Ubah Gambar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -123,7 +123,9 @@
                               <img class="m-2" src="{{asset('storage/produk/'.$g)}}" width="70" alt="">
                             </td>
                             <td>
-                              Designer
+                              <button type="submit" data-id="" data-name="" class="btn btn-primary m-1 delete" value="hapus" title="Hapus">
+                                <i class="bi bi-trash-fill fs-6"></i>
+                              </button>
                             </td>
                           </tr>
                           @endforeach

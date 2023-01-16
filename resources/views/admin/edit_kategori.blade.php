@@ -54,7 +54,7 @@
 
                         <div class="row mb-2">
                           <div class="col-sm-12 text-center">
-                            <img id="gam" width="200" src="{{asset('storage/img/'.$kategoris->foto_kategori)}}" alt="">
+                            <img id="gam" width="200" src="{{asset('storage/kategori/'.$kategoris->foto_kategori)}}" alt="">
                           </div>
                         </div>
         

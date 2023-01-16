@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="{{asset('storage/img/'.$penjual->brand_penjual)}}" alt="brand {{$penjual->nama_penjual}}" title="brand {{$penjual->nama_penjual}}">
+            <img src="{{asset('storage/brandPenjual/'.$penjual->brand_penjual)}}" alt="brand {{$penjual->nama_penjual}}" title="brand {{$penjual->nama_penjual}}">
             <h2 class="mb-2">{{$penjual->nama_penjual}}</h2>
             <h3>Uploader: {{Auth::user()->name}}</h3>
 
@@ -78,7 +78,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4 label">Foto penjual</div>
                     <div class="col-lg-9 col-md-8">
-                        <img src="{{asset('storage/img/'.$penjual->foto)}}" width="45%" alt="{{$penjual->foto}}" title="{{$penjual->foto}}">
+                        <img src="{{asset('storage/penjual/'.$penjual->foto)}}" width="30%" alt="{{$penjual->foto}}" title="{{$penjual->foto}}">
                     </div>
                 </div>
 

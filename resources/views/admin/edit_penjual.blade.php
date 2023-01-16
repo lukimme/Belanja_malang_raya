@@ -75,7 +75,7 @@
 
                     <div class="row mb-2">
                       <div class="col-sm-12 text-center">
-                        <img id="gam" width="200" src="{{asset('storage/img/'.$penjual->foto)}}" alt="">
+                        <img id="gam" width="200" src="{{asset('storage/penjual/'.$penjual->foto)}}" alt="">
                       </div>
                     </div>
 
@@ -101,7 +101,7 @@
 
                     <div class="row mb-2">
                       <div class="col-sm-12 text-center">
-                        <img id="gambar" width="200" src="{{asset('storage/img/'.$penjual->brand_penjual)}}" alt="">
+                        <img id="gambar" width="200" src="{{asset('storage/brandPenjual/'.$penjual->brand_penjual)}}" alt="">
                       </div>
                     </div>
     
