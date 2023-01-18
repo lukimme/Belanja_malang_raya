@@ -29,6 +29,7 @@
   <!-- CSS multiple image -->
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="{{('/css/image-uploader.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{('/css/image-uploader.css')}}"> --}}
 
   <!-- Template Main CSS File -->
   <link href="{{('/css/style.css')}}" rel="stylesheet">
@@ -470,12 +471,13 @@
       <!-- CSS multiple image -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
+      {{-- <script type="text/javascript" src="{{('/js/image-update-uploader.min.js')}}"></script> --}}
 
       <script>
         $('.input-images-1').imageUploader();
       </script>
-      <!-- End CSS multiple image -->
-  
+
+      
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
  

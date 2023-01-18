@@ -194,6 +194,7 @@
                                 // var_dump($item->gambar);
                                     $gam = (array) json_decode($item->gambar);
                                     $g = $gam[0];
+                                    // var_dump($g);
                                 @endphp
                                
                                 <img class="m-2" src="{{asset('storage/produk/'.$g)}}" width="70" alt="">

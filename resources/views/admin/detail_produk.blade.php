@@ -123,9 +123,12 @@
                               <img class="m-2" src="{{asset('storage/produk/'.$g)}}" width="70" alt="">
                             </td>
                             <td>
-                              <button type="submit" data-id="" data-name="" class="btn btn-primary m-1 delete" value="hapus" title="Hapus">
-                                <i class="bi bi-trash-fill fs-6"></i>
-                              </button>
+                              <form action="">
+                                <input type="file" id="file-input" style="display: none;">
+                                <label for="file-input" class="btn btn-primary">
+                                  <i class="ri-upload-2-line"></i> Pilih gambar
+                                </label>
+                              </form>
                             </td>
                           </tr>
                           @endforeach

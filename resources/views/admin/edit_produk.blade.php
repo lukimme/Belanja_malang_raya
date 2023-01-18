@@ -15,6 +15,15 @@
 </div><!-- End Page Title -->
 
 
+
+@php
+// var_dump($item->gambar);
+    $produk1 = (array) json_decode($produk->gambar);
+    $g = $produk1;
+    $tot = count($g);
+@endphp
+
+
 <section class="section dashboard">
     <div class="row justify-content-center">
 
@@ -77,25 +86,16 @@
                         </div>
                     </div>
 
-                    <div class="row mb-4">
-                      <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Produk:</label>
-                      <div class="col-sm-10">
-                        <div class="input-group form-outline">
-                          <input type="hidden" name="oldimage" value="{{$produk->gambar}}">
-                          <input name="gambar" class="form-control" type="file" id="pics" onchange="readUrl(this)">
-                          <div class="input-group-append">
-                            <button type="button" class="btn btn-danger" onclick="hapus()">Hapus</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="row mb-3">
-                      <div class="col-sm-12 text-center">
-                        <img id="gam" width="200" src="{{asset('storage/img/'.$produk->gambar)}}">
+                      <label class="col-sm-2 col-form-label">Gambar Produk:</label>
+                      <div class="col-sm-10">
+                        <div class="input-images-2" style="padding-top: .5rem;"></div>
                       </div>
                     </div>
 
+                    
+                    <!-- End CSS multiple image -->
                     <div class="row mb-3">
                       <label for="inputDate" class="col-sm-2 col-form-label">Harga:</label>
                       <div class="col-sm-10">
@@ -134,6 +134,29 @@
     </div>
    </section><!-- End Form Input -->
 
-   @include('sweetalert::alert')
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
 
+   <script>
+    let preloaded = [
+
+      <?php foreach($g as $gm){ ?>
+
+        {id: '<?=$gm?>', src: 'http://127.0.0.1:8000/storage/produk/<?=$gm?>'},
+
+      <?php }?>
+
+    ];
+
+      $('.input-images-2').imageUploader({
+        preloaded: preloaded,
+        imagesInputName: 'photos',
+        preloadedInputName: 'old',
+      });
+      </script>
+      <!-- End CSS multiple image -->
+
+
+   @include('sweetalert::alert')
+   
 @endsection
