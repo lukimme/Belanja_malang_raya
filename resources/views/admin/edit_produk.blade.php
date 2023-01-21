@@ -152,7 +152,7 @@
       $('.input-images-2').imageUploader({
         preloaded: value,
         imagesInputName: 'photos',
-        // preloadedInputName: 'oldimage',
+        preloadedInputName: 'oldimage',
       });
       </script>
       <!-- End CSS multiple image -->

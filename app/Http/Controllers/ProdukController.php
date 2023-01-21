@@ -63,18 +63,8 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id) {
 
-        // $data = produks::find($id);
-
-        $images = [];
-
-        foreach ($request->file('photos') as $image) {
-            $eks = $image->getClientOriginalExtension();
-            $filename = 'produk-' . uniqid() . '.' . $eks;
-            $path = $image->move(public_path().'/storage/produk/',$filename);
-            array_push($images, $path);
-        }
-
-        dd($image);
+        // $old = $request->oldimage;
+        // dd($old);
         
 
         $produk = produks::find($id);
@@ -86,10 +76,35 @@ class ProdukController extends Controller
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
 
-    
+        $foto = $request->file('photos');
+        if ($foto) {
+
+            $images = (array) json_decode($produk->gambar);
+            
+            foreach ($foto as $image) {
+                
+                $eks = $image->getClientOriginalExtension();
+                $filename = 'produk-' . uniqid() . '.' . $eks;
+                $image->move(public_path().'/storage/produk/',$filename);
+                array_push($images, $filename);
+
+            }
+
+            
+
+            $json = json_encode($images);
+
+            $produk->gambar = $json;
+
+        }else{
+
+            $old = $request->oldimage;
+            $produk->gambar = $old;
+
+        }
 
 
-        // $produk->gambar           = $json;
+        
         $produk->pesan            = $request->pesan;
         $produk->save();
         return redirect('/admin/produk')->with('success', 'Data berhasil di ubah!');
