@@ -33,7 +33,7 @@ class IklanController extends Controller
        $banner->gambar = $newName;
        $banner->link = $request->link;
        $banner->save();
-       return redirect('/admin/iklan')->with('success', 'Data berhasil di ubah!');
+       return redirect('/admin/banner')->with('success', 'Data berhasil di ubah!');
          
     }
 

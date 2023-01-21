@@ -23,17 +23,17 @@ class ProdukController extends Controller
 
     public function create(Request $request) {
 
-        // $images = [];
+        $images = [];
 
-        // foreach ($request->file('images') as $image) {
-        //     $eks =  $image->getClientOriginalExtension();
-        //     $filename = 'produk-' . uniqid() . '.' . $eks;
-        //     $image->move(public_path().'/storage/produk/',$filename);
-        //     array_push($images, $filename);
+        foreach ($request->file('images') as $image) {
+            $eks =  $image->getClientOriginalExtension();
+            $filename = 'produk-' . uniqid() . '.' . $eks;
+            $image->move(public_path().'/storage/produk/',$filename);
+            array_push($images, $filename);
         
-        // }
+        }
         
-        // $json = json_encode($images);
+        $json = json_encode($images);
 
         $produk = new produks;
         $produk->id_penjual       = $request->penjual;
@@ -43,26 +43,7 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->deskripsi;
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
-
-        $oldImage = $produk->gambar;
-        $newImage = $request->hasFile('photos');
-        if($newImage){
-            //Proses menyimpan data gambar baru
-            $imageName = 'produk-' . uniqid() . '.' . $newImage->getClientOriginalExtension();
-            $newImage->move(public_path('images'), $imageName);
-        
-            //Menghapus data gambar lama
-            File::delete(public_path('/storage/produk/'.$oldImage));
-        
-            //Menyimpan data gambar baru ke dalam database
-            $produk->gambar = $imageName;
-            $produk->save();
-        }else{
-            //Menyimpan data gambar lama ke dalam database
-            $produk->gambar = $oldImage;
-            $produk->save();
-        }
-
+        $produk->gambar           = $json;
         $produk->pesan            = $request->pesan;
         $produk->save();
     
@@ -82,18 +63,19 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id) {
 
+        // $data = produks::find($id);
+
         $images = [];
 
-        $filename = $request->file('old');
-        if ($request->file('photos')) {
-            $eks =  $request->file('photos')->getClientOriginalExtension();
+        foreach ($request->file('photos') as $image) {
+            $eks = $image->getClientOriginalExtension();
             $filename = 'produk-' . uniqid() . '.' . $eks;
-            $request->file('photos')->move(public_path('/storage/produk/',$filename));
-            array_push($images, $filename);
-        
+            $path = $image->move(public_path().'/storage/produk/',$filename);
+            array_push($images, $path);
         }
+
+        dd($image);
         
-        $json = json_encode($images);
 
         $produk = produks::find($id);
         $produk->id_penjual       = $request->penjual;
@@ -103,7 +85,11 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->deskripsi;
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
-        $produk->gambar           = $json;
+
+    
+
+
+        // $produk->gambar           = $json;
         $produk->pesan            = $request->pesan;
         $produk->save();
         return redirect('/admin/produk')->with('success', 'Data berhasil di ubah!');

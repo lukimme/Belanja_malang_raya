@@ -22,7 +22,7 @@
     $g = $produk1;
     $tot = count($g);
 @endphp
-
+{{$tot}}
 
 <section class="section dashboard">
     <div class="row justify-content-center">
@@ -90,6 +90,7 @@
                     <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">Gambar Produk:</label>
                       <div class="col-sm-10">
+                        {{-- <input type="hidden" name="oldimage" value="{{$tot}}"> --}}
                         <div class="input-images-2" style="padding-top: .5rem;"></div>
                       </div>
                     </div>
@@ -138,7 +139,7 @@
    <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
 
    <script>
-    let preloaded = [
+    let value = [
 
       <?php foreach($g as $gm){ ?>
 
@@ -149,9 +150,9 @@
     ];
 
       $('.input-images-2').imageUploader({
-        preloaded: preloaded,
+        preloaded: value,
         imagesInputName: 'photos',
-        preloadedInputName: 'old',
+        // preloadedInputName: 'oldimage',
       });
       </script>
       <!-- End CSS multiple image -->
