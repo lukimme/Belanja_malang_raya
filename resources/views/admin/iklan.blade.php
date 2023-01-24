@@ -32,25 +32,7 @@
                       <!-- General Form Elements -->
                       <form method="POST" action="iklan" enctype="multipart/form-data">
                         @csrf
-                      <div class="row mb-3">
-                         
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select class="form-select @error('id') is-invalid @enderror" name="id" aria-label="Default select example">
-                            
-                            <option selected>Pilih Admin</option>
-                            @foreach ($admin as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
-                          
-                          </select>
-                           @error('id')
-                            <div class="invalid-feedback">
-                            {{ 'Pilih admin tidak boleh kosong!' }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
+                      
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">
@@ -165,7 +147,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                     @foreach ($banner as $item)
+                     @foreach ($iklan as $item)
                       <tr>
                       <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                       
@@ -181,11 +163,11 @@
                       <img class="m-2" src="{{asset('storage/img/'.$item->gambar)}}" width="70" alt="">
                       </td>
                       <td>
-                     <form action="{{ route('banner.delete', $item->id_gambar) }}" method="POST">
+                     <form action="{{ route('banner.delete', $item->id) }}" method="POST">
                         @csrf
                         @method('delete') 
-                          <a href="banner-edit/{{$item->id_gambar}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
-                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id_gambar}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
+                          <a href="banner-edit/{{$item->id}}" class="btn btn-primary m-1" title="Edit">Edit</a>  
+                      <input class="btn btn-danger m-1 delete" data-id="{{$item->id}}" data-nama="{{$item->nama_gambar}}" value="Hapus" type="submit" >
                       </form>
                       </td> 
                       </tr>

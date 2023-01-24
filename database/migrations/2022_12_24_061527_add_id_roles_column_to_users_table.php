@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kategoris', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('nama_kategori', 20);
-            $table->string('foto_kategori', 100);
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_role')->after('id')->required();
+            $table->foreign('id_role')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kategoris');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['id_role']);
+            $table->dropColumn('id_role');
+        });
     }
 };

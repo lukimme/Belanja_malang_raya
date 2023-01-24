@@ -27,20 +27,10 @@
                       <h5 class="card-title">Edit Banner & Iklan</h5>
         
                       <!-- General Form Elements -->
-                      <form action="/admin/banner/{{$banner->id_gambar}}" method="POST"  enctype="multipart/form-data">
+                      <form action="/admin/banner/{{$banner->id}}" method="POST"  enctype="multipart/form-data">
                         @csrf 
                         @method('PUT')
-                    {{-- <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select class="form-select" name="id_admin" aria-label="Default select example" required>
-                            <option selected>Pilih Admin</option>
-                            @foreach ($admin as $data)
-                                <option value="{{$data->id}}">{{$data->nama}}</option>
-                            @endforeach
-                          </select>
-                        </div>
-                    </div> --}}
+                    
                         <div class="row mb-4">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-10">

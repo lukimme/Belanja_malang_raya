@@ -12,6 +12,10 @@
       </ol>
     </nav>
   </div><!-- End Page Title -->
+{{-- {{Auth::user()}}
+<br><br>
+{{Auth::user()->email}} --}}
+
 
   <section class="section dashboard">
     <div class="row justify-content-center">

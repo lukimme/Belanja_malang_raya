@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\admins;
+use App\Models\User;
 use App\Models\kategori;
 use App\Models\penjuals;
 use Illuminate\Database\Eloquent\Model;
@@ -12,19 +12,20 @@ class produks extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+
+    public function penjual()
+    {
+        return $this->hasMany(penjuals::class, 'id', 'id_penjual');
+    }
+
+    public function kategori()
+    {
+        return $this->hasMany(kategori::class, 'id', 'id_kategori');
+    }
     
-    public function adminProduk()
+    public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id');
-    }
-
-    public function kategoriProduk()
-    {
-        return $this->hasMany(kategori::class, 'id_kategori', 'id_kategori');
-    }
-
-    public function penjualProduk()
-    {
-        return $this->hasMany(penjuals::class, 'id_penjual', 'id_penjual');
+        return $this->hasMany(User::class, 'id', 'id_admin');
     }
 }

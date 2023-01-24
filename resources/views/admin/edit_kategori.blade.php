@@ -14,15 +14,7 @@
           </ol>
         </nav>
     </div><!-- End Page Title -->
-
-    {{-- {{$kategoris}} --}}
-    {{-- @foreach ($kategoris->admin as $item)
-        {{$item->nama}}
-    @endforeach --}}
-    {{-- <br><br>
-    {{$admin}} --}}
-
-
+    
       <!-- Form Input -->
       <section class="section dashboard">
         <div class="row justify-content-center">
@@ -33,10 +25,10 @@
     
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Masukkan data kategoris</h5>
+                      <h5 class="card-title">Edit data kategoris</h5>
         
                       <!-- General Form Elements -->
-                      <form action="/admin/kategori/{{$kategoris->id_kategori}}" method="post" enctype="multipart/form-data">
+                      <form action="/admin/kategori/{{$kategoris->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -44,23 +36,6 @@
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
                             <input name="nama_kategori" type="text" class="form-control" value="{{$kategoris->nama_kategori}}">
-                          </div>
-                        </div>
-
-                        <div class="row mb-4">
-                          <label class="col-sm-2 col-form-label">Admin</label>
-                          <div class="col-sm-10">
-                            <select name="id_admin" class="form-select" aria-label="Default select example">
-                              @foreach ($kategoris->admin as $item)
-                              <option value="{{$item->id}}">{{$item->nama}}</option>
-                              @endforeach
-
-                              @foreach ($admin as $data)
-                              
-                              <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                              @endforeach
-                            </select>
                           </div>
                         </div>
 
@@ -79,7 +54,7 @@
 
                         <div class="row mb-2">
                           <div class="col-sm-12 text-center">
-                            <img id="gam" width="200" src="{{asset('storage/img/'.$kategoris->foto_kategori)}}" alt="">
+                            <img id="gam" width="200" src="{{asset('storage/kategori/'.$kategoris->foto_kategori)}}" alt="">
                           </div>
                         </div>
         
@@ -99,5 +74,7 @@
     
         </div>
        </section><!-- End Form Input -->
+
+       @include('sweetalert::alert')
 
   @endsection

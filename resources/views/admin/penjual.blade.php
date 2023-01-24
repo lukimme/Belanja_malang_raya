@@ -14,6 +14,7 @@
     </nav>
   </div><!-- End Page Title -->
 
+
   <!-- Form Input -->
   <section class="section dashboard">
       <div class="row justify-content-center">
@@ -24,25 +25,11 @@
   
               <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">General Form Elements</h5>
+                    <h5 class="card-title">Tambah data penjual</h5>
       
                     <!-- General Form Elements -->
                     <form action="penjual" method="post" enctype="multipart/form-data">
                       @csrf
-
-                      <div class="row mb-4">
-                        <label class="col-sm-2 col-form-label">Admin</label>
-                        <div class="col-sm-10">
-                          <select name="id_admin" class="form-select" aria-label="Default select example" required>
-                            <option selected>--pilih--</option>
-                            @foreach ($adminPenjual as $data)
-                            
-                            <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                            @endforeach
-                          </select>
-                        </div>
-                      </div>
 
                       <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
@@ -164,12 +151,8 @@
                           <thead>
                             <tr>
                               <th scope="col">No</th>
-                              <th scope="col">Penambah</th>
+                              <th scope="col">Uploader</th>
                               <th scope="col">Nama</th>
-                              <th scope="col">Nomor</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">Foto</th>
-                              <th scope="col">Alamat</th>
                               <th scope="col">Brand</th>
                               <th scope="col">Aksi</th>
                             </tr>
@@ -180,22 +163,34 @@
                             <tr>
                               <th scope="row">{{$loop->iteration}}</th>
             
-                                @foreach ($item->adminPenjual as $admin)
-                                <td>{{$admin->nama}}</td>
+                                @foreach ($item->admin as $admin)
+                                <td>{{$admin->name}}</td>
                                 @endforeach
             
                               <td><p class="">{{$item->nama_penjual}}</p></td>
-                              <td><p class="">{{$item->nomor_penjual}}</p></td>
-                              <td><p class="">{{$item->email_penjual}}</p></td>
                               <td>
-                                <img src="{{asset('storage/img/'.$item->foto)}}" width="115%" alt="">
+                                <img src="{{asset('storage/brandPenjual/'.$item->brand_penjual)}}" width="95%" alt="">
                               </td>
-                              <td><p class="">{{$item->alamat}}</p></td>
                               <td>
-                                <img src="{{asset('storage/img/'.$item->brand_penjual)}}" width="115%" alt="">
-                              </td>
-                              <td class="align-items-center">
-                                <a href="#" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}"><i class="bi bi-pencil-square"></i></a>  <a href="#" class="btn btn-primary m-1" title="Detail {{$item->nama_kategori}}"><i class="bi bi-card-list"></i></a>  <a href="#" class="btn btn-danger m-1" title="Hapus {{$item->nama_kategori}}"><i class="bx bxs-trash"></i></a>
+
+                                <form action="{{ route('penjual.delete', $item->id) }}" method="POST">
+                                  @csrf
+                                  @method('delete')
+
+                                <a href="edit_penjual/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_penjual}}">
+                                  <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                <a href="detail_penjual/{{$item->id}}" class="btn btn-primary m-1" title="Detail {{$item->nama_penjual}}">
+                                  <i class="bi bi-card-list"></i>
+                                </a>
+
+                                <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_penjual}}" class="btn btn-danger m-1 delete" title="Hapus {{$item->nama_penjual}}">
+                                  <i class="bx bxs-trash"></i>
+                                </button>
+
+                              </form>
+
                               </td> 
                             </tr>
                             @endforeach
@@ -218,5 +213,7 @@
     </div>
     </div>
   </section><!-- End Tables -->
+
+  @include('sweetalert::alert')
 
 @endsection

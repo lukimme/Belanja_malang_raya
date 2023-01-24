@@ -26,10 +26,92 @@
   <link href="{{('/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
   <link href="{{('/vendor/simple-datatables/style.css')}}" rel="stylesheet">
 
+  <!-- CSS multiple image -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{('/css/image-uploader.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{('/css/image-uploader.css')}}"> --}}
+
   <!-- Template Main CSS File -->
   <link href="{{('/css/style.css')}}" rel="stylesheet">
 
-  <!-- Sambungan ke link untuk teks area -->
+  <style>
+
+    input:focus {
+        background-size: 100% 2px, 100% 1px;
+        outline: 0 none;
+        -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        border-bottom: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .input-field label {
+        width: 100%;
+        color: #9e9e9e;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        font-size: 1em;
+        cursor: text;
+        -webkit-transition: -webkit-transform .2s ease-out;
+        transition: -webkit-transform .2s ease-out;
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        text-align: initial;
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+        pointer-events: none;
+    }
+
+    input:focus + label {
+        color: #2196f3;
+    }
+
+    .input-field {
+        position: relative;
+        margin-top: 2.2rem;
+    }
+
+    .input-field label.active {
+        -webkit-transform: translateY(-15px) scale(0.8);
+        transform: translateY(-15px) scale(0.8);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+    .step {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin-right: .5rem;
+    }
+
+
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal .content {
+        background: #fff;
+        display: inline-block;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .modal .content h4 {
+        margin-top: 0;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.0
@@ -47,7 +129,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <span class="d-none d-lg-block">BelanjaMalang</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -205,31 +287,29 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{('/img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <img src="{{asset('storage/admin/'.Auth::user()->foto)}}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6>{{Auth::user()->name}}</h6>
+              @foreach (Auth::user()->roles as $item)
+                  <span>{{$item->nama}}</span>
+              @endforeach
+              
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
+            
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="/admin/akun">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -238,18 +318,18 @@
               <hr class="dropdown-divider">
             </li>
 
-            <li>
+            {{-- <li>
               <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
-            </li>
+            </li> --}}
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="/admin/logout">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -269,259 +349,51 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="dashboard">
+        <a class="nav-link " href="/admin/">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav --> --}}
-
       <li class="nav-heading">Input Data</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="kategori">
+        <a class="nav-link collapsed" href="/admin/kategori">
           <i class="bx bxs-category"></i>
           <span>Kategori</span>
         </a>
       </li><!-- End Kategori Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="produk">
+        <a class="nav-link collapsed" href="/admin/produk">
           <i class="bx bxs-cart-alt"></i>
           <span>Produk</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="penjual">
+        <a class="nav-link collapsed" href="/admin/penjual">
           <i class="bi bi-file-person-fill"></i>
           <span>Penjual</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav --> --}}
-
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav --> --}}
-
       {{-- Halaman --}}
       <li class="nav-heading">Halaman</li>
 
+      @if (Auth::user()->id_role != 1)
+
+      @else
        <li class="nav-item">
-        <a class="nav-link collapsed" href="administrator">
+        <a class="nav-link collapsed" href="/admin/administrator">
           <i class="bi bi-people"></i>
           <span>Administrator</span>
         </a>
       </li>
+      @endif
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="akun">
+        <a class="nav-link collapsed" href="/admin/akun">
           <i class="bi bi-person"></i>
           <span>Akun</span>
         </a>
@@ -529,19 +401,19 @@
 
         <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-         <i class="bi bi-gear"></i><span>Setting</span><i class="bi bi-chevron-down ms-auto"></i>
+         <i class="bi bi-gear"></i><span>Pengaturan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="banner">
+            <a href="/admin/banner">
               <i class="bi bi-circle"></i><span>Banner</span>
             </a>
           </li>
-          <li>
-            <a href="iklan">
+          {{-- <li>
+            <a href="/admin/iklan">
               <i class="bi bi-circle"></i><span>Iklan Masyarakat</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </li>
 
@@ -575,7 +447,7 @@
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">YuktiWebDeveloper</a>
+          Designed by <a href="#">YuktiWebDeveloper</a>
         </div>
       </footer><!-- End Footer -->
     
@@ -594,14 +466,58 @@
       {{-- jQuery --}}
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       {{-- SweetAlert --}}
+
+
+      <!-- CSS multiple image -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
+      {{-- <script type="text/javascript" src="{{('/js/image-update-uploader.min.js')}}"></script> --}}
+
+      <script>
+        $('.input-images-1').imageUploader();
+      </script>
+
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+ 
     
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
       <!-- Template Main JS File -->
       <script src="{{('/js/main.js')}}"></script>
 
-      <!-- Javascript untuk textarea -->
-    
+      <!-- Show input multiple image -->
+      <script>
+        let fileInput = document.getElementById("file-input");
+        let imageContainer = document.getElementById("images");
+        let numOfFiles = document.getElementById("num-of-files");
+
+        function preview(input) {
+            imageContainer.innerHTML = "";
+            numOfFiles.textContent = `${fileInput.files.length}
+            Files Selected`;
+
+            for(i of fileInput.files){
+
+                let reader = new FileReader();
+                let figure = document.createElement("figure");
+                let figCap = document.createElement("figcaption");
+                figCap.innerText = i.name;
+                figure.appendChild(figCap);
+                reader.onload=()=>{
+                    let img = document.createElement("img");
+                    img.setAttribute("src",reader.result);
+                    figure.insertBefore(img,figCap);
+                }
+
+                imageContainer.appendChild(figure);
+                reader.readAsDataURL(i);
+
+
+            }
+
+        }
+      </script>
+
 
       <!-- Javascript untuk gambar di input -->
       <script>
@@ -664,6 +580,125 @@
   
     
       </script>
+
+      <!-- JS show passowrd -->
+      <script>
+        // membuat fungsi change
+        function ganti() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('pswrd').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('pswrd').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('btn').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('pswrd').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('btn').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password  --}}
+
+      <!-- JS show passowrd -->
+      <script>
+        // membuat fungsi change
+        function change() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('pass').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('pass').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('mybutton').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('pass').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('mybutton').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password  --}}
+
+
+      <!-- JS show password2 -->
+      <script>
+        // membuat fungsi change
+        function ubah() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('password').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('password').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('button').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('password').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('button').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password2  --}}
+
+
+      <!-- JS show passowrd3 -->
+      <script>
+        // membuat fungsi change
+        function rubah() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        var x = document.getElementById('sandi').type;
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (x == 'password') {
+
+            //ubah form input password menjadi text
+            document.getElementById('sandi').type = 'text';
+            
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('tombol').innerHTML = `<i class="bi bi-eye-slash-fill fs-5"></i>`;
+        }
+        else {
+
+            //ubah form input password menjadi text
+            document.getElementById('sandi').type = 'password';
+
+            //ubah icon mata terbuka menjadi tertutup
+            document.getElementById('tombol').innerHTML = `<i class="bi bi-eye-fill fs-5"></i>`;
+          }
+        }
+      </script>
+      {{-- end show password3  --}}
+
     
     </body>
     

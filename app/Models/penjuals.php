@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\admins;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -10,9 +10,10 @@ class penjuals extends Model
 {
     use HasFactory;
 
-    public function adminPenjual()
+    protected $primaryKey = 'id';
+    public function admin()
     {
-        return $this->hasMany(admins::class, 'id', 'id');
+        return $this->hasMany(User::class, 'id', 'id_admin');
     }
 
 }

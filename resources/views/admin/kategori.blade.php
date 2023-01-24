@@ -13,7 +13,6 @@
           </ol>
         </nav>
     </div><!-- End Page Title -->
-    {{-- {{$kategoriList}} --}}
 
       <!-- Form Input -->
       <section class="section dashboard">
@@ -35,20 +34,6 @@
                           <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                           <div class="col-sm-10">
                             <input name="nama_kategori" type="text" class="form-control" required>
-                          </div>
-                        </div>
-
-                        <div class="row mb-4">
-                          <label class="col-sm-2 col-form-label">Admin</label>
-                          <div class="col-sm-10">
-                            <select name="id_admin" class="form-select" aria-label="Default select example" required>
-                              <option selected>--pilih--</option>
-                              @foreach ($admin as $data)
-                              
-                              <option value="{{$data->id}}">{{$data->nama}}</option>
-
-                              @endforeach
-                            </select>
                           </div>
                         </div>
 
@@ -118,7 +103,7 @@
                               <thead>
                                 <tr>
                                   <th scope="col">No</th>
-                                  <th scope="col">Admin</th>
+                                  <th scope="col">Uploader</th>
                                   <th scope="col">Nama</th>
                                   <th scope="col">Gambar</th>
                                   <th scope="col">Aksi</th>
@@ -131,29 +116,29 @@
                                   <th scope="row"><p class="m-2">{{$loop->iteration}}</p></th>
                                   @foreach ($item->admin as $admin)
 
-                                    <td><p class="m-2">{{$admin->nama}}</p></td>
+                                    <td><p class="m-2">{{$admin->name}}</p></td>
 
                                   @endforeach
                                   <td><p class="m-2">{{$item->nama_kategori}}</p></td>
                                   <td>
                                     {{-- {{$item->foto_kategori}} --}}
-                                  <img class="m-2" src="{{asset('storage/img/'.$item->foto_kategori)}}" width="70" alt="">
+                                  <img class="m-2" src="{{asset('storage/kategori/'.$item->foto_kategori)}}" width="70" alt="">
                                   </td>
                                   <td>
-                                    <form action="{{ route('kategori.delete', $item->id_kategori) }}" method="POST">
+                                    <form action="{{ route('kategori.delete', $item->id) }}" method="POST">
                                       @csrf
                                       @method('delete')
 
-                                      <a href="edit_kategori/{{$item->id_kategori}}" class="btn btn-labeled btn-primary m-1" title="Edit {{$item->nama_kategori}}">
-                                        <i class="bi bi-pencil-square px-1 fs-5 btn-label"></i>Edit
+                                      <a href="edit_kategori/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}">
+                                        <i class="bi bi-pencil-square fs-6"></i>
                                       </a>
 
-                                      <a href="#" class="btn btn-labeled btn-primary m-1" title="Detail {{$item->nama_kategori}}">
-                                        <i class="bi bi-card-list px-1 fs-5 btn-label"></i>Detail
-                                      </a>
+                                      {{-- <a href="detail_kategori/{{$item->id_kategori}}" class="btn btn-labeled btn-primary m-1" title="Detail {{$item->nama_kategori}}">
+                                        <i class="bi bi-card-list fs-6 btn-label"></i>Detail
+                                      </a> --}}
 
-                                      <button type="submit" data-id="{{$item->id_kategori}}" data-name="{{$item->nama_kategori}}" class="btn btn-labeled btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
-                                      <i class="bi bi-trash-fill px-1 fs-5 btn-label"></i>Hapus
+                                      <button type="submit" data-id="{{$item->id}}" data-name="{{$item->nama_kategori}}" class="btn btn-danger m-1 delete" value="hapus" title="Hapus {{$item->nama_kategori}}">
+                                      <i class="bi bi-trash-fill fs-6"></i>
                                       </button>
 
                                     </form>
