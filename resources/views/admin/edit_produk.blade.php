@@ -20,9 +20,9 @@
 // var_dump($item->gambar);
     $produk1 = (array) json_decode($produk->gambar);
     $g = $produk1;
-    $tot = count($g);
+    // $tot = count($g);
 @endphp
-{{$tot}}
+
 
 <section class="section dashboard">
     <div class="row justify-content-center">
@@ -90,7 +90,7 @@
                     <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">Gambar Produk:</label>
                       <div class="col-sm-10">
-                        {{-- <input type="hidden" name="oldimage" value="{{$tot}}"> --}}
+                        {{-- <input type="text" name="lama" value="{{$produk->gambar}}"> --}}
                         <div class="input-images-2" style="padding-top: .5rem;"></div>
                       </div>
                     </div>
@@ -139,18 +139,18 @@
    <script type="text/javascript" src="{{('/js/image-uploader.min.js')}}"></script>
 
    <script>
-    let value = [
+    let preloaded = [
 
       <?php foreach($g as $gm){ ?>
 
-        {id: '<?=$gm?>', src: 'http://127.0.0.1:8000/storage/produk/<?=$gm?>'},
+        {id: '<?= $gm ?>', src: 'http://127.0.0.1:8000/storage/produk/<?=$gm?>'},
 
       <?php }?>
 
     ];
 
       $('.input-images-2').imageUploader({
-        preloaded: value,
+        preloaded: preloaded,
         imagesInputName: 'photos',
         preloadedInputName: 'oldimage',
       });

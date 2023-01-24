@@ -31,7 +31,7 @@
                   <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">Penjual:</label>
                       <div class="col-sm-10">
-                        <select class="form-select" name="penjual" aria-label="Default select example">
+                        <select class="form-select" name="penjual" aria-label="Default select example" required>
                           <option selected>--Pilih--</option>
                           @foreach ($penjual as $data)
                               <option value="{{$data->id}}">{{$data->nama_penjual}}</option>
@@ -43,21 +43,21 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="nama" class="form-control">
+                      <input type="text" name="nama" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Diskon:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="diskon" class="form-control">
+                      <input type="text" name="diskon" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">Kategori:</label>
                       <div class="col-sm-10">
-                        <select class="form-select" name="kategori" aria-label="Default select example">
+                        <select class="form-select" name="kategori" aria-label="Default select example" required>
                           <option selected>--Pilih--</option>
                           @foreach ($kategori as $item)
                               <option value="{{$item->id}}">{{$item->nama_kategori}}</option>
@@ -103,14 +103,14 @@
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Pesan Produk:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="pesan" class="form-control">
+                      <input type="text" name="pesan" class="form-control"  required>
                     </div>
                   </div>
 
                   <div class="row mb-4">
                       <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi Produk:</label>
                       <div class="col-sm-10">
-                          <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
+                          <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10" required></textarea>
                       </div>
                   </div>
   

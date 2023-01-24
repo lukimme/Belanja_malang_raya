@@ -63,10 +63,6 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id) {
 
-        // $old = $request->oldimage;
-        // dd($old);
-        
-
         $produk = produks::find($id);
         $produk->id_penjual       = $request->penjual;
         $produk->id_kategori      = $request->kategori;
@@ -75,6 +71,7 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->deskripsi;
         $produk->harga            = $request->harga;
         $produk->diskon           = $request->diskon;
+
 
         $foto = $request->file('photos');
         if ($foto) {
@@ -102,7 +99,6 @@ class ProdukController extends Controller
             $produk->gambar = $old;
 
         }
-
 
         
         $produk->pesan            = $request->pesan;
