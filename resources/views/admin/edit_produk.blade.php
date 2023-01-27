@@ -21,6 +21,7 @@
     $produk1 = (array) json_decode($produk->gambar);
     $g = $produk1;
     // $tot = count($g);
+    var_dump($g);
 @endphp
 
 

@@ -86,9 +86,7 @@ class ProdukController extends Controller
                 array_push($images, $filename);
 
             }
-
             
-
             $json = json_encode($images);
 
             $produk->gambar = $json;
