@@ -309,7 +309,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="/admin/akun">
+              <a class="dropdown-item d-flex align-items-center" href="/akun">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -329,7 +329,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="/admin/logout">
+              <a class="dropdown-item d-flex align-items-center" href="/logout">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -349,7 +349,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="/admin/">
+        <a class="nav-link " href="/">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -358,21 +358,21 @@
       <li class="nav-heading">Input Data</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/kategori">
+        <a class="nav-link collapsed" href="/kategori">
           <i class="bx bxs-category"></i>
           <span>Kategori</span>
         </a>
       </li><!-- End Kategori Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/produk">
+        <a class="nav-link collapsed" href="/produk">
           <i class="bx bxs-cart-alt"></i>
           <span>Produk</span>
         </a>
       </li><!-- End Produk Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/penjual">
+        <a class="nav-link collapsed" href="/penjual">
           <i class="bi bi-file-person-fill"></i>
           <span>Penjual</span>
         </a>
@@ -385,7 +385,7 @@
 
       @else
        <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/administrator">
+        <a class="nav-link collapsed" href="/administrator">
           <i class="bi bi-people"></i>
           <span>Administrator</span>
         </a>
@@ -393,7 +393,7 @@
       @endif
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/akun">
+        <a class="nav-link collapsed" href="/akun">
           <i class="bi bi-person"></i>
           <span>Akun</span>
         </a>
@@ -405,7 +405,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/admin/banner">
+            <a href="/banner">
               <i class="bi bi-circle"></i><span>Banner</span>
             </a>
           </li>

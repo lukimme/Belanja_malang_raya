@@ -129,7 +129,7 @@
                                       @csrf
                                       @method('delete')
 
-                                      <a href="edit_kategori/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}">
+                                      <a href="/edit_kategori/{{$item->id}}" class="btn btn-primary m-1" title="Edit {{$item->nama_kategori}}">
                                         <i class="bi bi-pencil-square fs-6"></i>
                                       </a>
 

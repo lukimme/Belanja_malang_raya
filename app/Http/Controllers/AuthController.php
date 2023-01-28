@@ -14,7 +14,7 @@ class AuthController extends Controller
     
     public function login() {
 
-        return view('/admin/login');
+        return view('admin.login');
 
     }
 
@@ -28,13 +28,13 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             
-            return redirect()->intended('admin/');
+            return redirect()->intended('/');
         }
 
         Session::flash('status', 'failed');
         Session::flash('message', 'Login anda salah!');
 
-        return redirect('/admin/login');
+        return redirect('/login');
     }
     
 
@@ -42,6 +42,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/login');
+        return redirect('/login');
     }
 }

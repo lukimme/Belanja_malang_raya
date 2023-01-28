@@ -11,7 +11,7 @@ class KategoriController extends Controller
     
     public function index() {
         $kategori = kategori::all();
-        return view('/admin/kategori', ['kategoris' => $kategori]);
+        return view('admin.kategori', ['kategoris' => $kategori]);
     }
 
 
@@ -27,7 +27,7 @@ class KategoriController extends Controller
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
-        return redirect('/admin/kategori')->with('success', 'Upload berhasil!');
+        return redirect('/kategori')->with('success', 'Upload berhasil!');
     }
 
 
@@ -44,7 +44,7 @@ class KategoriController extends Controller
     public function edit($id) {
 
         $kategori   = kategori::find($id);
-        return view('/admin/edit_kategori', ['kategoris' => $kategori]);
+        return view('admin.edit_kategori', ['kategoris' => $kategori]);
 
     }
 
@@ -63,7 +63,7 @@ class KategoriController extends Controller
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->foto_kategori = $newName;
         $kategori->save();
-        return redirect('/admin/kategori')->with('success', 'Data berhasil di ubah!');
+        return redirect('/kategori')->with('success', 'Data berhasil di ubah!');
     }
 
 

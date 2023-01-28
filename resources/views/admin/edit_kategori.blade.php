@@ -28,7 +28,7 @@
                       <h5 class="card-title">Edit data kategoris</h5>
         
                       <!-- General Form Elements -->
-                      <form action="/admin/kategori/{{$kategoris->id}}" method="post" enctype="multipart/form-data">
+                      <form action="/kategori/{{$kategoris->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
